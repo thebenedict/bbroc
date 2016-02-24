@@ -261,6 +261,8 @@ GEM
       rails (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2016.1)
+      tzinfo (>= 1.0.0)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -323,6 +325,7 @@ DEPENDENCIES
   spring-commands-rspec
   timecop
   title
+  tzinfo-data
   uglifier
   web-console
   webmock
