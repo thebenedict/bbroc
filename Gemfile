@@ -23,7 +23,8 @@ gem "title"
 gem "uglifier"
 gem "devise"
 gem "omniauth"
-gem 'omniauth-facebook'
+gem "omniauth-facebook"
+gem "tzinfo-data"
 
 group :development do
   gem "quiet_assets"
