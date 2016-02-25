@@ -1,27 +1,72 @@
-<% if current_user %>
-  <div><%= current_user.first_name %></div>
-  <div><img src="<%= current_user.hosted_avatar_url %>"></div>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-<% end %>
-<div id="sign-up" class="user-post">
-  <h2>Start sharing today!</h2>
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "fb-sign-in" %>
-  <span>or sign up using your <a href="#" id="email-signup">email address</a></span>
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+<main>
+  <div id="sign-up" class="user-post">
+    <h2>Start sharing today!</h2>
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "fb-sign-in" %>
+    <span>or sign up using your <a href="#" id="email-signup">email address</a></span>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :first_name, required: true, autofocus: true %>
-      <%= f.input :last_name, required: true %>
-      <%= f.input :email, required: true %>
-      <%= f.input :password, required: true %>
-      <%= f.input :password_confirmation, required: true %>
+      <div class="form-inputs">
+        <%= f.input :first_name, required: true, autofocus: true %>
+        <%= f.input :last_name, required: true %>
+        <%= f.input :email, required: true %>
+        <%= f.input :password, required: true %>
+        <%= f.input :password_confirmation, required: true %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+
+  <article class="user-post">
+    <div class="user-post-image">
+      <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+    <div class="user-post-data">
+      <h2>Green Apples</h2>
+      <h3>at Shoppers</h3>
+      <h3><time datetime="2016-02-10 19:30">58 mins ago</time></h3>
     </div>
-  <% end %>
+    <div class="profile-name">
+      <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
+      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
+    </div>
+  </article>
 
-  <%= render "devise/shared/links" %>
-</div>
+  <article class="user-post">
+    <div class="user-post-image">
+      <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
+    </div>
+    <div class="user-post-data">
+      <h2>Green Apples</h2>
+      <h3>at Shoppers</h3>
+      <h3><time datetime="2016-02-10 19:30">58 mins ago</time></h3>
+    </div>
+    <div class="profile-name">
+      <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
+      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
+    </div>
+  </article>
+
+  <article class="user-post">
+    <div class="user-post-image">
+      <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
+    </div>
+    <div class="user-post-data">
+      <h2>Green Apples</h2>
+      <h3>at Shoppers</h3>
+      <h3><time datetime="2016-02-10 19:30">58 mins ago</time></h3>
+    </div>
+    <div class="profile-name">
+      <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
+      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
+    </div>
+  </article>
+
+  <%= render "application/footer" %>
+
+</main>
