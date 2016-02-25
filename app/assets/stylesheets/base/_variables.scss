@@ -14,16 +14,22 @@ $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
+$max-post-size: 300px;
 
 // Colors
-$blue: #477dca;
+$blue: rgb(59, 89, 152);
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+$dark-green: rgb(42, 93, 94);
+$medium-green: rgb(71, 156, 157);
+$light-green: rgb(218, 235, 235);
+
+
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $medium-green;
 
 // Border
 $base-border-color: $light-gray;
