@@ -3,19 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="ROBOTS" content="NOODP" />
-  <meta name="viewport" content="initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="What's fresh in Dar? Find the best produce and specialty products available right now!">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#2a5d5e">
+  <meta name="msapplication-TileImage" content="<%= image_path 'ms-icon-144x144.png' %>">
   <%#
     Configure default and controller-, and view-specific titles in
     config/locales/en.yml. For more see:
     https://github.com/calebthompson/title#usage
   %>
   <title><%= title %></title>
+  <%= render "application/favicons" %>
   <%= stylesheet_link_tag :application, media: "all" %>
+  <link href="https://fonts.googleapis.com/css?family=ABeeZee%7CArchitects+Daughter" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="jquery.mobile-events.min.js"></script>
+
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
-  <%= render "flashes" -%>
-  <%= yield %>
-  <%= render "javascript" %>
+  <div class="wrapper">
+    <%= render "application/header" %>
+    <%= render "flashes" -%>
+    <section>
+      <%= render "application/left" %>
+      <%= render "application/right" %>
+      <%= yield %>
+      <%= render "application/bottom_nav" %>
+    </section>
+    <%= render "javascript" %>
+  </div>
 </body>
 </html>
