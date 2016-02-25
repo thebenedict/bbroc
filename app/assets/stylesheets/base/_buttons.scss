@@ -10,13 +10,14 @@
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.5 ;
   padding: $small-spacing $base-spacing;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  width: 100%;
 
   &:hover,
   &:focus {
@@ -41,7 +42,8 @@
   width: 80%;
   padding: $small-spacing;
   text-align: center;
-  margin: auto;
+  margin: 0 auto $small-spacing auto;;
+  font-weight: 600;
   
   &:hover,
   &:focus {
