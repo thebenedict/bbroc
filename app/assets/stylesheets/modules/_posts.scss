@@ -1,0 +1,9 @@
+.user-post {
+  display: flex;
+  flex-flow: column wrap;
+  flex-grow: 1;
+  max-width: $max-post-size;
+  padding: $small-spacing;
+  margin: $small-spacing;
+  align-items: center;
+}
