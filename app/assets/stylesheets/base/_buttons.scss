@@ -2,7 +2,7 @@
   appearance: none;
   background-color: $action-color;
   border: 0;
-  border-radius: $base-border-radius;
+  //border-radius: $base-border-radius;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -10,13 +10,14 @@
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.5 ;
   padding: $small-spacing $base-spacing;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  width: 100%;
 
   &:hover,
   &:focus {
@@ -31,5 +32,22 @@
     &:hover {
       background-color: $action-color;
     }
+  }
+}
+
+.fb-sign-in {
+  display: block;
+  background-color: $blue;
+  color: #fff;
+  width: 80%;
+  padding: $small-spacing;
+  text-align: center;
+  margin: 0 auto $small-spacing auto;;
+  font-weight: 600;
+  
+  &:hover,
+  &:focus {
+    background-color: shade($blue, 20%);
+    color: #fff;
   }
 }

@@ -58,6 +58,10 @@ select[multiple=multiple] {
       border: $base-border;
     }
   }
+  
+  &:first-child {
+    margin-top: $small-spacing;
+  }
 }
 
 textarea {
