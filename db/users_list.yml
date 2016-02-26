@@ -1,0 +1,14 @@
+- first_name: Jason
+  last_name: Produceman
+  email: testmb@test.com
+  password: abc123
+
+- first_name: Mark
+  last_name: Lotsafruit
+  email: mark@fruit.com
+  password: def456
+
+- first_name: Alex
+  last_name: Demapples
+  email: alex@thefarm.com
+  password: ghi789

@@ -21,51 +21,8 @@
 
     <%= render "devise/shared/links" %>
   </div>
-  
-  <article class="user-post">
-    <div class="user-post-image">
-      <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
-    </div>
-    <div class="user-post-data">
-      <h2>Green Apples</h2>
-      <h3>at Shoppers</h3>
-      <h3><time datetime="2016-02-10 19:30">58 mins ago</time></h3>
-    </div>
-    <div class="profile-name">
-      <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
-      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
-    </div>
-  </article>
-
-  <article class="user-post">
-    <div class="user-post-image">
-      <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
-    </div>
-    <div class="user-post-data">
-      <h2>Green Apples</h2>
-      <h3>at Shoppers</h3>
-      <h3><time datetime="2016-02-10 19:30">58 mins ago</time></h3>
-    </div>
-    <div class="profile-name">
-      <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
-      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
-    </div>
-  </article>
-
-  <article class="user-post">
-    <div class="user-post-image">
-      <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
-    </div>
-    <div class="user-post-data">
-      <h2>Green Apples</h2>
-      <h3>at Shoppers</h3>
-      <h3><time datetime="2016-02-10 19:30">58 mins ago</time></h3>
-    </div>
-    <div class="profile-name">
-      <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
-      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
-    </div>
-  </article>
+ 
+  <%= render @posts %>
 
   <%= render "application/footer" %>
 </main>
