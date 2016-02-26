@@ -8,7 +8,7 @@
     <h2><%= post.item.name %></h2>
   </div>
   <div class="post-user">
-    <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
+    <span class="point-count"><%= Random.rand(1..10) %></span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
     <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar" %>
   </div>
 </article>
