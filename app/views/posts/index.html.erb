@@ -1,5 +1,6 @@
-<main>
-  <div id="sign-up" class="user-post">
+<main id="middle" class="panel">
+
+  <div id="sign-up" class="post">
     <h2>Start sharing today!</h2>
     <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "fb-sign-in" %>
     <span>or sign up using your <a href="#" id="email-signup">email address</a></span>
@@ -20,52 +21,67 @@
     <% end %>
 
     <%= render "devise/shared/links" %>
-  </div>
+  </div> 
   
-  <article class="user-post">
-    <div class="user-post-image">
+  <article class="post">
+    <div class="post-image">
       <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
     </div>
-    <div class="user-post-data">
+    <div class="post-text">
+      <h3><i class="fa fa-map-marker"></i> at Shoppers</h3>
+      <h3><i class="fa fa-clock-o"></i> <time datetime="2016-02-10 19:30">58 mins ago</time></h3>
       <h2>Green Apples</h2>
-      <h3>at Shoppers</h3>
-      <h3><time datetime="2016-02-10 19:30">58 mins ago</time></h3>
     </div>
-    <div class="profile-name">
+    <div class="post-user">
       <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
-      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
+      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar" %>
     </div>
   </article>
-
-  <article class="user-post">
-    <div class="user-post-image">
+  
+  <article class="post">
+    <div class="post-image">
       <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
     </div>
-    <div class="user-post-data">
+    <div class="post-text">
+      <h3><i class="fa fa-map-marker"></i> at Shoppers</h3>
+      <h3><i class="fa fa-clock-o"></i> <time datetime="2016-02-10 19:30">58 mins ago</time></h3>
       <h2>Green Apples</h2>
-      <h3>at Shoppers</h3>
-      <h3><time datetime="2016-02-10 19:30">58 mins ago</time></h3>
     </div>
-    <div class="profile-name">
+    <div class="post-user">
       <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
-      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
+      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar" %>
     </div>
   </article>
-
-  <article class="user-post">
-    <div class="user-post-image">
+  
+  <article class="post">
+    <div class="post-image">
       <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
     </div>
-    <div class="user-post-data">
+    <div class="post-text">
+      <h3><i class="fa fa-map-marker"></i> at Shoppers</h3>
+      <h3><i class="fa fa-clock-o"></i> <time datetime="2016-02-10 19:30">58 mins ago</time></h3>
       <h2>Green Apples</h2>
-      <h3>at Shoppers</h3>
-      <h3><time datetime="2016-02-10 19:30">58 mins ago</time></h3>
     </div>
-    <div class="profile-name">
+    <div class="post-user">
       <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
-      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
+      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar" %>
     </div>
   </article>
-
+  
+  <article class="post">
+    <div class="post-image">
+      <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
+    </div>
+    <div class="post-text">
+      <h3><i class="fa fa-map-marker"></i> at Shoppers</h3>
+      <h3><i class="fa fa-clock-o"></i> <time datetime="2016-02-10 19:30">58 mins ago</time></h3>
+      <h2>Green Apples</h2>
+    </div>
+    <div class="post-user">
+      <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
+      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar" %>
+    </div>
+  </article>
+  
   <%= render "application/footer" %>
 </main>
