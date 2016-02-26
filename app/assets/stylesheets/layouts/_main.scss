@@ -1,0 +1,29 @@
+main {
+	position: absolute;
+	top: 80px;
+	bottom: 0;
+	width: 100%;
+	background: $light-green;
+	height: calc(100% - 80px); // 80px for header
+	overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+	align-items: center;
+  padding-top: 0.35em;
+  z-index: 1;
+  transition: $base-transition;
+  
+  h2 {
+    text-align: center;
+    flex: 0 1 100%;
+    color: $dark-green;
+    margin: 0.75em 0 0.4em 0;
+  }
+}
+// attempt to lock scroll when swiping away from main - is this hacky?
+#right.active ~ main, #left.active ~ main {
+  overflow-y: hidden;
+}

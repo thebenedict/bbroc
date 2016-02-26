@@ -20,11 +20,9 @@
   <%= stylesheet_link_tag :application, media: "all" %>
   <link href="https://fonts.googleapis.com/css?family=ABeeZee%7CArchitects+Daughter" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <script src="jquery.mobile-events.min.js"></script>
-
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= body_class %>">
+<body class="<%= body_class %>" data-xthreshold="175">
   <div class="wrapper">
     <%= render "application/header" %>
     <%= render "flashes" -%>
