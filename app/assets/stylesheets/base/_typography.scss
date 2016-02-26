@@ -17,7 +17,10 @@ h6 {
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
-  color:$dark-green;
+}
+
+h1 {
+  font-family: 'Architects Daughter', sans-serif;
 }
 
 h2 {
@@ -53,4 +56,9 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+footer {
+  font-family: 'Architects Daughter';
+  color: $dark-gray;
 }
