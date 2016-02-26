@@ -1,6 +1,7 @@
 // Typography
-$base-font-family: 'Roboto', sans-serif;
+$base-font-family: 'Open Sans', sans-serif;
 $heading-font-family: $base-font-family;
+$base-font-weight: lighter;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -15,18 +16,19 @@ $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 $max-post-size: 325px;
+$site-min-width: 300px;
 
 // Colors
 $blue: rgb(59, 89, 152);
-$dark-gray: #333;
-$medium-gray: #999;
+$dark-gray: #222;
+$medium-gray: #555;
 $light-gray: #ccc;
 $dark-green: rgb(42, 93, 94);
 $medium-green: rgb(71, 156, 157);
 $light-green: rgb(218, 235, 235);
 
 // Font Colors
-$base-font-color: $dark-gray;
+$base-font-color: $medium-gray;
 $action-color: $medium-green;
 
 // Border

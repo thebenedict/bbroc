@@ -1,17 +1,9 @@
 // navigation
-$('.left').on('click', function() {
-  $('#right, #bottom, #left, .right, .middle').removeClass('active');
-  $('#left, .left').addClass('active');  
-});
-
-$('.middle').on('click', function() {
-  $('#left, .left, #right, .right').removeClass('active');
-  $('.middle').addClass('active');
-});
-
-$('.right').on('click', function() {
-  $('#left, .left, .middle').removeClass('active');
-  $('#right, .right').addClass('active');
+$('.nav a').on('click', function() {
+  var className = $(this).attr('class'); 
+  var panelId = '#' + className; 
+  $(this).add(panelId).siblings().removeClass('active');
+  $(this).add(panelId).addClass('active');
 });
 
 $('body').on('swiperight', function() {

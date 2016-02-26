@@ -1,0 +1,75 @@
+.post {
+  display: flex;
+  flex-flow: row wrap;
+  flex-grow: 1;
+  max-width: $max-post-size;
+  padding: $small-spacing * 0.75;
+  margin: $small-spacing * 0.5;
+  align-items: center;
+  border: $base-border;
+  box-shadow: 0 2px 2px -2px #323232;
+  background: #fff;
+  justify-content: center;
+  
+  .broccoli-point-icon {
+    height: 20px;
+    width: 20px;
+    margin: 0 0.2em;
+  }
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+    
+    img {
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+    }
+    
+    span {
+      font-size: $base-font-size * 0.85;
+      font-weight: $base-font-weight;
+    }
+} 
+
+.post-text {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 0 66.66%;
+    padding-top: $small-spacing * 0.5;
+    
+    h2 {
+      width:100%;
+      margin: 0 0 $small-spacing * 0.25 0;
+    }
+    
+    h3 {
+      width: 50%;
+      font-size: $base-font-size * 0.85;
+    }
+    
+    i {
+      color: #777;
+    }
+}
+
+// signIn-signUp form
+#sign-up {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  
+  span {
+    margin: auto;
+  }
+}
+
+#new_user {
+  display: none;
+}
+
+#new_user.active {
+  display: block;
+}
