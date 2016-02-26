@@ -1,0 +1,17 @@
+footer {
+	padding: $base-spacing $base-spacing $small-spacing $base-spacing;
+	text-align: center;
+  flex: 0 1 100%;
+  font-size: $base-font-size * 0.85;
+  font-family: 'Open Sans', sans-serif;
+  
+  .menu-links {
+    
+    margin: $base-spacing * 2;
+    
+    li {
+      display: inline-block;
+      padding: $base-spacing * 0.5;
+    }
+  }
+}

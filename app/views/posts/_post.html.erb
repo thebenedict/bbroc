@@ -1,16 +1,14 @@
-<article class="user-post">
-  <div class="user-post-image">
+<article class="post">
+  <div class="post-image">
     <%= image_tag "apples_placeholder.jpg", alt: "apples" %>
   </div>
-  <div class="user-post-data">
+  <div class="post-text">
+    <h3><i class="fa fa-map-marker"></i> at <%= post.vendor.name %></h3>
+    <h3><%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: true %></h3>
     <h2><%= post.item.name %></h2>
-    <h3>at <%= post.vendor.name %></h3>
-    <h3>
-      <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: true %>
-    </h3>
   </div>
-  <div class="profile-name">
+  <div class="post-user">
     <span class="point-count">7</span><%= image_tag "icon.svg", alt: "broccoli points", class: "broccoli-point-icon" %>
-    <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "profile" %>
+    <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar" %>
   </div>
 </article>
