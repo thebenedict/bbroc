@@ -1,0 +1,24 @@
+header {
+	position: relative;
+	width: 100%;
+  height: 5em;
+	background: $dark-green;
+	z-index: 5;
+
+  h1 {
+    margin: 0;
+    text-align: center;
+    padding: 0.35em 0 0.1em 0;
+    font-size: 0.95em;
+    text-transform: lowercase;
+    font-weight: 400;
+
+    a {
+      color:#fff;
+    
+      img {
+        height: 30px;
+      }
+    }
+  }
+}

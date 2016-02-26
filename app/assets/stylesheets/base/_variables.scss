@@ -1,5 +1,5 @@
 // Typography
-$base-font-family: $helvetica;
+$base-font-family: 'Roboto', sans-serif;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -20,12 +20,10 @@ $max-post-size: 325px;
 $blue: rgb(59, 89, 152);
 $dark-gray: #333;
 $medium-gray: #999;
-$light-gray: #ddd;
+$light-gray: #ccc;
 $dark-green: rgb(42, 93, 94);
 $medium-green: rgb(71, 156, 157);
 $light-green: rgb(218, 235, 235);
-
-
 
 // Font Colors
 $base-font-color: $dark-gray;
@@ -46,3 +44,4 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+$base-transition: transform $base-duration  $base-timing;
