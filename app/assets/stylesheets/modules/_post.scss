@@ -1,49 +1,25 @@
 .post {
   display: flex;
   flex-flow: row wrap;
-  flex-grow: 1;
   max-width: $max-post-size;
   padding: $small-spacing * 0.75;
   margin: $small-spacing * 0.5;
   align-items: center;
   border: $base-border;
-  box-shadow: 0 2px 2px -2px #323232;
+  box-shadow: $base-box-shadow;
   background: #fff;
   justify-content: center;
-  
-  .broccoli-point-icon {
-    height: 15px;
-    width: 15px;
-    margin: 0 0.1em;
-  }
   
   .post-image {
     overflow: hidden;
   }
-}
-
-.post-user {
-    width: 50px;
-    text-align: center;
-    
-    img {
-      border-radius: 50%;
-      height: 50px;
-      width: 50px;
-    }
-    
-    span {
-      font-size: $base-font-size * 0.85;
-      font-weight: $base-font-weight;
-    }
-} 
-
-.post-text {
+  
+  .post-text {
     display: flex;
     flex-flow: row wrap;
     flex: 1 0 66.66%;
     padding-top: $small-spacing * 0.5;
-    
+  
     h2 {
       width:100%;
       margin: 0 0 $small-spacing * 0.25 0;
@@ -58,6 +34,29 @@
     i {
       color: #777;
     }
+  }
+  
+  .post-user {
+    width: 50px;
+    text-align: center;
+  
+    img {
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+    }
+    
+    .broccoli-point-icon {
+      height: 15px;
+      width: 15px;
+      margin: 0 $small-spacing * 0.1;
+    }
+    
+    span {
+      font-size: $base-font-size * 0.85;
+      font-weight: $base-font-weight;
+    }
+  }  
 }
 
 // signIn-signUp form
