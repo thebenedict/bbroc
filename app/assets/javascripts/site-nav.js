@@ -7,6 +7,7 @@ $('.nav a').on('click', function() {
 });
 
 $('body').on('swiperight', function() {
+  
   // check to see if on middle or left panel
   if (($('.middle').hasClass('active')) || ($('.left').hasClass('active')) ) {
     $('#right, .right, #bottom, .middle').removeClass('active');
