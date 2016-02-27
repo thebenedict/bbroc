@@ -17,7 +17,7 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  padding-top: 0.35em;
+  padding-top: $small-spacing * 0.5;
   transition: $base-transition;
   justify-content: center;
   background: $dark-green;
