@@ -35,6 +35,16 @@
     <% end %>
   </div>
 
+  <div id="new-post" class="post">
+    <%= simple_form_for(@new_post) do |f| %>
+      <%= f.association :item %>
+      <%= f.association :vendor %>
+      <div class="form-actions">
+        <%= f.button :submit, "Post" %>
+      </div>      
+    <% end %>
+  </div>
+
   <%= render @posts %>
 
   <%= render "application/footer" %>
