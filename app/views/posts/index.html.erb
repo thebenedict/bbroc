@@ -20,8 +20,11 @@
     <% end %>
 
     <%= render "devise/shared/links" %>
+    <% if current_user %>
+      <%= link_to(" Logout #{current_user.first_name}", destroy_user_session_path, :method => :delete) %>
+    <% end %>
   </div>
- 
+
   <%= render @posts %>
 
   <%= render "application/footer" %>
