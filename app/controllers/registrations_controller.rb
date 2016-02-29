@@ -1,5 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-
   # override create to allow redirecting to root on sign up failure
   def create
     build_resource(sign_up_params)
