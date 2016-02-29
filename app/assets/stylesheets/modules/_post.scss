@@ -9,54 +9,63 @@
   box-shadow: $base-box-shadow;
   background: #fff;
   justify-content: center;
-  
-  .post-image {
+
+  .item-image {
     overflow: hidden;
   }
-  
-  .post-text {
+
+  .headline {
     display: flex;
-    flex-flow: row wrap;
-    flex: 1 0 66.66%;
-    padding-top: $small-spacing * 0.5;
-  
+    flex: 1 0 100%;
+    justify-content: space-between;
+
     h2 {
-      width:100%;
-      margin: 0 0 $small-spacing * 0.25 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
     }
-    
-    h3 {
-      width: 50%;
-      font-size: $base-font-size * 0.85;
-      padding-right: $small-spacing * 0.25;
+
+    div {
+      display: flex;
+      align-items: center;
     }
-    
-    i {
-      color: #777;
-    }
-  }
-  
-  .post-user {
-    width: 50px;
-    text-align: center;
-  
-    img {
-      border-radius: 50%;
-      height: 50px;
-      width: 50px;
-    }
-    
+
     .broccoli-point-icon {
       height: 15px;
       width: 15px;
       margin: 0 $small-spacing * 0.1;
     }
-    
+
     span {
       font-size: $base-font-size * 0.85;
       font-weight: $base-font-weight;
     }
-  }  
+
+    img {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  .detail {
+    display: flex;
+    flex: 1 0 100%;
+    justify-content: space-between;
+    padding-top: $small-spacing;
+
+    h3 {
+      width: 45%;
+      font-size: $base-font-size * 0.85;
+      margin: 0;
+
+      &:last-of-type {text-align: right;}
+
+      i {
+        color: #777;
+      }
+    }
+  }
 }
 
 // signIn-signUp form
@@ -64,7 +73,7 @@
   background: transparent;
   border: 0;
   box-shadow: none;
-  
+
   span {
     margin: auto;
   }
