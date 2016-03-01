@@ -1,63 +1,9 @@
 <main id="middle" class="panel active">
   <%= render "flashes" -%>
-  <div id="top-container" class="post">
-    <div class="post sign-up">
-      <h2>Start sharing today!</h2>
-      <h3>Create an account</h3>
-      <span class="toggle-container">or <a href="#">log in</a></span>
-
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: 'First Name' %>
-        <%= f.input :last_name, required: true, label: false, placeholder: 'Last Name' %>
-        <%= f.input :email, required: true, label: false, placeholder: 'Email' %>
-        <%= f.input :password, required: true, label: false, placeholder: 'Password' %>
-        <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Repeat Password' %>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Create an account" %>
-      </div>
-
-      <% end %>
-
-      <span class="form-text-space">- or -</span>
-      <%= link_to "Sign up with Facebook", user_omniauth_authorize_path(:facebook), class: "fb-sign-in" %>
-    </div>
-    <div class="post sign-in hidden">
-      <h2>Start sharing today!</h2>
-      <h3>Sign in</h3>
-      <span class="toggle-container">or <a href="#">create an account</a></span>
-
-      <%= simple_form_for(:resource, as: resource_name, :url => registration_path(resource_name)) do |f| %>
-      <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email' %>
-      <%= f.input :password, required: true, autofocus: true, label: false, placeholder: 'Password' %>
-      <%= f.input :remember_me, label: "Remember me", as: :boolean %>
-      <%= f.submit 'Sign in' %>
-      <%= link_to "Forgot your password?", new_password_path(resource_name), class: "form-text-space" %>
-
-      <% end %>
-
-      <%# <%= render "devise/shared/links" %> <!-- remove links - Eric -->
-      <% if current_user %>
-        <%= link_to(" Logout #{current_user.first_name}", destroy_user_session_path, :method => :delete) %>
-      <% end %>
-
-    </div>
-  </div>
   <% if current_user %>
-    <div id="new-post" class="post">
-      <h2>Find something?</h2>
-      <%= simple_form_for(@new_post) do |f| %>
-        <input type="file" capture> <!-- added by Eric -->
-        <%= f.association :item, label: false  %>
-        <%= f.association :vendor,label: false %>
-        <div class="form-actions">
-          <%= f.button :submit, "Post" %>
-        </div>
-      <% end %>
-    </div>
+    <%= render "post_form" %>
+  <% else %>
+    <%= render "authentication_forms" %>
   <% end %>
   <%= render @posts %>
   <%= render "application/footer" %>

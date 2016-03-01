@@ -1,0 +1,14 @@
+<div id="new-post" class="post">
+  <h2>Find something?</h2>
+  <%= simple_form_for(@new_post) do |f| %>
+    <input type="file" capture> <!-- added by Eric -->
+    <%= f.association :item, label: false  %>
+    <%= f.association :vendor,label: false %>
+    <div class="form-actions">
+      <%= f.button :submit, "Post" %>
+    </div>
+  <% end %>
+  <% if current_user %>
+    <%= link_to(" Logout #{current_user.first_name}", destroy_user_session_path, :method => :delete) %>
+  <% end %>
+</div>
