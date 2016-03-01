@@ -18,7 +18,7 @@ select {
 }
 
 label {
-  font-weight: 600;
+  font-weight: lighter;
   margin-bottom: $small-spacing / 2;
 
   &.required::after {
@@ -62,7 +62,7 @@ select[multiple=multiple] {
       border: $base-border;
     }
   }
-  
+
   &:first-child {
     margin-top: $small-spacing;
   }
