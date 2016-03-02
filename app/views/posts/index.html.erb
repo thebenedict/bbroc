@@ -1,10 +1,12 @@
 <main id="middle" class="panel active">
-  <%= render "flashes" -%>
-  <% if current_user %>
-    <%= render "post_form" %>
-  <% else %>
-    <%= render "authentication_forms" %>
-  <% end %>
-  <%= render @posts %>
-  <%= render "application/footer" %>
+  <div id="top-container" class="post">
+    <%= render "flashes" -%>
+    <% if current_user %>
+      <%= render "post_form" %>
+    <% else %>
+      <%= render "authentication_forms" %>
+    <% end %>
+  </div>
+    <%= render @posts %>
+    <%= render "application/footer" %>
 </main>
