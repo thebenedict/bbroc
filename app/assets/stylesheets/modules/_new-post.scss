@@ -378,34 +378,51 @@
   cursor: not-allowed;
 }
 
-.image-controls {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-  margin-bottom: $base-spacing * 1.5;
-
-  button {
-    width: inherit;
-    padding: $small-spacing;
-    flex: 1 0 auto;
-    background:$medium-gray;
-
-    &#retake-image {background: $dark-gray;}
-    &:hover { background: darken( $medium-gray, 10% );}
-  }
-}
-
 #new-post {
-  justify-content: space-between;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  margin: 0 $small-spacing * 0.5 $small-spacing;
-  padding: 0;
+  display: flex;
+  align-content: flex-start;
+  flex-flow: row wrap;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 
-  input, select {width: 100%;}
+  .bar {
+    display: flex;
+    flex: 1 0 100%;
+    justify-content: flex-end;
+    padding:$small-spacing * 0.5;
+  }
 
-  .close-share {background: $dark-gray;}
+  .canvas-container {
+    display: flex;
+    flex: 1 0 100%;
+    height: 50%;
+  }
+
+  .image-controls {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex: 1 0 100%;
+    margin-bottom: $base-spacing;
+
+    button {
+      width: inherit;
+      padding: $small-spacing;
+      flex: 1 0 auto;
+      background:$medium-gray;
+
+      &#retake-image {background: $dark-gray;}
+      &:hover { background: darken( $medium-gray, 10% );}
+    }
+  }
+
+  .new-post-form {
+    display: flex;
+    flex: 1 0 100%;
+
+    select {width: 100%;}
+  }
 }
 
 input#inputImage {

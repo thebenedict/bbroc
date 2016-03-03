@@ -3033,18 +3033,18 @@ $(function () {
 });
 
   $('#image').cropper({
-    viewMode: 3,
+    viewMode: 1,
     dragMode: 'move',
     aspectRatio: 4 / 3,
     crop: function(e) {
       // Output the result data for cropping image.
-      console.log(e.x);
-      console.log(e.y);
-      console.log(e.width);
-      console.log(e.height);
-      console.log(e.rotate);
-      console.log(e.scaleX);
-      console.log(e.scaleY);
+      //console.log(e.x);
+      //console.log(e.y);
+      //console.log(e.width);
+      //console.log(e.height);
+      //console.log(e.rotate);
+      //console.log(e.scaleX);
+      //console.log(e.scaleY);
     }
   });
 
