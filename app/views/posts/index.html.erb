@@ -2,7 +2,7 @@
   <div id="top-container" class="post">
     <%= render "flashes" -%>
     <% if current_user %>
-      <%= render "post_form" %>
+      <%= link_to(" Logout #{current_user.first_name}", destroy_user_session_path, :method => :delete) %>
     <% else %>
       <%= render "authentication_forms" %>
     <% end %>
