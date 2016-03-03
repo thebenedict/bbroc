@@ -6,28 +6,26 @@
     <canvas id="image"></canvas>
   </div>
   <div class="image-controls">
-    <button id="drag-mode">
-      <i class="fa fa-arrows"></i>
+    <button id="retake-image" onclick="document.getElementById('inputImage').click()">
+      <i class="fa fa-camera"></i>
     </button>
     <button id="rotate-left">
       <i class="fa fa-rotate-left"></i>
     </button>
-    <button id="rotate-right">
-      <span class="fa fa-rotate-right"></i>
-    </button>
-    <button id="zoom-in">
+
+    <!--<button id="zoom-in">
       <i class="fa fa-search-plus"></i>
     </button>
     <button id="zoom-out">
       <i class="fa fa-search-minus"></i>
-    </button>
-    <button id="retake-image" onclick="document.getElementById('inputImage').click()">
-      <i class="fa fa-camera"></i>
+    </button>-->
+    <button id="rotate-right">
+      <span class="fa fa-rotate-right"></i>
     </button>
   </div>
   <div class="new-post-form">
   <%= simple_form_for(@post) do |f| %>
-    <input type="file" id="inputImage" accept="image/*">
+    <input type="file" id="inputImage" accept="image/*" capture>
     <%= f.association :item, label: false, prompt: "What is this?"  %>
     <%= f.association :vendor,label: false, prompt: "Where are you?" %>
     <div class="form-actions">
