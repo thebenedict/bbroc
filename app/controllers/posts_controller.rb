@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, :except => [:index]
+
   def index
     # preserve form state details if user sign up fails
     @resource = User.new(session[:incomplete_resource])
@@ -7,6 +9,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    render(action: "new", layout: "bare")
   end
 
   def create 
