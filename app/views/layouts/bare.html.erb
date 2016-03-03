@@ -2,11 +2,4 @@
 <body>
   <%= yield %>
   <%= render "javascript" %>
-  <script>
-    $("document").ready(function() {
-      setTimeout(function() {
-          $('#image').cropper('getImageData');
-      },10);
-    });
-  </script>
 </body>
