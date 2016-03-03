@@ -4,6 +4,12 @@
     <% if current_user %>
       <div class="toggle-container post"><a href="/posts/new"><i class="fa fa-camera"></i> Add Post</a></div>
     <% else %>
+    <div class="welcome">
+      <h2>Easily find what's fresh in town.</h2>
+        <h3><i class="fa fa-map-signs"></i><span> Discover fresh local items</span></h3>
+        <h3><i class="fa fa-plus-square"></i><span> Post your own personal discoveries</span></h3>
+        <h3><i class="fa fa-heart"></i><span> Get notified when others post an item you love</span></h3>
+    </div>
       <%= render "authentication_forms" %>
     <% end %>
   </div>
