@@ -2,8 +2,11 @@ class PostsController < ApplicationController
   def index
     # preserve form state details if user sign up fails
     @resource = User.new(session[:incomplete_resource])
-    @new_post = Post.new
     @posts = Post.order(created_at: :desc)
+  end
+
+  def new
+    @post = Post.new
   end
 
   def create 
