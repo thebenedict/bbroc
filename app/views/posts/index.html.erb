@@ -2,8 +2,7 @@
   <div id="top-container" class="post">
     <%= render "flashes" -%>
     <% if current_user %>
-    <div class="toggle-container post"><a href="/posts/new"><i class="fa fa-camera"></i> Add Post</a></div>
-      <%= link_to(" Logout #{current_user.first_name}", destroy_user_session_path, :method => :delete) %>
+      <div class="toggle-container post"><a href="/posts/new"><i class="fa fa-camera"></i> Add Post</a></div>
     <% else %>
       <%= render "authentication_forms" %>
     <% end %>
