@@ -30,14 +30,7 @@ $('body').on('swipeleft', function() {
     }
 });
 
+// sign in and sign up toggle
 $('.toggle-container a').on('click', function() {
-  $('#top-container .post').toggleClass('hidden');
-});
-
-$('.toggle-container a').on('click', function() {
-  $('.add-post').toggleClass('hidden');
-});
-
-$('.close-share').on('click', function() {
   $('#top-container .post').toggleClass('hidden');
 });
