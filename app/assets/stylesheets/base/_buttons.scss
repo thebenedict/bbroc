@@ -1,8 +1,8 @@
-#{$all-buttons} {
+#{$all-buttons}, .button {
   appearance: none;
   background-color: $action-color;
   border: 0;
-  //border-radius: $base-border-radius;
+  border-radius: $base-border-radius;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -18,6 +18,17 @@
   vertical-align: middle;
   white-space: nowrap;
   width: 100%;
+  text-align: center;
+
+  &.fb-sign-in {
+  background-color: $blue;
+
+    &:hover,
+    &:focus {
+      background-color: shade($blue, 20%);
+      color: #fff;
+    }
+  }
 
   &:hover,
   &:focus {
@@ -32,22 +43,5 @@
     &:hover {
       background-color: $action-color;
     }
-  }
-}
-
-.fb-sign-in {
-  display: block;
-  background-color: $blue;
-  color: #fff;
-  width: 100%;
-  padding: $small-spacing;
-  text-align: center;
-  margin: 0 auto $small-spacing auto;;
-  font-weight: 600;
-  
-  &:hover,
-  &:focus {
-    background-color: shade($blue, 20%);
-    color: #fff;
   }
 }

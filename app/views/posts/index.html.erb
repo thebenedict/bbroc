@@ -1,18 +1,22 @@
 <main id="middle" class="panel active">
-  <div id="top-container" class="post">
-    <%= render "flashes" -%>
-    <% if current_user %>
-      <div class="toggle-container post"><a href="/posts/new"><i class="fa fa-camera"></i> Add Post</a></div>
-    <% else %>
-    <div class="welcome">
-      <h2>Easily find what's fresh in town.</h2>
-        <h3><i class="fa fa-map-signs"></i><span> Discover fresh local items</span></h3>
-        <h3><i class="fa fa-plus-square"></i><span> Post your own personal discoveries</span></h3>
-        <h3><i class="fa fa-heart"></i><span> Get notified when others post an item you love</span></h3>
+  <%= render "flashes" -%>
+  <% if current_user %>
+    <div class="post start">
+      <h2>Ready to share?</h2>
+      <p>Take a photo, enter the item name, and add the location!</p>
+      <a href="/posts/new" class="button"><i class="fa fa-plus"></i> Add Post</a>
     </div>
-      <%= render "authentication_forms" %>
-    <% end %>
+  <% else %>
+  <div class="post welcome">
+    <h2>What's fresh in town?</h2>
+    <ul>
+      <li><i class="fa fa-map-signs"></i> Discover fresh local items</li>
+      <li><i class="fa fa-plus-square"></i> Post your discoveries</li>
+      <li><i class="fa fa-heart"></i> List the items you love</li>
+    </ul>
   </div>
-    <%= render @posts %>
-    <%= render "application/footer" %>
+    <%= render "authentication_forms" %>
+  <% end %>
+  <%= render @posts %>
+  <%= render "application/footer" %>
 </main>

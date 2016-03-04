@@ -1,10 +1,12 @@
 <div id="right" class="panel">
- <div id="sign-in-form">
-  <h2>Hey, <% if current_user %><%= current_user.first_name %><% else %>stranger... you gotta log in first!<% end %></h2>
-  <% if current_user %><%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "avatar" %><% end %>
-  <% if current_user %> <a href="#">Change Password</a><% end %>
-    <% if current_user %>
-      <%= link_to(" Logout #{current_user.first_name}", destroy_user_session_path, :method => :delete) %>
+  <div style="padding:1em;">
+    <h2>Hey, <% if current_user %><%= current_user.first_name %></h2><% else %>stranger</h2>
+    <p>...you gotta log in first!</p>
     <% end %>
+    <% if current_user %><%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "avatar" %><% end %>
+    <% if current_user %> <a href="#">Change Password</a><% end %>
+      <% if current_user %>
+        <%= link_to(" Logout #{current_user.first_name}", destroy_user_session_path, :method => :delete) %>
+      <% end %>
   </div>
 </div>
