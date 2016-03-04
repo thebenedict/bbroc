@@ -378,58 +378,87 @@
   cursor: not-allowed;
 }
 
+//end cropper css - let's split this up - Eric
+
+.start {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
 #new-post {
   display: flex;
-  align-content: flex-start;
+  align-content: center;
   flex-flow: row wrap;
+  justify-content: center;
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
 
-  .bar {
+  .interactive-container {
     display: flex;
-    flex: 1 0 100%;
-    justify-content: flex-end;
-    padding:$small-spacing * 0.5;
-  }
+    align-content: flex-start;
+    flex-flow: row wrap;
+    justify-content: center;
 
-  .canvas-container {
-    display: flex;
-    flex: 1 0 100%;
-    height: 50%;
-  }
-
-  .image-controls {
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-between;
-    flex: 1 0 100%;
-    margin-bottom: $base-spacing;
-
-
-    button {
-      width: inherit;
-      padding: $small-spacing;
-      flex: 1 0 auto;
-      background:$medium-gray;
-
-      &#retake-image {background: $dark-gray;}
-      &:hover { background: darken( $medium-gray, 10% );}
+    .bar {
+      display: flex;
+      flex: 1 0 100%;
+      justify-content: flex-end;
+      padding:$small-spacing * 0.5;
+      background: $dark-green;
     }
-  }
 
-  .new-post-form {
-    display: flex;
-    flex: 1 0 100%;
-    padding: 0 $small-spacing;
+    .canvas-container {
+      display: flex;
+      flex: 1 0 100%;
+      height: 50vh;
+      width: 100%;
+    }
 
-    select {width: 100%;}
+    .image-controls {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+      flex: 1 0 100%;
+      margin-bottom: $base-spacing;
+
+      button {
+        border-radius: 0;
+
+        &.blink {
+          animation: blinker 1s linear 1s 10;
+          @keyframes blinker {
+            50% { opacity: 0.5; }
+          }
+          &:active,&:focus,&:hover {animation-play-state: paused;}
+        }
+      }
+      #rotate-left, #rotate-right { background: $medium-gray; }
+    }
+
+    .new-post-form {
+      display: flex;
+      flex: 1 0 100%;
+      padding: 0 $small-spacing;
+
+      select {
+        width: 100%;
+      }
+
+      input#inputImage {
+        position: absolute;
+        width: 1px;
+        opacity: 0.01;
+        z-index: -1;
+      }
+    }
   }
 }
 
-input#inputImage {
-  position: absolute;
-  width: 1px;
-  opacity: 0.01;
-  z-index: -1;
+@media screen and (min-width: $small-screen) {
+  .interactive-container {
+    height: 100vh;
+    width: 480px;
+  }
 }
