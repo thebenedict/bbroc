@@ -16,8 +16,11 @@ Vendor.create(vendors_list)
 
 users_list_file = Rails.root.join('db', 'users_list.yml')
 users_list = YAML::load_file(users_list_file)
-User.create(users_list)
-User.all.each { |u| u.confirm! }
+users_list.each do |u|
+  user = User.new(u)
+  user.skip_confirmation!
+  user.save!
+end
 
 broccoli = Item.find_by(name: 'Broccoli')
 apples = Item.find_by(name: 'Apples')
