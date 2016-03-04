@@ -2993,7 +2993,7 @@
 });
 
 
-//added by Eric
+//end cropper js - let's split this up - Eric
 
 // Import image
 $(function () {
@@ -3032,9 +3032,35 @@ $(function () {
   }
 });
 
+
+
   $('#image').cropper({
     viewMode: 3,
-    dragMode: 'move',
+    dragMode: 'nothing',
+    autoCropArea: 1,
+    aspectRatio: 4 / 3,
+    strict: false,
+    guides: false,
+    highlight: false,
+    dragCrop: false,
+    cropBoxMovable: false,
+    cropBoxResizable: false,
+    crop: function(e) {
+      // Output the result data for cropping image.
+      //console.log(e.x);
+      //console.log(e.y);
+      //console.log(e.width);
+      //console.log(e.height);
+      //console.log(e.rotate);
+      //console.log(e.scaleX);
+      //console.log(e.scaleY);
+    }
+  });
+
+  /*$('#image').cropper({
+    viewMode: 3,
+    dragMode: 'nothing',
+    autoCropArea: 1,
     aspectRatio: 4 / 3,
     crop: function(e) {
       // Output the result data for cropping image.
@@ -3047,6 +3073,7 @@ $(function () {
       //console.log(e.scaleY);
     }
   });
+*/
 
   $('#rotate-left').on('click', function() {
     $('#image').cropper('rotate', -90);

@@ -18,29 +18,28 @@
   flex-flow: row wrap;
   align-items: center;
   padding-top: $small-spacing * 0.5;
-  transition: $base-transition;
   justify-content: center;
   background: $dark-green;
   color: #fff;
-  
-  &#right { 
-    right: -100%; 
-    
+
+  &#right {
+    right: -100%;
+
     &.active, &.active ~ main {
-      transform: translate3d(-100%, 0, 0);
+      transform: translate(-100%, 0);
       overflow-y: hidden;
     }
   }
-	
-  &#left { 
-    left: -100%; 
-  
+
+  &#left {
+    left: -100%;
+
     &.active, &.active ~ main {
-      transform: translate3d(100%, 0, 0);
+      transform: translate(100%, 0);
       overflow-y: hidden;
     }
   }
-  
+
   &#middle {
     background: $light-green;
     height: calc(100% - 80px); // 80px for header
