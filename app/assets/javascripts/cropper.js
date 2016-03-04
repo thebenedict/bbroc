@@ -3033,7 +3033,7 @@ $(function () {
 });
 
   $('#image').cropper({
-    viewMode: 1,
+    viewMode: 3,
     dragMode: 'move',
     aspectRatio: 4 / 3,
     crop: function(e) {
@@ -3055,7 +3055,7 @@ $(function () {
   $('#rotate-right').on('click', function() {
     $('#image').cropper('rotate', 90);
   });
-
+  /*
   $('#zoom-in').on('click', function() {
     $('#image').cropper('zoom', 0.1);
   });
@@ -3063,11 +3063,7 @@ $(function () {
   $('#zoom-out').on('click', function() {
     $('#image').cropper('zoom', -0.1);
   });
-
-  $('#drag-mode').on('click', function() {
-    $('#image').cropper('setDragMode', 'move');
-  });
-
+  */
   $('#inputImage').on('click', function() {
     $('#image').cropper('getImageData');
   });

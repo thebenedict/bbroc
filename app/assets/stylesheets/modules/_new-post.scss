@@ -406,6 +406,7 @@
     flex: 1 0 100%;
     margin-bottom: $base-spacing;
 
+
     button {
       width: inherit;
       padding: $small-spacing;
@@ -420,6 +421,7 @@
   .new-post-form {
     display: flex;
     flex: 1 0 100%;
+    padding: 0 $small-spacing;
 
     select {width: 100%;}
   }
