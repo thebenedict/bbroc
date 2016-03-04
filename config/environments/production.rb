@@ -1,6 +1,6 @@
 require Rails.root.join("config/smtp")
 Rails.application.configure do
-  config.middleware.use Rack::CanonicalHost, ENV.fetch("APPLICATION_HOST")
+  #config.middleware.use Rack::CanonicalHost, ENV.fetch("APPLICATION_HOST")
   config.cache_classes = true
   config.eager_load = true
   config.consider_all_requests_local       = false
