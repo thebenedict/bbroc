@@ -6,7 +6,7 @@
     <% if current_user %><%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "avatar" %><% end %>
     <% if current_user %> <a href="#">Change Password</a><% end %>
       <% if current_user %>
-        <%= link_to(" Logout #{current_user.first_name}", destroy_user_session_path, :method => :delete) %>
+        <%= link_to(" Logout #{current_user.name}", destroy_user_session_path, :method => :delete) %>
       <% end %>
   </div>
 </div>

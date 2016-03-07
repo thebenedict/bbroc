@@ -35,8 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
       ## Extra fields
-      t.string :first_name
-      t.string :last_name
+      t.string :name
       t.string :hosted_avatar_url
 
       t.timestamps null: false

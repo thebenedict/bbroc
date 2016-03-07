@@ -240,7 +240,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'],
-    :info_fields => 'email,last_name,first_name',
+    :info_fields => 'email,name',
     :image_size => {width: 150, height: 150}
 
   # ==> Warden configuration

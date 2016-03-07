@@ -7,16 +7,6 @@
       <a href="/posts/new" class="button"><i class="fa fa-plus"></i> Add Post</a>
     </div>
   <% else %>
-  <div class="post welcome">
-    <h2>What's fresh in town?</h2>
-    <ul>
-      <li><i class="fa fa-map-signs"></i> Discover fresh local items</li>
-      <li><i class="fa fa-plus-square"></i> Post your discoveries</li>
-      <li><i class="fa fa-heart"></i> List the items you love</li>
-    </ul>
-  </div>
-    <%= render "authentication_forms" %>
-  <% end %>
   <%= render @posts %>
   <%= render "application/footer" %>
 </main>
