@@ -6,8 +6,8 @@
   </h1>
   <div class="nav">
     <a class="left" href="#"><i class="fa fa-heart"></i></a>
-    <a class="middle active" href="#"><i class="fa fa-home"></i></a>
-    <a class="right" href="#"><i class="fa fa-user"></i></a>
+    <%= link_to root_path, class: "middle " + is_active("posts") do %><i class="fa fa-home"></i><% end %>
+    <%= link_to edit_user_registration_path, class: "right " + is_active("registrations") do %><i class="fa fa-user"></i><% end %>
     <div class="menu-channel"><div class="menu-indicator"></div></div>
   </div>
 </header>
