@@ -16,9 +16,9 @@ $(function () {
 
       if (files && files.length) {
         file = files[0];
-
         if (/^image\/\w+$/.test(file.type)) {
           blobURL = URL.createObjectURL(file);
+          console.log(blobURL);
           $image.one('built.cropper', function () {
 
             // Revoke when load complete

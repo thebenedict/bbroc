@@ -45,6 +45,9 @@ GEM
       execjs
       json
     awesome_print (1.6.1)
+    aws-sdk-v1 (1.66.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     bcrypt (3.1.10-x64-mingw32)
     bourbon (4.2.6)
@@ -65,6 +68,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -130,6 +137,7 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.99)
+    mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -159,6 +167,12 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    paperclip (4.3.5)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
     pg (0.18.4)
     pg (0.18.4-x64-mingw32)
     pry (0.10.3)
@@ -292,6 +306,7 @@ DEPENDENCIES
   annotate
   autoprefixer-rails
   awesome_print
+  aws-sdk-v1
   bourbon (~> 4.2.0)
   bullet
   bundler-audit
@@ -311,6 +326,7 @@ DEPENDENCIES
   normalize-rails (~> 3.0.0)
   omniauth
   omniauth-facebook
+  paperclip (~> 4.3)
   pg
   pry-byebug
   pry-rails

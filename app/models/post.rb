@@ -4,4 +4,7 @@ class Post < ActiveRecord::Base
 
   validates :item, presence: true
   validates :vendor, presence: true
+
+  has_attached_file :image, styles: { default: "305x229#"}, default_url: "apples-placeholder"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end
