@@ -31,8 +31,8 @@ shoppers = Vendor.find_by(name: 'Shoppers Masaki')
 food_lovers = Vendor.find_by(name: 'Food Lovers Market')
 garden_market = Vendor.find_by(name: 'Garden Market')
 
-mark = User.find_by(first_name: 'Mark')
-alex = User.find_by(first_name: 'Alex')
+mark = User.find_by(name: 'Mark Lovesfuit')
+alex = User.find_by(name: 'Alex Eatsbroc')
 
 Post.create(item_id: broccoli.id, vendor_id: shoppers.id, user_id: mark.id)
 Post.create(item_id: apples.id, vendor_id: shoppers.id, user_id: alex.id)

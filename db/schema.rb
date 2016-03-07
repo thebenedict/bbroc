@@ -63,8 +63,7 @@ ActiveRecord::Schema.define(version: 20160226095242) do
     t.string   "unconfirmed_email"
     t.string   "provider"
     t.string   "uid"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "hosted_avatar_url"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
