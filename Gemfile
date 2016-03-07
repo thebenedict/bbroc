@@ -25,6 +25,8 @@ gem "devise"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "tzinfo-data"
+gem "paperclip", "~> 4.3"
+gem "aws-sdk-v1"
 
 group :development do
   gem "quiet_assets"
