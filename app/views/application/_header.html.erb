@@ -4,4 +4,14 @@
       <%= image_tag "icon.svg", alt: "best broccoli logo" %>Best Broccoli
     <% end %>
   </h1>
+ <% if current_user %>
+  <ul>
+    <li>
+      <%= link_to edit_user_registration_path do %>
+      <span>Hey, <%= current_user.first_name %></span>
+      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "avatar" %>
+      <% end %>
+    </li>
+  </ul>
+  <% end %>
 </header>

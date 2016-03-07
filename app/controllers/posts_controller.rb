@@ -9,10 +9,9 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    render(action: "new", layout: "bare")
   end
 
-  def create 
+  def create
     post = current_user.posts.build(post_params)
     if post.save
       flash.notice = "Success, thanks for posting!"
@@ -28,4 +27,3 @@ class PostsController < ApplicationController
     params.require(:post).permit(:item, :vendor_id, :notes, :price, :unit, :image)
   end
 end
-
