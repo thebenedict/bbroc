@@ -1,11 +1,2 @@
-<main id="middle" class="panel active">
-  <%= render "flashes" -%>
-  <div class="post start">
-    <h2>Find something?</h2>
-    <p>Take a photo, enter the item name, and add the location!</p>
-    <a href="/posts/new" class="button"><i class="fa fa-plus"></i> Add Post</a>
-  </div>
-  <%= render @posts %>
-  <%= link_to(" Logout #{current_user.name}", destroy_user_session_path, :method => :delete) %>
-  <%= render "application/footer" %>
-</main>
+<a href="/posts/new" class="button"><i class="fa fa-plus"></i> Add Post</a>
+<%= render @posts %>

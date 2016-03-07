@@ -1,23 +1,36 @@
 header {
-	position: relative;
+	display: flex;
 	width: 100%;
-  height: 5em;
 	background: $dark-green;
-	z-index: 5;
+	flex-flow: row wrap;
+	justify-content: space-between;;
+	padding: $small-spacing;
+	box-shadow: $base-box-shadow;
 
   h1.main-logo {
-    margin: 0;
-    text-align: center;
-    padding: 0.35em 0 0.1em 0;
-    font-size: 0.95em;
     text-transform: lowercase;
+		margin: 0;
 
     a {
       color:#fff;
-    
+
       img {
         height: 30px;
       }
     }
   }
+
+	ul {
+		display: inline-flex;
+		justify-content: flex-end;
+		align-items: center;
+		flex: 0 1 auto;
+
+		img {
+			border-radius: 50%;
+			height: 30px;
+			width: 30px;
+			vertical-align: middle;
+		}
+	}
 }

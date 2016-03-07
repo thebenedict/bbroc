@@ -1,53 +1,32 @@
-.wrapper {
-  position: absolute;
-	width: 100%;
-	height: 100%;
-  overflow: hidden;
-	min-width: $site-min-width;
+.flashes {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
 }
 
 .panel {
-  position: absolute;
-	top: 80px;
-	bottom: 0;
-	width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
-  padding-top: $small-spacing * 0.5;
+  flex: 1 0 100%;
   justify-content: center;
-  background: $dark-green;
-  color: #fff;
+  align-items: center;
+  padding: $base-spacing;
 
-  &#right {
-    right: -100%;
+  .welcome {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: $base-spacing * 3;
 
-    &.active, &.active ~ main {
-      transform: translate(-100%, 0);
-      overflow-y: hidden;
+    img {
+      width: 150px;
+    }
+    h1 {
+      font-size: $base-font-size * 2.5;
     }
   }
-
-  &#left {
-    left: -100%;
-
-    &.active, &.active ~ main {
-      transform: translate(100%, 0);
-      overflow-y: hidden;
-    }
-  }
-
-  &#middle {
-    background: $light-green;
-    height: calc(100% - 80px); // 80px for header
-    color: $base-font-color;
-  }
-}
-
-.flashes {
-  width: 100%;
-  margin-top: -$small-spacing/2;
 }

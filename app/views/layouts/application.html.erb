@@ -1,12 +1,18 @@
 <%= render "layouts/head" %>
-<body class="<%= body_class %>" data-xthreshold="100">
-  <div class="wrapper">
+<body class="<%= body_class %>">
+  <% if current_user %>
     <%= render "application/header" %>
-    <section>
-      <%= yield %>
-      <%= render "application/bottom_nav" %>
-    </section>
+  <% end %>
+    <%= render "flashes" -%>
+    <main>
+      <section class="main">
+        <%= yield %>
+      </section>
+    </main>
+    <% if current_user %>
+    <%= link_to(" Logout #{current_user.name}", destroy_user_session_path, :method => :delete) %>
+    <% end %>
+    <%= render "application/footer" %>
     <%= render "javascript" %>
-  </div>
 </body>
 </html>

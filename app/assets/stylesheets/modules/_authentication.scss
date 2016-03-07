@@ -1,9 +1,11 @@
 .sign-up, .sign-in {
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
   background: transparent;
   border: 0;
   box-shadow: none;
-  align-self: flex-start;
+  min-height: 375px;
 
   .toggle-container {
     display: flex;

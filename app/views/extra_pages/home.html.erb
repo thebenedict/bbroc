@@ -1,11 +1,11 @@
-<h2>What's fresh in town?</h2>
-<ul>
-  <li><i class="fa fa-map-signs"></i> Discover fresh local items</li>
-  <li><i class="fa fa-plus-square"></i> Post your discoveries</li>
-  <li><i class="fa fa-heart"></i> List the items you love</li>
-</ul>
-<%= render "application/authentication_forms" %>
-
-<ul>
-  <%= render partial: "posts/teaser_post", collection: @posts %>
-</ul>
+<div class="panel">
+  <div class="welcome">
+    <%= image_tag "icon.svg", alt: "best broccoli logo" %><h1>best broccoli</h1>
+    <h2>know what's fresh</h2>
+  </div>
+  <%= render "application/authentication_forms" %>
+</div>
+<div class="panel">
+  <span style="width:100%; text-align: cetner;"><hr></span>
+    <%= render partial: "posts/teaser_post", collection: @posts %>
+</div>
