@@ -32,16 +32,13 @@ ActiveRecord::Schema.define(version: 20160226095242) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-  create_table "items", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "vendor_id"
-    t.integer  "item_id"
+    t.string   "item"
+    t.string   "notes"
+    t.integer  "price"
+    t.string   "unit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

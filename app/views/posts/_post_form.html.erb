@@ -1,7 +1,7 @@
 <a href="/"><i class="fa fa-close"></i></a>
 
 <div id="new-post">
-
+  <%= simple_form_for(@post) do |f| %>
   <div id="the-real-new-post" class="post">
     <button id="take-image" class="camera" onclick="document.getElementById('inputImage').click()">
       <i class="fa fa-camera"></i><span> Add Photo</span>
@@ -21,21 +21,23 @@
       </div>
     </div>
     <div class="headline">
-      <%= simple_form_for(@post) do |f| %>
       <input type="file" id="inputImage" accept="image/*" capture>
-      <input type="text" placeholder="Item">
+      <%= f.input(:item, placeholder: "Item", label: false) %>
       <div>
         <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "avatar" %>
       </div>
     </div>
+    <div>
+      <%= f.input :notes, label: false, placeholder: "Note" %>
+      <%= f.input :price, label: false, placeholder: "Price" %>
+      <%= f.input :unit, label: false, placeholder: "Unit" %>
+    </div>
     <div class="detail">
-      <input type="text" placeholder="Location">
+      <%= f.association :vendor, label: false, prompt: "Location" %>
       <div class="form-actions">
         <%= f.button :submit, "Post", data: {disable_with: "Submitting..."} %>
       </div>
     </div>
   </div>
-<%= f.association :vendor,label: false, prompt: "Where are you?" %>
-<%= f.association :item, label: false, prompt: "What is this?"  %>
-<% end %>
+  <% end %>
 </div>
