@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     :omniauth_callbacks => "users/omniauth_callbacks"
   }
 
+  get '/posts', to: 'posts#index', as: :user_root
   resources :posts
 end
