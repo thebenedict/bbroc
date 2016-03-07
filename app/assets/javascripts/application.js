@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require cropper
 //= require_tree .
 
 if (window.location.hash && window.location.hash == '#_=_') {

@@ -1,69 +1,25 @@
-// Import image
-$(function () {
-  var $image = $('#image');
-  var $inputImage = $('#inputImage');
-  var URL = window.URL || window.webkitURL;
-  var blobURL;
+$(function() {
+    $('#inputImage').change(function(e) {
+        var file = e.target.files[0],
+            imageType = /image.*/;
 
-  if (URL) {
-    $inputImage.change(function () {
-      var files = this.files;
-      var file;
+        if (!file.type.match(imageType))
+            return;
 
-      if (!$image.data('cropper')) {
-        return;
-      }
-
-      if (files && files.length) {
-        file = files[0];
-        if (/^image\/\w+$/.test(file.type)) {
-          blobURL = URL.createObjectURL(file);
-          console.log(blobURL);
-          $image.one('built.cropper', function () {
-
-            // Revoke when load complete
-            URL.revokeObjectURL(blobURL);
-          }).cropper('reset').cropper('replace', blobURL);
-          $inputImage.val('');
-        } else {
-          window.alert('Please choose an image file.');
-        }
-      }
+        var reader = new FileReader();
+        reader.onload = fileOnload;
+        reader.readAsDataURL(file);
     });
-  } else {
-    $inputImage.prop('disabled', true).parent().addClass('disabled');
-  }
-});
 
-$('#image').cropper({
-  viewMode: 3,
-  dragMode: 'nothing',
-  autoCropArea: 1,
-  aspectRatio: 4 / 3,
-  strict: false,
-  guides: false,
-  highlight: false,
-  dragCrop: false,
-  cropBoxMovable: false,
-  cropBoxResizable: false,
-  crop: function(e) {
-    // Output the result data for cropping image.
-    //console.log(e.x);
-    //console.log(e.y);
-    //console.log(e.width);
-    //console.log(e.height);
-    //console.log(e.rotate);
-    //console.log(e.scaleX);
-    //console.log(e.scaleY);
-  }
-});
+    function fileOnload(e) {
+        var $img = $('<img>', { src: e.target.result });
+        var canvas = $('#image')[0];
+        var context = canvas.getContext('2d');
 
-$('#rotate-left').on('click', function() {
-  $('#image').cropper('rotate', -90);
-});
-
-$('#rotate-right').on('click', function() {
-  $('#image').cropper('rotate', 90);
+        $img.load(function() {
+            context.drawImage(this, 0, 0, 305, 289);
+        });
+    }
 });
 
 $('#inputImage').on('click', function() {
@@ -75,26 +31,3 @@ $('#take-image').on('click', function() {
   $('.item-image, #retake-image').removeClass('hidden');
   $('.form-actions input').css('background', '#479c9d');
 });
-
-
-
-/* the blob stuff for server upload!
-  $().cropper('getCroppedCanvas').toBlob(function (blob) {
-  var formData = new FormData();
-
-  formData.append('croppedImage', blob);
-
-  $.ajax('/path/to/upload', {
-    method: "POST",
-    data: formData,
-    processData: false,
-    contentType: false,
-    success: function () {
-      console.log('Upload success');
-    },
-    error: function () {
-      console.log('Upload error');
-    }
-  });
-});
-*/

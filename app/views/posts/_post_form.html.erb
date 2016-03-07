@@ -10,15 +10,7 @@
       <i class="fa fa-camera"></i><span> Retake Photo</span>
     </div>
     <div class="item-image hidden">
-      <canvas id="image"></canvas>
-      <div class="image-controls">
-        <button id="rotate-left">
-          <i class="fa fa-rotate-left"></i>
-        </button>
-        <button id="rotate-right">
-          <span class="fa fa-rotate-right"></i>
-        </button>
-      </div>
+      <canvas id="image" width="305px" height="289px"></canvas>
     </div>
     <div class="headline">
       <%= f.input :image, label: false, as: :file, input_html: {id: "inputImage", capture: "", accept: "image/*"} %>
