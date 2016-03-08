@@ -60,6 +60,11 @@ main {
     img#baw-logo {
       width: 100px;
       filter: grayscale(100%);
+
+      &.color {
+        filter: grayscale(0);
+        transition: filter 2s;
+      }
     }
 
     h2 {
