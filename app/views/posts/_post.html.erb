@@ -2,8 +2,8 @@
   <div class="item-image">
     <%= image_tag post.image.url, alt: "apples" %>
   </div>
-  <div class="headline">
-    <h2><%= post.item %></h2>
+  <div class="headline" title="<%= post.item %>">
+    <h2><%= post.safe_item %></h2>
     <div>
       <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "avatar" %>
     </div>
