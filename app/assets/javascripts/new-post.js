@@ -63,5 +63,4 @@ $(function() {
 $('#take-image').on('click', function() {
   $(this).addClass('hidden');
   $('.item-image, #retake-image').removeClass('hidden');
-  $('.form-actions input').css('background', '#479c9d');
 });
