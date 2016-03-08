@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!
 
   def index
     # preserve form state details if user sign up fails
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:post).permit(:item, :vendor_id, :notes, :price, :unit, :image, :image_field)
-  end
+    def post_params
+      params.require(:post).permit(:item, :vendor_id, :notes, :price, :unit, :image, :image_field)
+    end
 end
