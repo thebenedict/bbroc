@@ -20,7 +20,7 @@ $(function() {
 		    var height = $img[0].height;
         var r = (width / height);
         var cardWidth = 305;
-        var cardHeight = 289;
+        var cardHeight = 229;
         var newWidth;
 		    var newHeight;
         var xCrop;
