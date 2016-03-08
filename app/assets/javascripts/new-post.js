@@ -54,7 +54,7 @@ $(function() {
 
         $img.load(function() {
             context.drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth, newHeight);
-            var uri = $('#image')[0].toDataURL("image/jpeg");
+            var uri = $('#canvas')[0].toDataURL("image/jpeg");
             $('#post_image').val(uri);
         });
     }
