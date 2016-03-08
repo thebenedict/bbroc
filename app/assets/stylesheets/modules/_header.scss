@@ -1,21 +1,25 @@
 header {
+	position: fixed;
 	display: flex;
 	width: 100%;
-	background: $dark-green;
+	background: #fff;
 	flex-flow: row wrap;
-	justify-content: space-between;;
+	justify-content: space-around;
 	padding: $small-spacing;
-	box-shadow: $base-box-shadow;
+	box-shadow: 0 2px 2px -2px #ccc;
+	z-index: 99;
 
   h1.main-logo {
+		font-size: $base-font-size * 1.5;
     text-transform: lowercase;
 		margin: 0;
 
     a {
-      color:#fff;
+      color: $medium-gray;
 
       img {
         height: 30px;
+				vertical-align: text-top;
       }
     }
   }
