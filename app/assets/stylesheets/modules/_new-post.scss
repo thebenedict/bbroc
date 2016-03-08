@@ -7,20 +7,6 @@
 
   .camera { margin-bottom: $small-spacing;}
 
-  .image-controls {
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-between;
-    flex: 1 0 100%;
-    margin-bottom: $base-spacing;
-
-    button {
-      border-radius: 0;
-
-      &#rotate-left, &#rotate-right { background: $medium-gray; }
-    }
-  }
-
   #inputImage {
     opacity: 0.01;
     position: absolute;
@@ -35,5 +21,4 @@
 
   .hidden { display: none;}
 
-  .form-actions input {background: #ccc;}
 }

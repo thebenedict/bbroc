@@ -2,7 +2,7 @@ header {
 	position: fixed;
 	display: flex;
 	width: 100%;
-	background: #fff;
+	background: rgba(255,255,255,0.90);
 	flex-flow: row wrap;
 	justify-content: space-around;
 	padding: $small-spacing;
@@ -10,8 +10,7 @@ header {
 	z-index: 99;
 
   h1.main-logo {
-		font-size: $base-font-size * 1.5;
-    text-transform: lowercase;
+		font-size: $base-font-size * 1.25;
 		margin: 0;
 
     a {
@@ -19,7 +18,7 @@ header {
 
       img {
         height: 30px;
-				vertical-align: text-top;
+				vertical-align: text-bottom;;
       }
     }
   }
@@ -34,7 +33,7 @@ header {
 			border-radius: 50%;
 			height: 30px;
 			width: 30px;
-			vertical-align: middle;
+			vertical-align: text-bottom;
 		}
 	}
 }

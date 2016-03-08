@@ -1,6 +1,6 @@
 body {
   min-width: 300px;
-  background: $off-white;
+  background: $medium-gray;
 }
 
 .flashes {
@@ -9,6 +9,7 @@ body {
 
 main {
   padding-top: 55px; //for header
+  background: $off-white;
 }
 
 .main {
@@ -27,11 +28,14 @@ main {
 
   &.feed {
     background: $off-white;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   &.divide {
+    position: relative;
     padding: 0 $small-spacing;
+    top: -6px;
+    background: $off-white;
 
     hr {
       width:100%;
@@ -50,13 +54,18 @@ main {
   .welcome {
     padding: $base-spacing;
     margin: $small-spacing * 0.5;
+    max-width: 400px;
+    text-align: center;
 
-    img {
-      width: 150px;
+    img#baw-logo {
+      width: 100px;
+      filter: grayscale(100%);
     }
 
     h2 {
       font-size: $base-font-size * 1.75;
+      text-align: center;
+      margin-bottom: $base-spacing;
     }
 
     p {

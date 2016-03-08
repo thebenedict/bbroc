@@ -1,14 +1,14 @@
-<div class="panel">
-  <div class="welcome">
-    <h2>It's simple. You'll know what's fresh in town.</h2>
-    <p>Your free account gives you access to a live feed of fresh items.</p>
-  </div>
-  <%= render "application/authentication_forms" %>
+<div class="panel feed">
+  <%= render partial: "posts/teaser_post", collection: @posts %>
 </div>
 <div class="panel divide">
   <hr>
-  <span>here's a sneak peek</span>
+  <span>Sign up to see more</span>
 </div>
-<div class="panel feed">
-  <%= render partial: "posts/teaser_post", collection: @posts %>
+<div class="panel">
+  <div class="welcome">
+    <%= image_tag "icon.svg", alt: "best broccoli alternate logo", id: "baw-logo" %>
+    <h2>Know what's fresh in town.</h2>
+  </div>
+  <%= render "application/authentication_forms" %>
 </div>
