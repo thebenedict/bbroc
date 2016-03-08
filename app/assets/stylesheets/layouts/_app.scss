@@ -1,5 +1,14 @@
+body {
+  min-width: 300px;
+  background: $off-white;
+}
+
 .flashes {
   width: 100%;
+}
+
+main {
+  padding-top: 55px; //for header
 }
 
 .main {
@@ -14,19 +23,44 @@
   flex: 1 0 100%;
   justify-content: center;
   align-items: center;
-  padding: $base-spacing;
+  padding: $base-spacing * 1.5 0;
+
+  &.feed {
+    background: $off-white;
+    justify-content: center;
+  }
+
+  &.divide {
+    padding: 0 $small-spacing;
+
+    hr {
+      width:100%;
+      margin: 0;
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+      background: $off-white;
+      top: -14px;
+      padding: 0 $small-spacing;
+    }
+  }
 
   .welcome {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding: $base-spacing * 3;
+    padding: $base-spacing;
+    margin: $small-spacing * 0.5;
 
     img {
       width: 150px;
     }
-    h1 {
-      font-size: $base-font-size * 2.5;
+
+    h2 {
+      font-size: $base-font-size * 1.75;
+    }
+
+    p {
+      font-size: $base-font-size * 1.25;
     }
   }
 }

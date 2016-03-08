@@ -1,11 +1,14 @@
 <div class="panel">
   <div class="welcome">
-    <%= image_tag "icon.svg", alt: "best broccoli logo" %><h1>best broccoli</h1>
-    <h2>know what's fresh</h2>
+    <h2>It's simple. You'll know what's fresh in town.</h2>
+    <p>Your free account gives you access to a live feed of fresh items.</p>
   </div>
   <%= render "application/authentication_forms" %>
 </div>
-<div class="panel">
-  <span style="width:100%; text-align: cetner;"><hr></span>
-    <%= render partial: "posts/teaser_post", collection: @posts %>
+<div class="panel divide">
+  <hr>
+  <span>here's a sneak peek</span>
+</div>
+<div class="panel feed">
+  <%= render partial: "posts/teaser_post", collection: @posts %>
 </div>
