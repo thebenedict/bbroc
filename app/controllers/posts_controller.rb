@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.build(post_params)
+    post = current_user.posts.build(post_params.except(:image_field))
     if post.save
       flash.notice = "Success, thanks for posting!"
     else
@@ -24,6 +24,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:item, :vendor_id, :notes, :price, :unit, :image)
+    params.require(:post).permit(:item, :vendor_id, :notes, :price, :unit, :image, :image_field)
   end
 end

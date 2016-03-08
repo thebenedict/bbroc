@@ -13,7 +13,8 @@
       <canvas id="image" width="305px" height="289px"></canvas>
     </div>
     <div class="headline">
-      <%= f.input :image, label: false, as: :file, input_html: {id: "inputImage", capture: "", accept: "image/*"} %>
+      <%= f.input :image_field, label: false, as: :file, input_html: {id: "inputImage", capture: "", accept: "image/*"} %>
+      <%= f.input :image, as: :hidden %>
       <%= f.input(:item, placeholder: "Item", label: false) %>
       <div>
         <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "avatar" %>

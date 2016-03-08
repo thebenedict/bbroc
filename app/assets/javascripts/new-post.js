@@ -18,6 +18,8 @@ $(function() {
 
         $img.load(function() {
             context.drawImage(this, 0, 0, 305, 289);
+            var uri = $('#image')[0].toDataURL("image/jpeg");
+            $('#post_image').val(uri);
         });
     }
 });
