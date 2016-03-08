@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   default_scope { order('created_at DESC') }
-  
+
   belongs_to :user
   belongs_to :vendor
 
@@ -10,8 +10,7 @@ class Post < ActiveRecord::Base
   has_attached_file :image, default_url: "apples-placeholder"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  def safe_post_item
-    self.item.name.split(" ")[0]
+  def safe_item
+    item.length < 12 ? item : "#{item.first(12)}&hellip;".html_safe
   end
-
 end
