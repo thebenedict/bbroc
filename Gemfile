@@ -30,6 +30,7 @@ gem "aws-sdk-v1"
 gem "kaminari"
 gem "jquery-infinite-pages"
 gem "administrate", "~> 0.1.4"
+gem "sentry-raven"
 
 group :development do
   gem "quiet_assets"
