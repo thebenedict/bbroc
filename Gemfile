@@ -29,6 +29,7 @@ gem "paperclip", "~> 4.3"
 gem "aws-sdk-v1"
 gem "kaminari"
 gem "jquery-infinite-pages"
+gem "administrate", "~> 0.1.4"
 
 group :development do
   gem "quiet_assets"

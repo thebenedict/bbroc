@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
 
   has_many :posts
 
+  enum role: {
+    user: 0,
+    admin: 9
+  }
+
   def first_name
     self.name.split(" ")[0]
   end

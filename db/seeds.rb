@@ -5,6 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#create admins
+e = User.new( name: "Eric",
+  email: "e@bestbroccoli.com",
+  password: "abc123",
+  role: 9)
+m = User.new(name: "Michael",
+    email: "m@bestbroccoli.com",
+    password: "abc123",
+    role: 9)
+e.skip_confirmation!
+m.skip_confirmation!
+e.save
+m.save
+
 vendors_list_file = Rails.root.join('db', 'vendors_list.yml')
 vendors_list = YAML::load_file(vendors_list_file)
 Vendor.create(vendors_list)
