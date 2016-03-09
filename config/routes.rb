@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users
+resources :posts
+resources :vendors
+
+    root to: "users#index"
+  end
+
   root to: "extra_pages#home"
   
   # override registrations controller for extra field (name)
