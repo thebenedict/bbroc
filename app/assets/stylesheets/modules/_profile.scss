@@ -1,11 +1,16 @@
 .profile {
   span.hint {font-size: $base-font-size * 0.85;}
+  padding: $small-spacing;
 
   .form-actions {
     margin: $base-spacing 0;
   }
 
   p {
+    text-align: center;
+  }
+
+  .helpful-links {
     text-align: center;
   }
 }
