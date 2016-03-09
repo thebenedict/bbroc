@@ -2,7 +2,7 @@
   <div class="profile">
     <h2>Hey, <%= " #{current_user.first_name} " %></h2>
 
-    <p>We're always looking to improve. <br>Have any <a href="/pages/feedback">feedback</a> for us?</p>
+    <p>Have any <a href="/pages/feedback">feedback</a> for us?</p>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
