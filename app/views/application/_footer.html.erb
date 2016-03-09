@@ -1,8 +1,11 @@
 <footer>
   <ul class="menu-links">
-    <li><a href="/pages/about">about</a></li>
-    <li><a href="/pages/feedback">feedback</a></li>
-    <li><a href="/pages/privacy">privacy</a></li>
+    <li><a href="/pages/about">About</a></li>
+    <li><a href="/pages/feedback">Feedback</a></li>
+    <li><a href="/pages/privacy">Privacy</a></li>
   </ul>
-  <span>&copy; <%= Time.now.year %></span> made for the <i class="fa fa-heart-o"></i> of fresh produce
+  <%= image_tag "icon.svg", alt: "best broccoli gray logo" %>
+  <span class="copyright">
+  © <%= Time.now.year %> bestbroccoli.com
+  </span>
 </footer>
