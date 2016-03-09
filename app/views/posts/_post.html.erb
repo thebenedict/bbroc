@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="detail">
-    <h3><i class="fa fa-map-marker"></i> at <%= post.vendor.name %></h3>
+    <h3><i class="fa fa-map-marker"></i> at <%= link_to post.vendor.name, post.vendor.map_url, target: "_blank" %></h3>
     <h3><i class="fa fa-clock-o"></i> <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: true %></h3>
   </div>
 </article>
