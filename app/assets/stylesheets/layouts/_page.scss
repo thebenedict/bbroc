@@ -1,6 +1,18 @@
 .full {
+  width: 100%;
 
   p {
+    text-align: center;
     padding: $base-spacing;
+  }
+
+  h3 {
+    font-size: $base-font-size * 1.25;
+    font-weight: bold;
+  }
+
+  &.box {
+  padding: $base-spacing * 2;
+  text-align: left;
   }
 }

@@ -1,9 +1,9 @@
 <div class="panel">
   <div class="profile">
     <h2>Hey, <%= " #{current_user.first_name} " %></h2>
-    <%= link_to destroy_user_session_path, :method => :delete do %>
-    <span><i class="fa fa-sign-out"></i> Sign out</span>
-    <% end %>
+
+    <p>We're always looking to improve. <br>Have any <a href="/pages/feedback">feedback</a> for us?</p>
+
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
@@ -13,8 +13,8 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
 
-        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, label: false, placeholder: 'Password' %>
-        <%= f.input :password_confirmation, required: false, label: false, placeholder: 'Confirm Password' %>
+        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, label: false, placeholder: 'New Password' %>
+        <%= f.input :password_confirmation, required: false, label: false, placeholder: 'Confirm New Password' %>
         <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, label: false, placeholder: 'Current Password' %>
       </div>
 
@@ -22,8 +22,10 @@
         <%= f.button :submit, "Update" %>
       </div>
     <% end %>
-
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
+    <div class="helpful-links">
+      <%= link_to destroy_user_session_path, :method => :delete do %>
+      <span><i class="fa fa-sign-out"></i> Sign out</span>
+      <% end %>
+    </div>
   </div>
 </div>
