@@ -27,6 +27,8 @@ gem "omniauth-facebook"
 gem "tzinfo-data"
 gem "paperclip", "~> 4.3"
 gem "aws-sdk-v1"
+gem "kaminari"
+gem "jquery-infinite-pages"
 
 group :development do
   gem "quiet_assets"
