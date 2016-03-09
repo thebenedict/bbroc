@@ -5,7 +5,7 @@
   <div class="headline" title="<%= post.item %>">
     <h2><%= post.safe_item %></h2>
     <div>
-      <%= image_tag "broccoli-placeholder.png", alt: "placeholder avatar", class: "avatar" %>
+      <%= image_tag post.vendor.name.parameterize, alt: "#{post.vendor.name} logo", class: "avatar" %>
     </div>
   </div>
   <div class="detail">
