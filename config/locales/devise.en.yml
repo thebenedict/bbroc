@@ -52,7 +52,9 @@ en:
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
+      already_confirmed: "was already confirmed, please try signing in <%= link_to new_user_session_path do %>
+    <span><i class='fa fa-sign-out'></i> Sign in</span>
+    <% end %>"
       confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
       expired: "has expired, please request a new one"
       not_found: "not found"
