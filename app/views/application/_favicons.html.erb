@@ -1,16 +1,16 @@
 <% %w(57 60 72 76 114 120 144 152 180).each do |size| %>
-  <%= favicon_link_tag "apple-touch-icon-#{size}x#{size}.png", rel: 'apple-touch-icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+  <%= favicon_link_tag "icons/apple-touch-icon-#{size}x#{size}.png", rel: 'apple-touch-icon', type: 'image/png', sizes: "#{size}x#{size}" %>
 <% end %>
 
 
 <% if Rails.env.production? %>
   <% %w(16 32 96).each do |size| %>
-    <%= favicon_link_tag "favicon-#{size}x#{size}.png", rel: 'icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+    <%= favicon_link_tag "icons/favicon-#{size}x#{size}.png", rel: 'icon', type: 'image/png', sizes: "#{size}x#{size}" %>
   <% end %>
 <% else %>
   <% %w(16 32 96).each do |size| %>
-    <%= favicon_link_tag "dev-favicon-#{size}x#{size}.png", rel: 'icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+    <%= favicon_link_tag "icons/dev-favicon-#{size}x#{size}.png", rel: 'icon', type: 'image/png', sizes: "#{size}x#{size}" %>
   <% end %>
 <% end %>
 
-<%= favicon_link_tag "android-icon-192x192.png", rel: 'icon', type: 'image/png', sizes: "192x192"%>
+<%= favicon_link_tag "icons/android-icon-192x192.png", rel: 'icon', type: 'image/png', sizes: "192x192"%>
