@@ -56,6 +56,7 @@ $(function() {
             context.drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth, newHeight);
             var uri = $('#canvas')[0].toDataURL("image/jpeg");
             $('#post_image').val(uri);
+            console.log(uri)
         });
     }
 });
