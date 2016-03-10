@@ -8,7 +8,7 @@
   <div class="headline" title="<%= post.item %>" itemprop="mainEntityOfPage">
     <h2 itemprop="headline"><%= post.safe_item %></h2>
     <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-      <%= image_tag post.vendor.name.parameterize, alt: "#{post.vendor.name} logo", class: "avatar" %>
+      <%= image_tag "vendor_logos/#{post.vendor.name.parameterize}.jpg", alt: "#{post.vendor.name} logo", class: "avatar" %>
       <meta itemprop="name" content="<%= post.user.name %>">
     </div>
   </div>
