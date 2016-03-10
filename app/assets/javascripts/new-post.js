@@ -27,8 +27,8 @@ $(function() {
         var yCrop;
 
         if (r == 1) {
-          newWidth = (cardWidth / width) * width;
-          newHeight = cardHeight;
+          newWidth = cardWidth;
+          newHeight = (cardWidth / width) * height;
 
           var w = (width / newWidth);
 
