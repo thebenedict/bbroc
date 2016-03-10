@@ -33,7 +33,7 @@ main {
 
   &.divide {
     position: relative;
-    padding: 0 $small-spacing;
+    padding: $base-spacing * 2 0 0 $small-spacing;
     top: -6px;
     background: $off-white;
 

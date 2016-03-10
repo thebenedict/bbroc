@@ -1,15 +1,24 @@
-<article class="post">
-  <div class="item-image">
-    <%= image_tag post.image.url, alt: "apples" %>
+<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="item-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+    <%= image_tag post.image.url, alt: "apples", itemprop: "thumbnail" %>
+    <meta itemprop="url" content="<%= image_path post.image.url %>">
+    <meta itemprop="width" content="305">
+    <meta itemprop="height" content="229">
   </div>
   <div class="headline" title="<%= post.item %>">
-    <h2><%= post.safe_item %></h2>
+    <h2 itemprop="headline"><%= post.safe_item %></h2>
     <div>
       <%= image_tag post.vendor.name.parameterize, alt: "#{post.vendor.name} logo", class: "avatar" %>
     </div>
   </div>
-  <div class="detail">
-    <h3><i class="fa fa-map-marker"></i> at <%= link_to post.vendor.name, post.vendor.map_url, target: "_blank" %></h3>
-    <h3><i class="fa fa-clock-o"></i> <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: true %></h3>
+  <div class="detail" itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
+    <h3 itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+      <i class="fa fa-map-marker"></i> at <%= link_to post.vendor.name, post.vendor.map_url, target: "_blank" %>
+      <meta itemprop="latitude" content="" />
+      <meta itemprop="longitude" content="" />
+    </h3>
+    <h3>
+      <i class="fa fa-clock-o"></i> <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: true, itemprop: "datePublished" %>
+    </h3>
   </div>
 </article>

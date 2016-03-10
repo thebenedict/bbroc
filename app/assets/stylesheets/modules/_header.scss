@@ -33,7 +33,12 @@ header {
 			border-radius: 50%;
 			height: 30px;
 			width: 30px;
-			vertical-align: text-bottom;
+			vertical-align: middle;
+		}
+
+		.user-name {
+			font-size: $base-font-size * 0.85;
+			color: $medium-gray;
 		}
 	}
 }
