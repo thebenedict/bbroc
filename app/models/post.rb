@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   validates :item, presence: true
   validates :vendor, presence: true
 
-  has_attached_file :image, default_url: "/assets/apples-placeholder.jpg"
+  has_attached_file :image, default_url: "/images/apples-placeholder.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def safe_item
