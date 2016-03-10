@@ -1,13 +1,13 @@
 <%= render "layouts/head" %>
 <body class="<%= body_class %>">
-    <%= render "application/header" %>
-    <main>
-      <%= render "flashes" -%>
-      <div class="main">
-        <%= yield %>
-      </div>
-    </main>
-    <%= render "application/footer" %>
-    <%= render "javascript" %>
+  <%= render "application/header" %>
+  <main>
+    <%= render "flashes" -%>
+    <div class="main">
+      <%= yield %>
+    </div>
+  </main>
+  <%= render "application/footer" %>
+  <%= render "javascript" %>
 </body>
 </html>

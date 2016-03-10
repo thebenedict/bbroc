@@ -8,8 +8,9 @@
   <ul>
     <li>
       <%= link_to edit_user_registration_path do %>
+        <span class="user-name"><%= current_user.first_name %></span>
         <%= image_tag avatar_or_default(current_user), alt: "placeholder avatar", class: "avatar", title: "Hey, #{current_user.first_name}" %>
-        <span><%= current_user.first_name %></span>
+
       <% end %>
     </li>
   </ul>
