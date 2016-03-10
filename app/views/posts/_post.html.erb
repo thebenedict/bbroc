@@ -1,24 +1,34 @@
 <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="item-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <%= image_tag post.image.url, alt: "apples", itemprop: "thumbnail" %>
-    <meta itemprop="url" content="<%= image_path post.image.url %>">
+    <%= image_tag post.image.url, alt: "apples" %>
+    <meta itemprop="url" content="<%= image_url post.image.url %>">
     <meta itemprop="width" content="305">
     <meta itemprop="height" content="229">
   </div>
-  <div class="headline" title="<%= post.item %>">
+  <div class="headline" title="<%= post.item %>" itemprop="mainEntityOfPage">
     <h2 itemprop="headline"><%= post.safe_item %></h2>
-    <div>
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
       <%= image_tag post.vendor.name.parameterize, alt: "#{post.vendor.name} logo", class: "avatar" %>
+      <meta itemprop="name" content="<%= post.user.name %>">
     </div>
   </div>
-  <div class="detail" itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
-    <h3 itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-      <i class="fa fa-map-marker"></i> at <%= link_to post.vendor.name, post.vendor.map_url, target: "_blank" %>
-      <meta itemprop="latitude" content="" />
-      <meta itemprop="longitude" content="" />
+  <div class="detail" >
+    <h3 itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
+      <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+        <i class="fa fa-map-marker"></i> at <%= link_to post.vendor.name, post.vendor.map_url, target: "_blank" %>
+        <meta itemprop="latitude" content="<%= post.vendor.lat %>" />
+        <meta itemprop="longitude" content="<%= post.vendor.lng %>" />
+      </span>
     </h3>
     <h3>
       <i class="fa fa-clock-o"></i> <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: true, itemprop: "datePublished" %>
+      <meta itemprop="dateModified" content="<%= post.created_at %>"/>
     </h3>
   </div>
+  <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="http://www.bestbroccoli.com/public/best-broccoli-logo.svg">
+    </span>
+    <meta itemprop="name" content="Best Broccoli">
+  </span>
 </article>
