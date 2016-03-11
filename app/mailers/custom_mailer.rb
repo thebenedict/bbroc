@@ -5,28 +5,28 @@ class CustomMailer < Devise::Mailer
 end
 
 def confirmation_instructions(record, token, opts={})
-  opts[:from] = 'Team Best Broccoli'
+  opts[:from] = 'Team Best Broccoli <info@bestbroccoli.com>'
   opts[:reply_to] = 'info@bestbroccoli.com'
   opts[:subject] = 'Confirm your Best Broccoli account'
   super
 end
 
 def reset_password_instructions(record, token, opts={})
-  opts[:from] = 'Team Best Broccoli'
+  opts[:from] = 'Team Best Broccoli <info@bestbroccoli.com>'
   opts[:reply_to] = 'info@bestbroccoli.com'
   opts[:subject] = 'Reset your Best Broccoli password'
   super
 end
 
 def password_change(record, token, opts={})
-  opts[:from] = 'Team Best Broccoli'
+  opts[:from] = 'Team Best Broccoli <info@bestbroccoli.com>'
   opts[:reply_to] = 'info@bestbroccoli.com'
   opts[:subject] = 'Your Best Broccoli password was changed'
   super
 end
 
 def unlock_instructions(record, token, opts={})
-  opts[:from] = 'Team Best Broccoli'
+  opts[:from] = 'Team Best Broccoli <info@bestbroccoli.com>'
   opts[:reply_to] = 'info@bestbroccoli.com'
   opts[:subject] = 'Unlock your Best Broccoli account'
   super
