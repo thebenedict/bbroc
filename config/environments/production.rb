@@ -30,3 +30,4 @@ Rails.application.configure do
     }
 end
 Rack::Timeout.timeout = (ENV["RACK_TIMEOUT"] || 10).to_i
+Rails.logger = Le.new(ENV["LOGENTRIES_TOKEN", :debug => true, :local => true)
