@@ -31,6 +31,7 @@ gem "kaminari"
 gem "jquery-infinite-pages"
 gem "administrate", "~> 0.1.4"
 gem "sentry-raven"
+gem 'le'
 
 group :development do
   gem "quiet_assets"
