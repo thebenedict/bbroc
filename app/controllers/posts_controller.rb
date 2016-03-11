@@ -13,7 +13,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.build(post_params)
+    image = Paperclip.io_adapters.for(post_params[:image]) 
+    image.original_filename = "#{post_params[:item].parameterize}.jpg"
+    named_params = post_params
+    named_params[:image] = image
+    post = current_user.posts.build(named_params)
     if post.save
       flash.notice = "Success, thanks for posting!"
     else
