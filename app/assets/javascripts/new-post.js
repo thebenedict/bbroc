@@ -53,10 +53,11 @@ $(function() {
         }
 
         $img.load(function() {
-            context.drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth, newHeight);
-            var uri = $('#canvas')[0].toDataURL("image/jpeg");
-            $('#post_image').val(uri);
-            console.log(uri)
+          var hiddenCanvas = $('#hidden-canvas')[0]
+          context.drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth, newHeight);
+          hiddenCanvas.getContext('2d').drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth * 2, newHeight *2);
+          var uri = $('#hidden-canvas')[0].toDataURL("image/jpeg");
+          $('#post_image').val(uri);
         });
     }
 });
