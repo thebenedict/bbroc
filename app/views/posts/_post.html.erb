@@ -15,13 +15,13 @@
   <div class="detail" >
     <h3 itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
       <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-        <i class="fa fa-map-marker"></i> at <%= link_to post.vendor.name, post.vendor.map_url, target: "_blank" %>
+        at <%= link_to post.vendor.name, post.vendor.map_url, target: "_blank" %>
         <meta itemprop="latitude" content="<%= post.vendor.lat %>" />
         <meta itemprop="longitude" content="<%= post.vendor.lng %>" />
       </span>
     </h3>
     <h3>
-      <i class="fa fa-clock-o"></i> <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: true, itemprop: "datePublished" %>
+      <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: true, itemprop: "datePublished" %>
       <meta itemprop="dateModified" content="<%= post.created_at %>"/>
     </h3>
   </div>
