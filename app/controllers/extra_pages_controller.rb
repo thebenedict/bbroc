@@ -2,7 +2,7 @@ class ExtraPagesController < ApplicationController
   before_action :redirect_if_logged_in
 
   def home
-    @posts = Post.limit(24)
+    @posts = Post.limit(7)
   end
 
   private
