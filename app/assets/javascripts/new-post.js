@@ -27,8 +27,8 @@ $(function() {
         var yCrop;
 
         if (r == 1) {
-          newWidth = (cardWidth / width) * width;
-          newHeight = cardHeight;
+          newWidth = cardWidth;
+          newHeight = (cardWidth / width) * height;
 
           var w = (width / newWidth);
 
@@ -56,6 +56,7 @@ $(function() {
             context.drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth, newHeight);
             var uri = $('#canvas')[0].toDataURL("image/jpeg");
             $('#post_image').val(uri);
+            console.log(uri)
         });
     }
 });
