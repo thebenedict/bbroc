@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.build(post_params.except(:image_field))
+    post = current_user.posts.build(post_params)
     if post.save
       flash.notice = "Success, thanks for posting!"
     else
