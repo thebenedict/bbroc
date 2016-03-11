@@ -4,10 +4,10 @@
   <%= simple_form_for(@post) do |f| %>
   <div id="the-real-new-post" class="post">
     <div id="take-image" class="camera button" onclick="document.getElementById('inputImage').click()">
-      <i class="fa fa-camera"></i><span> Add Photo</span>
+      <span> Add Photo</span>
     </div>
     <div id="retake-image" class="camera hidden button" onclick="document.getElementById('inputImage').click()">
-      <i class="fa fa-camera"></i><span> Retake Photo</span>
+      <span> Retake Photo</span>
     </div>
     <div class="item-image hidden">
       <canvas id="canvas" width="305" height="229px"></canvas>
