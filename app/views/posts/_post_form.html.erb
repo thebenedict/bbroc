@@ -1,5 +1,4 @@
 <a href="/"><i class="fa fa-close"></i></a>
-
 <div id="new-post">
   <input id="inputImage" type="file">
   <%= simple_form_for(@post) do |f| %>
@@ -14,7 +13,6 @@
       <canvas id="canvas" width="305" height="229px"></canvas>
     </div>
     <div>
-      <%# <%= f.input :image_field, label: false, as: :file, input_html: {id: "inputImage", capture: "", accept: "image/*"} %>
       <%= f.input :image, as: :hidden %>
       <%= f.input(:item, placeholder: "Item", label: false) %>
     </div>
