@@ -71,5 +71,14 @@
 
 .intro-post {
   padding: $small-spacing * 0.75;
-  margin: $small-spacing * 0.5;
+  margin: 0 $small-spacing * 0.5 $base-spacing $small-spacing * 0.5;
+  width: 325px;
+
+  .post {
+    width: 185px;
+    margin: 0 auto $base-spacing * 1.5 auto;
+    font-size: $base-font-size * 0.6;
+
+    .headline {padding-top: $small-spacing * 0.35;}
+  }
 }
