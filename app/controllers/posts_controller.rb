@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     else
       flash.alert = "Something went wrong, please try again."
     end
-    redirect_to root_path
+    redirect_to new_post_path
   end
 
   private
