@@ -75,10 +75,9 @@
   width: 325px;
 
   .post {
-    width: 185px;
+    width: 200px;
     margin: 0 auto $base-spacing * 1.5 auto;
     font-size: $base-font-size * 0.6;
-
-    .headline {padding-top: $small-spacing * 0.35;}
+    transform: rotate(-4deg);
   }
 }
