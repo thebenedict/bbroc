@@ -16,6 +16,6 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def safe_item
-    item.length <= 12 ? item : "#{item.first(12)}&hellip;".html_safe
+    item.length <= 12 ? item : "#{item.first(12).strip}&hellip;".html_safe
   end
 end
