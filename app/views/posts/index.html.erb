@@ -1,7 +1,19 @@
 <div id="wrap">
-  <div class="panel feed">
-    <div class="intro-post">
+  <div class="panel alert">
+    <div class="alert-bar">
       <h2>Know what's fresh</h2>
+      <form>
+        <input type="text" placeholder="Enter an item" title="Enter an item you're looking for">
+        <input type="submit" value="Add alert" title="Enter an item you're looking for">
+      </form>
+    </div>
+  </div>
+  <div class="panel feed">
+    <div class="welcome alt">
+      <div class="item-image">
+        <%= image_tag "bbroc-see.png", alt: "See what's fresh with Best Broccoli" %>
+      </div>
+      <h2>See what's fresh</h2>
         <div style="text-align: center;">
         <span>We list the freshest produce and specialty items in town </span>
         <div class="fb-like" style="top: -2px; left: 5px;" data-href="http://www.bestbroccoli.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
