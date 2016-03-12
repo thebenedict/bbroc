@@ -22,6 +22,7 @@
       margin: 0;
       display: flex;
       align-items: center;
+      font-weight: $base-font-weight;
     }
 
     div {
@@ -56,6 +57,7 @@
     h3 {
       font-size: $base-font-size * 0.85;
       margin: 0;
+      font-weight: $base-font-weight;
 
       &:last-of-type {text-align: right;}
     }
@@ -66,18 +68,5 @@
     width: 100%;
     text-align: center;
     margin: $small-spacing * 0.5;
-  }
-}
-
-.intro-post {
-  padding: $small-spacing * 0.75;
-  margin: 0 $small-spacing * 0.5 $base-spacing $small-spacing * 0.5;
-  width: 325px;
-
-  .post {
-    width: 200px;
-    margin: 0 auto $base-spacing * 1.5 auto;
-    font-size: $base-font-size * 0.6;
-    transform: rotate(-4deg);
   }
 }

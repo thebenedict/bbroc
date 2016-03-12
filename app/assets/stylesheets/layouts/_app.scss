@@ -46,8 +46,42 @@ main {
       position: relative;
       display: inline-block;
       background: $off-white;
-      top: -14px;
-      padding: 0 $small-spacing;
+      top: -24px;
+      padding: $small-spacing;
+      border: 1px solid #ccc;
+    }
+  }
+
+  &.alternate {
+    justify-content: center;
+  }
+
+  &.alert {
+    padding-bottom: 0;
+  }
+
+  .alert-bar{
+
+    form {
+      display: flex;
+      padding: $small-spacing;
+
+      input {
+        margin:0;
+        padding: $small-spacing;
+        flex: 0 1 auto;
+        border-radius: 3px 0 0 3px;
+      }
+
+      input[type='submit']{
+        flex: 0 1 33.33%;
+        border-radius: 0 3px 3px 0;
+      }
+    }
+
+    h2 {
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -57,17 +91,14 @@ main {
   max-width: 400px;
   text-align: center;
 
-    .fb-like {
-      margin-top: $base-spacing;
+    img {
+      position: relative;
+      top: 15px;
+      width: 150px;
     }
-  }
 
-  h2 {
-    text-align: center;
-    margin-bottom: $small-spacing * 0.5;
-  }
-
-  p {
-    font-size: $base-font-size * 1.25;
+    &.alt {
+      max-width: 325px;
+    }
   }
 }
