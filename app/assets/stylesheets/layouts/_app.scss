@@ -49,6 +49,7 @@ main {
       top: -24px;
       padding: $small-spacing;
       border: 1px solid #ccc;
+      border-radius: 3px;
     }
   }
 
@@ -77,6 +78,11 @@ main {
         flex: 0 1 33.33%;
         border-radius: 0 3px 3px 0;
       }
+    }
+
+    p {
+      text-align: center;
+      margin: 0;
     }
 
     h2 {
