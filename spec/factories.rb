@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :request do
+    user nil
+    body "MyString"
+  end
   factory :post do
     user_id 1
     vendor_id 1
