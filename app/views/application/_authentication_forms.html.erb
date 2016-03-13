@@ -21,7 +21,7 @@
 <div class="post sign-in hidden">
   <div class="toggle-container"><span>Sign in</span><span>or <a href="javascript:void(0)">create an account</a></span></div>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: "sign_in"}) do |f| %>
     <%= f.input :email, required: true, autofocus: false, label: false, placeholder: 'Email' %>
     <%= f.input :password, required: true, autofocus: false, label: false, placeholder: 'Password' %>
     <%= f.input :remember_me, label: "Remember me", as: :boolean %>

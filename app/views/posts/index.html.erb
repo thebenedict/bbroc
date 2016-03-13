@@ -2,10 +2,10 @@
   <div class="panel alert">
     <div class="alert-bar">
       <h2>Know what's fresh</h2>
-      <form>
-        <input type="text" placeholder="Enter an item" title="Enter an item you're looking for">
-        <input type="submit" value="Add alert" title="Enter an item you're looking for">
-      </form>
+      <%= simple_form_for @request do |f| %>
+        <%= f.input :body, label: false, placeholder: "Enter an item" %>
+        <%= f.submit 'Add alert' %>
+      <% end %>
     </div>
   </div>
   <div class="panel feed">
