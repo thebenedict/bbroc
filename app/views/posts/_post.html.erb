@@ -21,7 +21,7 @@
       </span>
     </h3>
     <h3>
-      <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: true, itemprop: "datePublished" %>
+      <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: false, itemprop: "datePublished" %>
       <meta itemprop="dateModified" content="<%= post.created_at %>"/>
     </h3>
   </div>
