@@ -9,6 +9,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     posts: Field::HasMany,
+    requests: Field::HasMany,
     id: Field::Number,
     email: Field::String,
     encrypted_password: Field::String,
@@ -30,6 +31,7 @@ class UserDashboard < Administrate::BaseDashboard
     hosted_avatar_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    role: Field::String.with_options(searchable: false),
   }
 
   # COLLECTION_ATTRIBUTES
@@ -39,15 +41,16 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :posts,
+    :requests,
     :id,
     :email,
-    :encrypted_password,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :posts,
+    :requests,
     :id,
     :email,
     :encrypted_password,
@@ -69,6 +72,7 @@ class UserDashboard < Administrate::BaseDashboard
     :hosted_avatar_url,
     :created_at,
     :updated_at,
+    :role,
   ]
 
   # FORM_ATTRIBUTES
@@ -76,6 +80,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :posts,
+    :requests,
     :email,
     :encrypted_password,
     :reset_password_token,
@@ -94,12 +99,13 @@ class UserDashboard < Administrate::BaseDashboard
     :uid,
     :name,
     :hosted_avatar_url,
+    :role,
   ]
 
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    "#{user.name} (#{user.email})"
+  end
 end

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :posts
+  has_many :requests
 
   enum role: {
     user: 0,

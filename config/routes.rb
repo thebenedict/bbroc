@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'requests/create'
+
   namespace :admin do
     resources :users
-resources :posts
-resources :vendors
-
+    resources :posts
+    resources :vendors
+    resources :requests
+    
     root to: "users#index"
   end
 
@@ -17,4 +20,5 @@ resources :vendors
 
   get '/posts', to: 'posts#index', as: :user_root
   resources :posts
+  resources :requests, only: :create
 end
