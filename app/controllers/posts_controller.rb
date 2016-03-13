@@ -3,8 +3,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_admin, only: :new
 
   def index
-    # preserve form state details if user sign up fails
-    @resource = User.new(session[:incomplete_resource])
+    @request = Request.new
     @posts = Post.order(created_at: :desc).page(params[:page])
   end
 
