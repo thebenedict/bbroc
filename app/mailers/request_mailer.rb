@@ -1,5 +1,5 @@
 class RequestMailer < ApplicationMailer
-  default from: 'info@bestbroccoli.com'
+  default from: 'admin@bestbroccoli.com'
  
   def new_request_email(request)
     @request = request
