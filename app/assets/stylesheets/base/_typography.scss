@@ -3,7 +3,7 @@ body {
   font-family: $base-font-family;
   font-feature-settings: "kern", "liga", "pnum";
   font-size: $base-font-size;
-  line-height: $base-line-height;
+  line-font-weight: $base-line-height;
 }
 
 h1,
@@ -16,7 +16,7 @@ h6 {
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing * 0.25;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 h2 {
