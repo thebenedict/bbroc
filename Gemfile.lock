@@ -94,6 +94,7 @@ GEM
     concurrent-ruby (1.0.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    daemons (1.2.3)
     database_cleaner (1.5.1)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
@@ -338,6 +339,7 @@ DEPENDENCIES
   bullet
   bundler-audit
   coffee-rails (~> 4.1.0)
+  daemons
   database_cleaner
   delayed_job_active_record
   devise
