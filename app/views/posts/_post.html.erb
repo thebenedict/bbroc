@@ -5,7 +5,7 @@
     <meta itemprop="width" content="305">
     <meta itemprop="height" content="229">
   </div>
-  <div class="headline" title="<%= post.item %>">
+  <div class="headline" itemprop="mainEntityOfPage" title="<%= post.item %>">
     <h2 itemprop="headline"><%= post.safe_item %></h2>
     <div itemprop="author" itemscope itemtype="https://schema.org/Person">
       <%= image_tag "vendor_logos/#{post.vendor.name.parameterize}.jpg", alt: "#{post.vendor.name} logo", class: "avatar" %>
