@@ -4,6 +4,6 @@ class Request < ActiveRecord::Base
   after_create :notify_admins
 
   def notify_admins
-    RequestMailer.new_request_email(self).deliver_now
+    RequestMailer.new_request_email(self).deliver_later
   end
 end

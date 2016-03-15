@@ -13,10 +13,13 @@
         <%= f.button :submit, "Log in" %>
       </div>
     <% end %>
+
     <div class="helpful-links">
       <%= link_to "Forgot your password?", new_password_path(resource_name), class: "form-text-space" %>
       <br>
       <%= link_to "Didn't receive confirmation instructions?", new_user_confirmation_path(resource_name), class: "form-text-space" %>
     </div>
+    <br>
+    <%= link_to "Continue with Facebook", user_omniauth_authorize_path(:facebook), class: "button fb-sign-in" %>
   </div>
 </div>
