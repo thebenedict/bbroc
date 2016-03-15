@@ -11,7 +11,9 @@ $(document).ready(function(){
   $(".request-box").keyup(function(e){
 	  if (e.which == 13) {
 	    $(".sign-up-toggle").click();
-	    return false;    //<---- Add this line
+
+	    return false;
+
 	  }
     if ($(this).val() != "") {
       $(".sign-up-toggle").removeAttr("disabled");
