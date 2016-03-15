@@ -1,88 +1,33 @@
+<div class="panel alternate">
+
+  <div class="request-container">
+    <h2>I'm looking for</h2>
+    <div class="request-bar">
+      <input id="request-bar" class="request-box" type="text" placeholder="" value="" onfocus="if (this.value == '') {this.value = '';}" onblur="if (this.value == '') {this.value = '';}" />
+      <button class="sign-up-toggle" title="Tell us what you're looking for">Go</button>
+    </div>
+  </div>
+
+  <%= render "application/sign_up_form" %>
+</div>
+
+<div class="panel divide">
+  <hr>
+  <span>
+    <strong>Here's a few recent finds</strong>
+  </span>
+</div>
+
 <div class="panel feed">
   <div class="welcome">
     <div class="item-image">
-      <%= image_tag "bbroc-see.png", alt: "See what's fresh with Best Broccoli" %>
+      <%= image_tag "bbroc-find.png", alt: "See what's fresh with Best Broccoli" %>
     </div>
-    <h2>See what's fresh</h2>
+    <h2>Know what's fresh</h2>
     <div>
-      <span>We list the freshest produce and specialty items in town. Here's a few recent posts.</span>
+      <span>We find the freshest produce and specialty items in town</span>
     </div>
   </div>
   <%= render @posts %>
 </div>
-<div class="panel divide">
-  <hr>
-  <span><a href="#bottom"><strong>Sign up to see what's fresh</strong></a></span>
-</div>
-<div class="panel">
-  <div class="welcome">
-    <div class="item-image">
-      <%= image_tag "bbroc-find.png", alt: "Find what's fresh with Best Broccoli" %>
-    </div>
-    <h2>Find what's fresh</h2>
-    <div>
-      <span>Not sure how to get there? Tap on the vendor name and instantly get directions!</span>
-    </div>
-  </div>
-  <div class="post">
-    <div class="item-image">
-      <img alt="Fresh Apples" src="/public/apples-placeholder.jpg">
-    </div>
-    <div class="headline" title="Apples">
-      <h2 itemprop="headline">Apples</h2>
-      <div>
-        <img alt="Garden Market logo" class="avatar" src="/public/garden-market.jpg">
-      </div>
-    </div>
-    <div class="detail">
-      <h3>
-        <span id="directions-demo">
-          at <a target="_blank" href="https://maps.google.com/?q=-6.773374,39.276718" title="Click this link for directions">Garden Market</a>
-        </span>
-      </h3>
-      <h3>
-        <span>2 hours ago</span>
-      </h3>
-    </div>
-  </div>
-</div>
-<div class="panel divide">
-  <hr>
-  <span><a href="#bottom"><strong>Sign up to find what's fresh</strong></a></span>
-</div>
-<div class="panel">
-  <div class="welcome">
-    <div class="item-image">
-      <%= image_tag "bbroc-know.png", alt: "Know what's fresh with Best Broccoli" %>
-    </div>
-    <h2>Know what's fresh</h2>
-    <div>
-      <span>Don't see what you're looking for? Add an alert and we'll let you know when it's available.</span>
-    </div>
-  </div>
-  <div class="alert-bar">
-    <p>
-      Sorry, partner. This one's just for show.
-    </p>
-    <form>
-      <input type="text" placeholder="Notify me about an item" title="Sign up first - then create alerts" disabled>
-      <input type="submit" value="Add alert" title="Sign up first - then create alerts" disabled>
-    </form>
-  </div>
-</div>
-<div class="panel divide">
-  <hr>
-  <span><a href="#bottom"><strong>Sign up to know what's fresh</strong></a></span>
-</div>
-<div class="panel">
-  <div class="welcome">
-    <div class="item-image">
-      <%= image_tag "bbroc-enjoy.png", alt: "Enjoy what's fresh with Best Broccoli" %>
-    </div>
-    <h2>Enjoy what's fresh</h2>
-    <span>Think we're on to something?</span>
-    <div class="fb-like" style="top: -2px; left: 5px;" data-href="http://www.bestbroccoli.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-  </div>
-  <%= render "application/authentication_forms" %>
-</div>
-<%= render "flashes" -%>
+<div class="fb-like" style="top: -2px; left: 5px;" data-href="http://www.bestbroccoli.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>

@@ -1,0 +1,38 @@
+.panel {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 0 100%;
+  justify-content: center;
+  align-items: center;
+  padding: $base-spacing * 1.5 0;
+
+  &.feed {
+    background: $off-white;
+    padding: 0 $base-spacing * 1.5 0 $base-spacing * 1.5;
+  }
+
+  &.divide {
+    position: relative;
+    padding: 0;
+
+    hr {
+      width:100%;
+      margin: 0;
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+      background: $off-white;
+      top: -24px;
+      padding: $small-spacing;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+  }
+
+  &.alternate {
+    background: url('back-light.png');
+    padding: $base-spacing * 4 0;
+  }
+}

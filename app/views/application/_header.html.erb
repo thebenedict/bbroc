@@ -4,6 +4,11 @@
     <span>Best</span><%= image_tag "icon.svg", alt: "best broccoli logo" %><span>Broccoli</span>
     <% end %>
   </h1>
+  <% if !current_user %>
+  <div>
+    <a class="button smaller" href="/pages/sign_in" >Sign in</a>
+  </div>
+  <% end %>
   <% if current_user %>
   <ul>
     <li>
