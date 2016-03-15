@@ -11,6 +11,7 @@
 /public/assets
 /tags
 /tmp/*
+/vendor/tmp/*
 .env
 .byebug_history
 
