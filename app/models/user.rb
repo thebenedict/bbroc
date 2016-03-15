@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     self.name.split(" ")[0]
   end
 
+  def recent_requests
+    self.requests.order(created_at: "DESC").limit(5)
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.skip_confirmation!
