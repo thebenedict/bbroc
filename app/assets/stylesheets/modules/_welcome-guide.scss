@@ -3,11 +3,17 @@ padding: $base-spacing * 0.75;
 margin: $small-spacing * 0.5;
 max-width: 325px;
 text-align: center;
+align-self: flex-start;
 
   img {
     position: relative;
     top: 15px;
     width: 150px;
+  }
+
+  ul li {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

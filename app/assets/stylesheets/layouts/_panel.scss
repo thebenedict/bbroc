@@ -35,4 +35,8 @@
     background: url('back-light.png');
     padding: $base-spacing * 4 0;
   }
+
+  &.control {
+    justify-content: space-around;
+  }
 }

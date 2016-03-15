@@ -2,18 +2,11 @@
   <h3>Now just create your account so we can alert you once we find your <span id="item-requested"></span>.</h3>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-
-
     <%= f.input :name, required: true, autofocus: false, label: false, placeholder: 'Name' %>
     <%= f.input :email, required: true, label: false, placeholder: 'Email' %>
     <%= f.input :password, required: true, label: false, placeholder: 'Password' %>
-
-
     <%= f.button :submit, "Sign up" %>
-
-
   <% end %>
-
   <span class="form-text-space">or</span>
   <%= link_to "Continue with Facebook", user_omniauth_authorize_path(:facebook), class: "button fb-sign-in" %>
 </div>
