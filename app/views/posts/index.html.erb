@@ -8,6 +8,16 @@
       <% end %>
     </div>
   </div>
+  
+  <div class="panel alert">
+    <div class="alert-bar">
+      <h2>Your recent requests</h2>
+      <ul>
+        <%= render current_user.recent_requests %>
+      </ul>
+    </div>
+  </div>
+
   <div class="panel feed">
     <div class="welcome alt">
       <div class="item-image">
