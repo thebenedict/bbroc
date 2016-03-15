@@ -1,23 +1,23 @@
 <div id="wrap">
-  <div class="panel alternate">
-    <div class="request-container">
-      <h2>I'm looking for</h2>
-      <div class="request-bar">
-        <%= simple_form_for @request do |f| %>
-          <%= f.input :body, label: false, placeholder: "Enter an item" %>
-          <%= f.submit 'Add alert' %>
-        <% end %>
-      </div>
+  <div class="panel control">
+    <div class="welcome">
+      <h2>Your recent requests</h2>
+      <ul>
+        <%= render current_user.recent_requests %>
+      </ul>
+    </div>
+    <div class="welcome">
+      <h2>New request</h2>
+      <%= simple_form_for @request do |f| %>
+        <%= f.input :body, label: false, placeholder: "Enter an item" %>
+        <%= f.submit 'Submit' %>
+      <% end %>
     </div>
   </div>
-<h2>Your recent requests</h2>
-<ul>
-  <%= render current_user.recent_requests %>
-</ul>
   <div class="panel divide">
     <hr>
     <span>
-      <strong>the fresh list</strong>
+      <strong>Here's all of our recent finds</strong>
     </span>
   </div>
   <div class="panel feed">
