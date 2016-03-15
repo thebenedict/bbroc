@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :requests
 
+  accepts_nested_attributes_for :requests
+
   enum role: {
     user: 0,
     admin: 9

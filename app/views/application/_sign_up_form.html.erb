@@ -1,10 +1,13 @@
 <div class="sign-up">
   <h3>Sweet, create an account and we'll let you know when we find <span id="item-requested"></span>.</h3>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= f.error_notification %>
     <%= f.input :name, required: true, autofocus: false, label: false, placeholder: 'Name' %>
     <%= f.input :email, required: true, label: false, placeholder: 'Email' %>
     <%= f.input :password, required: true, label: false, placeholder: 'Password' %>
+    <%= f.simple_fields_for :requests, resource.requests.build do |r| %>
+      <%= r.input :body, as: :hidden %>
+    <% end %>
     <%= f.button :submit, "Sign up" %>
   <% end %>
   <span class="form-text-space">or</span>

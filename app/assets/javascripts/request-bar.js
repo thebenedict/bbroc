@@ -9,11 +9,10 @@ $(function(){
 $(document).ready(function(){
   $(".sign-up-toggle").attr("disabled", "true");
   $(".request-box").keyup(function(e){
+    $("#user_requests_attributes_0_body").val($("#request-bar").val());
 	  if (e.which == 13) {
 	    $(".sign-up-toggle").click();
-
 	    return false;
-
 	  }
     if ($(this).val() != "") {
       $(".sign-up-toggle").removeAttr("disabled");

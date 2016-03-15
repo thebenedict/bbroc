@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   # override create to allow redirecting to root on sign up failure
   def create
     build_resource(sign_up_params)
-
+    
     resource.save
     yield resource if block_given?
     if resource.persisted?
@@ -38,7 +38,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, requests_attributes: [:body, :id])
   end
 
   def account_update_params
