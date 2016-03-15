@@ -9,7 +9,7 @@
   font-family: $base-font-family;
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
-  font-weight: $base-font-weight;
+  font-weight: 700;
   line-height: 1.5 ;
   padding: $small-spacing $base-spacing;
   text-decoration: none;
@@ -20,8 +20,14 @@
   width: 100%;
   text-align: center;
 
+  &.smaller {
+    padding: $small-spacing * 0.5 $base-spacing * 0.5;
+    font-size: $base-font-size * 0.9;
+    font-weight: $base-font-weight;
+  }
+
   &.fb-sign-in {
-  background-color: $blue;
+    background-color: $blue;
 
     &:hover,
     &:focus {
@@ -38,10 +44,11 @@
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: 1;
+    background: #ddd;
 
     &:hover {
-      background-color: $action-color;
+      background-color: #ddd;
     }
   }
 }

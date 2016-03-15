@@ -1,0 +1,22 @@
+.sign-up {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height:0px;
+  overflow: hidden;
+  transition: all .5s ease;
+  padding: 0 $small-spacing * 0.4;
+  max-width: 500px;
+  text-align: center;
+
+  &.show {
+    height:400px;
+    transition: height .5s ease;
+  }
+
+  .form-text-space {
+    text-align: center;
+    width: 100%;
+  }
+}
