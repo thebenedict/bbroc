@@ -1,1 +1,1 @@
-<li><%= request.body %> &mdash; <%= time_tag request.created_at, distance_of_time_in_words_to_now(request.created_at) + ' ago', pubdate: false, itemprop: "datePublished" %></li>
+<li><span><%= request.body %></span><%= time_tag request.created_at, distance_of_time_in_words_to_now(request.created_at) + ' ago', pubdate: false, itemprop: "datePublished" %></li>
