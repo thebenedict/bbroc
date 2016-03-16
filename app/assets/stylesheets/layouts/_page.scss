@@ -8,8 +8,10 @@
     font-weight: bold;
   }
 
-  &.box {
+  .box {
+  margin-top: $small-spacing;
   text-align: left;
+  font-size: $base-font-size * 1.25;
   }
 
   .item-image-first {
