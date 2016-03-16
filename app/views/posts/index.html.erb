@@ -1,19 +1,9 @@
 <div id="wrap">
-  <div class="panel control">
-    <div class="welcome">
-      <h2>Your recent requests</h2>
-      <ul>
-        <%= render current_user.recent_requests %>
-      </ul>
-    </div>
-    <div class="welcome">
-      <h2>New request</h2>
-      <%= simple_form_for @request do |f| %>
-        <%= f.input :body, label: false, placeholder: "Enter an item" %>
-        <%= f.submit 'Submit' %>
-      <% end %>
-    </div>
-  </div>
+  <% if current_user.role == "vendor" %>
+    <%= render "vendor_panel" %>
+  <% else %>
+    <%= render "request_panel" %>
+  <% end %>
   <div class="panel">
     <div class="fb-like" data-href="http://www.bestbroccoli.com" data-layout="standard" data-width="225" data-action="like" data-show-faces="true" data-share="true"></div>
   </div>

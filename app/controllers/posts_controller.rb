@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :authenticate_admin, only: :new
+  before_filter :verify_post_permission, only: :new
 
   def index
     @request = Request.new
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(:item, :vendor_id, :notes, :price, :unit, :image, :image_field)
     end
 
-    def authenticate_admin
-      redirect_to root_path unless current_user and current_user.role == "admin"
+    def verify_post_permission
+      redirect_to root_path unless current_user and current_user.role != "user"
     end
 end
