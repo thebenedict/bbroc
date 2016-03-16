@@ -7,9 +7,13 @@ $(function(){
 });
 
 $(document).ready(function(){
+  var baseFBUri = $('.fb-sign-in').attr('href');
   $(".sign-up-toggle").attr("disabled", "true");
   $(".request-box").keyup(function(e){
-    $("#user_requests_attributes_0_body").val($("#request-bar").val());
+    var requestVal = $("#request-bar").val();
+    $('.fb-sign-in').attr('href', baseFBUri + '?request=' + encodeURIComponent(requestVal));
+    $("#user_requests_attributes_0_body").val(requestVal);
+
 	  if (e.which == 13) {
 	    $(".sign-up-toggle").click();
 	    return false;
