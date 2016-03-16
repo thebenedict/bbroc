@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   enum role: {
     user: 0,
+    vendor: 1,
     admin: 9
   }
 
