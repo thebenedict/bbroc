@@ -1,28 +1,32 @@
 <div class="panel full">
   <h2 class="full">About</h2>
+  <p class="box">Tell us an item and we'll alert you when we find it. <strong>It's that simple.</strong></p>
   <p class="box">
-    <strong>Everyone</strong> has had the experience of not being to find that one item or ingredient necessary to complete their amazing dinner plan. We want to know what that item is for you. In fact, we want to become your go-to source for finding it! We created <%= link_to 'www.bestbroccoli.com', root_path %> to help people find fresh produce and specialty items in Dar es Salaam, Tanzania. We're currently focusing our efforts around the peninsula while we refine our   approach and gather people's <%= link_to 'feedback', page_path('feedback') %></a>. Enter your item on the <%= link_to 'front page', root_path %>, sign up, and receive a notification when it becomes available. <strong>It's that simple.</strong> <br><br>Find yourself on the other side of the equation? We're always looking for new vendors to join the Best Broccoli community. <%= mail_to 'info@bestbroccoli.com', 'Contact us today!', subject: 'Vendor inquiry' %>
+    Everyone has had the experience of not being able to find that one item or ingredient necessary to complete their amazing dinner plan. We want to know what that item is for you. In fact, we want to become your go-to source for finding it! We created <%= link_to 'www.bestbroccoli.com', root_path %> to help people find fresh produce and specialty items in Dar es Salaam, Tanzania. We're currently focusing our efforts around the peninsula while we refine our approach and gather people's <%= mail_to 'info@bestbroccoli.com', 'feedback', subject: 'General Feedback' %>.
   </p>
+  <p class="box">
+    Find yourself on the other side of the equation? We're always looking for new vendors to join the Best Broccoli community. <%= mail_to 'info@bestbroccoli.com', 'Contact us today!', subject: 'Vendor inquiry' %>
+  </p>
+</div>
+<div class="panel">
   <div class="welcome">
     <div class="item-image">
       <%= image_tag "bbroc-find.png", alt: "Enjoy what's fresh with Best Broccoli" %>
     </div>
-    <h2>Find what's fresh</h2>
+    <h2>Know what's fresh</h2>
     <div>
-      <p>Sign up and gain access to see all of our fresh posts.</p>
+      <p>Take a look at the live post feed to see what's fresh.</p>
     </div>
   </div>
-
   <div class="welcome">
     <div class="item-image">
       <%= image_tag "bbroc-know.png", alt: "Enjoy what's fresh with Best Broccoli" %>
     </div>
-    <h2>Know what's fresh</h2>
+    <h2>Find what's fresh</h2>
     <div>
-      <p>We'll notify you when your item becomes available</p>
+      <p>Enter your request and we'll alert you when we find it.</p>
     </div>
   </div>
-
   <div class="welcome">
     <div class="item-image">
       <%= image_tag "bbroc-enjoy.png", alt: "Enjoy what's fresh with Best Broccoli" %>
