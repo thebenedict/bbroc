@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :vendors
     resources :requests
+    resources :matches
     
     root to: "users#index"
   end

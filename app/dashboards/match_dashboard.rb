@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class RequestDashboard < Administrate::BaseDashboard
+class MatchDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,10 +8,10 @@ class RequestDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    user: Field::BelongsTo,
+    request: Field::BelongsTo,
+    post: Field::BelongsTo,
     id: Field::Number,
-    body: Field::String,
-    matches: Field::HasMany,
+    weight: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -22,19 +22,19 @@ class RequestDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :user,
+    :request,
+    :post,
     :id,
-    :body,
-    :created_at,
+    :weight,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :user,
+    :request,
+    :post,
     :id,
-    :body,
-    :matches,
+    :weight,
     :created_at,
     :updated_at,
   ]
@@ -43,15 +43,15 @@ class RequestDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :user,
-    :body,
-    :matches
+    :request,
+    :post,
+    :weight,
   ]
 
-  # Overwrite this method to customize how requests are displayed
+  # Overwrite this method to customize how matches are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(request)
-    "#{request.body} (#{request.user.email})"
-  end
+  # def display_resource(match)
+  #   "Match ##{match.id}"
+  # end
 end

@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :vendor
+  has_many :matches
+  has_many :requests, through: :matches
 
   validates :item, presence: true
   validates :vendor, presence: true

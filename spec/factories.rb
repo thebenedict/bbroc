@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :match do
+    request nil
+    post nil
+    weight 1
+  end
   factory :request do
     user nil
     body "MyString"
