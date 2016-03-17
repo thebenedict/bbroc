@@ -45,10 +45,10 @@
   &:disabled {
     cursor: not-allowed;
     opacity: 1;
-    background: #ddd;
+    background: #999;
 
     &:hover {
-      background-color: #ddd;
+      background-color: #999;
     }
   }
 }

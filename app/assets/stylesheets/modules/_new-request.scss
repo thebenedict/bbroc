@@ -29,7 +29,7 @@
     button, input[type="submit"]  {
       width: 20%;
       border-radius: 0 6px 6px 0;
-      border: 1px solid #ccc;
+      border-color: shade($base-border-color, 20%);
       border-left: 0;
     }
   }
