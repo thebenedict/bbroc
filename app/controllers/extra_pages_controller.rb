@@ -2,7 +2,7 @@ class ExtraPagesController < ApplicationController
   before_action :redirect_if_logged_in
 
   def home
-    @posts = Post.limit(3)
+    @posts = Post.limit(10).sample(3)
   end
 
   private
