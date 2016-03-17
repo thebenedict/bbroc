@@ -17,7 +17,11 @@ class User < ActiveRecord::Base
   }
 
   def first_name
-    self.name.split(" ")[0]
+    if self.name
+      self.name.split(" ")[0]
+    else
+      "you"
+    end  
   end
 
   def recent_requests
