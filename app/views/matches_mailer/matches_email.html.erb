@@ -10,19 +10,20 @@
 
       <table style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; width: 100%; margin: 0; padding: 0;"><tr style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
 <td style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">Hi <%= @resource.name %>,</p>
+            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">Hi [User First Name],</p>
 
-            <h1 style="font-family: Arial,  sans-serif; font-size: 36px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Your Best Broccoli account was locked.</h1>
+            <h1 style="font-family: Arial,  sans-serif; font-size: 36px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Good news! We found your item.</h1>
 
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">This is normally due to an excessive number of unsuccessful sign in attempts.</p>
-            <!-- button -->
-            <table class="btn-primary" cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; width: auto !important; Margin: 0 0 30px; padding: 0;"><tr style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
-<td style="font-family: Arial,  sans-serif; font-size: 14px; line-height: 1.6em; border-radius: 25px; text-align: center; vertical-align: top; background: #2CD05F ; margin: 0; padding: 0;" align="center" bgcolor="#2CD05F " valign="top">
-                  <%= link_to unlock_url(@resource, unlock_token: @token) do %>
-                  <span style="font-family: Arial, sans-serif; font-size: 100%; line-height: 2; color: #ffffff; border-radius: 25px; display: inline-block; cursor: pointer; font-weight: bold; text-decoration: none; background: #2CD05F ; margin: 0; padding: 0; border-color: #2CD05F ; border-style: solid; border-width: 10px 20px;">Unlock my account</span>
-                  <% end %>
-                </td>
-              </tr></table>
+            <h2 style="font-family: Arial,  sans-serif; font-size: 28px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Here are the top picks for [items name]</h2>
+            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">[1] - [Vendor Location] - [Price]</p>
+            <img src="apples-placeholder.jpg" height="152" width="200">
+            <hr>
+            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">[2] - [Vendor Location] - [Price]</p>
+            <img src="apples-placeholder.jpg" height="152" width="200">
+            <hr>
+            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">[3] - [Vendor Location] - [Price]</p>
+            <img src="apples-placeholder.jpg" height="152" width="200">
+            <hr>
 <!-- /button -->
             <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">Cheers,</p>
             <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;"><a href="http://www.bestbroccoli.com" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; color: #2CD05F ; margin: 0; padding: 0;">Team Best Broccoli</a></p>
