@@ -15,7 +15,7 @@ class Request < ActiveRecord::Base
 
   def status
     if self.matches.present? and notified_at.blank?
-      "pending"
+      "pending [#{self.matches.count}]"
     elsif self.matches.present?
       "resolved"
     else
