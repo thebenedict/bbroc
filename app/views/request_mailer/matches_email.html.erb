@@ -13,23 +13,27 @@
             <p style="font-family: Arial, sans-serif; font-size: 18px; line-height: 1.6em; font-weight: normal; padding: 0;">Hi <%= @request.user.first_name %>,</p>
             <h2 style="font-family: Arial,  sans-serif; font-size: 18px; line-height: 1.2em; color: #111111; font-weight: 200; padding: 0;">Here's where you can get fresh <%= @request.body %>.</h2>
             <% @request.matches.each do |m| %>
-              <p style="font-family: Arial, sans-serif; font-size: 24px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; text-align: center;">
+              <p style="font-family: Arial, sans-serif; font-size: 18px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; text-align: center;">
               <%= m.post.vendor.name %> - <%= link_to "Map it", m.post.vendor.map_url, target: "_blank" %><br>Price - <%= m.post.price_string %></p>
-                <img src="<%= image_url(m.post.image.url) %>" width="596" style="height: auto; width: 596px;">
+                <img src="<%= image_url(m.post.image.url) %>" width="305" style="height: auto; width: 100%;">
             <h2 style="font-family: Arial,  sans-serif; font-size: 18px; line-height: 1.2em; color: #111111; font-weight: 200; padding: 0;"><%= m.post.notes %></h2>
               <hr style="border: 1px solid #eee; background-color: #eee; margin-bottom: 10px;">
 
             <% end %>
 <!-- /button -->
-            <p style="font-family: Arial,  sans-serif; font-size: 18px; line-height: 1.6em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">We'd love to hear your feedback, please reply to this email.</p>
+            <div style="text-align: center;">
+              <p style="font-family: Arial,  sans-serif; font-size: 18px; line-height: 1.6em; color: #111111; font-weight: 200; margin: 20px 0 10px; padding: 0; padding-bottom: 10px;">
+              Check out our other fresh finds on <a href="http://www.bestbroccoli.com">www.bestbroccoli.com</a></p>
+              <a href="http://www.bestbroccoli.com"><a href="http://www.bestbroccoli.com"><img src="<%= image_url '/public/bbroc-fresh-badge.jpg' %>" width="200" height="200" style="height: 200px; width: 200px; margin-left: auto; margin-right: auto; padding-bottom: 20px;" alt="Best Broccoli Fresh Badge"></a>
+            </div>
+            <hr style="border: 1px solid #eee; background-color: #eee; margin-bottom: 10px;">
+            <p style="font-family: Arial,  sans-serif; font-size: 18px; line-height: 1.6em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0; padding-bottom: 10px;">We'd love to hear your feedback, please reply to this email.</p>
             <p style="font-family: Arial, sans-serif; font-size: 18px; line-height: 1.2em; font-weight: normal; margin: 0 0 10px; padding: 0;">Cheers,</p>
             <p style="font-family: Arial, sans-serif; font-size: 18px; line-height: 1.2em; font-weight: normal; margin: 0 0 10px; padding: 0;"><a href="http://www.bestbroccoli.com" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; color: #2CD05F ; margin: 0; padding: 0;">Team Best Broccoli</a></p>
           </td>
         </tr></table>
 </div>
-<div style="text-align: center;">
-  <a href="http://www.bestbroccoli.com"><img src="<%= image_url '/public/bbroc-fresh-badge.jpg' %>" width="300" height="300" style="height:300px; width: 300px; margin-left: auto; margin-right: auto;" alt="Best Broccoli Fresh Badge"></a>
-</div>
+
       <!-- /content -->
 
     </td>
