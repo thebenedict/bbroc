@@ -5,4 +5,12 @@ class RequestMailer < ApplicationMailer
     @request = request
     mail(to: ['thebenedict@gmail.com', 'ericmpadron@gmail.com'], subject: '[bbroc] New request')
   end
+
+  def matches_email(request, opts={})
+    @request = request
+    opts[:from] = 'Team Best Broccoli <info@bestbroccoli.com>'
+    opts[:reply_to] = 'info@bestbroccoli.com'
+    opts[:subject] = 'We found it!'
+    mail(to: request.user.email)
+  end
 end

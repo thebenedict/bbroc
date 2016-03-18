@@ -12,8 +12,10 @@ class RequestDashboard < Administrate::BaseDashboard
     id: Field::Number,
     body: Field::String,
     matches: Field::HasMany,
+    notified_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    status: Field::String
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,6 +27,7 @@ class RequestDashboard < Administrate::BaseDashboard
     :user,
     :id,
     :body,
+    :status,
     :created_at,
   ]
 
@@ -35,6 +38,7 @@ class RequestDashboard < Administrate::BaseDashboard
     :id,
     :body,
     :matches,
+    :notified_at,
     :created_at,
     :updated_at,
   ]
@@ -45,7 +49,8 @@ class RequestDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :user,
     :body,
-    :matches
+    :matches,
+    :notified_at
   ]
 
   # Overwrite this method to customize how requests are displayed

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   }
 
   get '/posts', to: 'posts#index', as: :user_root
+  get '/notify', to: 'requests#send_fulfillment_notifications'
   resources :posts
   resources :requests, only: :create
 end

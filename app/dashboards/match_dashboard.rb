@@ -51,7 +51,7 @@ class MatchDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how matches are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(match)
-  #   "Match ##{match.id}"
-  # end
+  def display_resource(match)
+    match.post.item
+  end
 end

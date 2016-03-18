@@ -20,4 +20,8 @@ class Post < ActiveRecord::Base
   def safe_item
     item.length <= 16 ? item : "#{item.first(16).strip}&hellip;".html_safe
   end
+
+  def price_string
+    "Tsh #{self.price} #{self.unit}"
+  end
 end

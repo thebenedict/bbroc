@@ -14,16 +14,12 @@
 
             <h1 style="font-family: Arial,  sans-serif; font-size: 36px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Good news! We found your item.</h1>
 
-            <h2 style="font-family: Arial,  sans-serif; font-size: 28px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Here are the top picks for [items name]</h2>
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">[1] - [Vendor Location] - [Price]</p>
-            <img src="apples-placeholder.jpg" height="152" width="200">
-            <hr>
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">[2] - [Vendor Location] - [Price]</p>
-            <img src="apples-placeholder.jpg" height="152" width="200">
-            <hr>
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">[3] - [Vendor Location] - [Price]</p>
-            <img src="apples-placeholder.jpg" height="152" width="200">
-            <hr>
+            <h2 style="font-family: Arial,  sans-serif; font-size: 28px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Here are the top picks for <%= @request.body %></h2>
+            <% @request.matches.each do |m| %>
+              <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;"><%= m.post.vendor.name %> - <%= m.post.price_string %></p>
+              <img src="<%= image_url(m.post.image.url) %>" height="152" width="200">
+              <hr>
+            <% end %>
 <!-- /button -->
             <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">Cheers,</p>
             <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;"><a href="http://www.bestbroccoli.com" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; color: #2CD05F ; margin: 0; padding: 0;">Team Best Broccoli</a></p>
@@ -43,7 +39,7 @@
       <div class="content" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; display: block; max-width: 600px; margin: 0 auto; padding: 0;">
         <table style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; width: 100%; margin: 0; padding: 0;"><tr style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
 <td align="center" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
-              <p style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.6em; color: #666666; font-weight: normal; margin: 0 0 10px; padding: 0;">Don't like these annoying emails? <a href="http://www.bestbroccoli.com/users/edit" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; color: #999999; margin: 0; padding: 0;"><unsubscribe style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">Unsubscribe</unsubscribe></a>.
+              <p style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.6em; color: #666666; font-weight: normal; margin: 0 0 10px; padding: 0;">Don't like these emails? <a href="http://www.bestbroccoli.com/users/edit" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; color: #999999; margin: 0; padding: 0;"><unsubscribe style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">Unsubscribe</unsubscribe></a>.
               </p>
             </td>
           </tr></table>
