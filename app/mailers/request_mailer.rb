@@ -11,6 +11,6 @@ class RequestMailer < ApplicationMailer
     opts[:reply_to] = 'info@bestbroccoli.com'
     opts[:subject] = 'We found it!'
     #mail(to: request.user.email)
-    mail(to: ['thebenedict@gmail.com', 'ericmpadron@gmail.com'], from: 'Team Best Broccoli <info@bestbroccoli.com>')
+    mail(to: ['thebenedict@gmail.com', 'ericmpadron@gmail.com'], from: '"Team Best Broccoli" <info@bestbroccoli.com>')
   end
 end
