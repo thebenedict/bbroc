@@ -3,26 +3,28 @@
     <td class="container" bgcolor="#FFFFFF" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; clear: both !important; display: block !important; max-width: 600px !important; Margin: 0 auto; padding: 20px; border: 1px solid #f0f0f0;">
       <!-- logo -->
       <div style="text-align: center; padding-bottom: 30px;">
-        <img src="<%= image_url '/public/bbroc-logo.gif' %>" width="230" height="50" style="margin-left: auto; margin-right: auto; height:50px; width: 230px; padding: 20px;" alt="Best Broccoli">
+        <a href="http://www.bestbroccoli.com"><img src="<%= image_url '/public/bbroc-logo.gif' %>" width="230" height="50" border="0" style="margin-left: auto; margin-right: auto; height:50px; width: 230px; padding: 20px; border: 0;" alt="Best Broccoli"></a>
       </div>
       <!-- content -->
       <div class="content" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; display: block; max-width: 600px; margin: 0 auto; padding: 0;">
 
       <table style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; width: 100%; margin: 0; padding: 0;"><tr style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
 <td style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">Hi <%= @request.user.first_name %>,</p>
+            <p style="font-family: Arial, sans-serif; font-size: 24px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">Hi <%= @request.user.first_name %>,</p>
 
-            <h1 style="font-family: Arial,  sans-serif; font-size: 36px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Good news! We found your item.</h1>
+            <h1 style="font-family: Arial,  sans-serif; font-size: 36px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Found <img src="<%= image_url '/public/bbroc-fresh-badge.gif' %>" width="125" height="125" style="height:125px; width: 125px; padding: 20px; vertical-align: middle;" alt="Best Broccoli Fresh Badge"> for you.</h1>
 
-            <h2 style="font-family: Arial,  sans-serif; font-size: 28px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Here are the top picks for <%= @request.body %></h2>
+            <h2 style="font-family: Arial,  sans-serif; font-size: 24px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Here's where you can get <%= @request.body %></h2>
             <% @request.matches.each do |m| %>
-              <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;"><%= m.post.vendor.name %> - <%= m.post.price_string %></p>
-              <img src="<%= image_url(m.post.image.url) %>" height="152" width="200">
-              <hr>
+              <p style="font-family: Arial, sans-serif; font-size: 24px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; text-align: center;"><%= m.post.vendor.name %> - <%= m.post.price_string %></p>
+                <img src="<%= image_url(m.post.image.url) %>" height="447" width="596" style="height: 447px; width: 596px;">
+              <hr style="border: 1px solid #ccc; padding: 2px; background-color: #ccc;">
+
             <% end %>
 <!-- /button -->
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">Cheers,</p>
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;"><a href="http://www.bestbroccoli.com" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; color: #2CD05F ; margin: 0; padding: 0;">Team Best Broccoli</a></p>
+            <p style="font-family: Arial,  sans-serif; font-size: 18px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">We'd love to hear your feedback. Feel free to reply to this email directly</p>
+            <p style="font-family: Arial, sans-serif; font-size: 24px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">Cheers,</p>
+            <p style="font-family: Arial, sans-serif; font-size: 24px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;"><a href="http://www.bestbroccoli.com" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; color: #2CD05F ; margin: 0; padding: 0;">Team Best Broccoli</a></p>
           </td>
         </tr></table>
 </div>
