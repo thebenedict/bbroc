@@ -25,7 +25,7 @@ class Request < ActiveRecord::Base
 
   def self.send_fulfillment_notifications
     Request.pending.each do |r|
-      RequestMailer.matches_email(r).deliver_now
+      RequestMailer.matches_email(r).deliver_later
       r.update(notified_at: DateTime.now)
     end
   end
