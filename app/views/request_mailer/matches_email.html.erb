@@ -3,7 +3,7 @@
     <td class="container" bgcolor="#FFFFFF" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; clear: both !important; display: block !important; max-width: 600px !important; Margin: 0 auto; padding: 20px; border: 1px solid #f0f0f0;">
       <!-- logo -->
       <div style="text-align: center; padding-bottom: 30px;">
-        <a href="http://www.bestbroccoli.com"><img src="<%= image_url '/public/bbroc-fresh-badge.jpg' %>" width="300" height="300" style="height:300px; width: 300px; margin-left: auto; margin-right: auto;" alt="Best Broccoli Fresh Badge"></a>
+        <a href="http://www.bestbroccoli.com"><img src="<%= image_url '/public/bbroc-logo.gif' %>" width="230" height="50" border="0" style="margin-left: auto; margin-right: auto; height:50px; width: 230px; padding: 20px; border: 0;" alt="Best Broccoli"></a>
       </div>
       <!-- content -->
       <div class="content" style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; display: block; max-width: 600px; margin: 0 auto; padding: 0;">
@@ -14,7 +14,7 @@
             <h2 style="font-family: Arial,  sans-serif; font-size: 18px; line-height: 1.2em; color: #111111; font-weight: 200; padding: 0;">Here's where you can get fresh <%= @request.body %>.</h2>
             <% @request.matches.each do |m| %>
               <p style="font-family: Arial, sans-serif; font-size: 24px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; text-align: center;">
-              <%= m.post.vendor.name %> | <%= link_to "Map it", m.post.vendor.map_url, target: "_blank" %> | <%= m.post.price_string %></p>
+              <%= m.post.vendor.name %> - <%= link_to "Map it", m.post.vendor.map_url, target: "_blank" %><br>Price - <%= m.post.price_string %></p>
                 <img src="<%= image_url(m.post.image.url) %>" width="596" style="height: auto; width: 596px;">
             <h2 style="font-family: Arial,  sans-serif; font-size: 18px; line-height: 1.2em; color: #111111; font-weight: 200; padding: 0;"><%= m.post.notes %></h2>
               <hr style="border: 1px solid #eee; background-color: #eee; margin-bottom: 10px;">
@@ -28,7 +28,7 @@
         </tr></table>
 </div>
 <div style="text-align: center;">
-  <a href="http://www.bestbroccoli.com"><img src="<%= image_url '/public/bbroc-logo.gif' %>" width="230" height="50" border="0" style="margin-left: auto; margin-right: auto; height:50px; width: 230px; padding: 20px; border: 0;" alt="Best Broccoli"></a>
+  <a href="http://www.bestbroccoli.com"><img src="<%= image_url '/public/bbroc-fresh-badge.jpg' %>" width="300" height="300" style="height:300px; width: 300px; margin-left: auto; margin-right: auto;" alt="Best Broccoli Fresh Badge"></a>
 </div>
       <!-- /content -->
 
