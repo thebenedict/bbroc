@@ -12,12 +12,10 @@
 <td style="font-family: Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;">
             <p style="font-family: Arial, sans-serif; font-size: 24px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;">Hi <%= @request.user.first_name %>,</p>
 
-            <h1 style="font-family: Arial,  sans-serif; font-size: 36px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Found <img src="<%= image_url '/public/bbroc-fresh-badge.gif' %>" width="125" height="125" style="height:125px; width: 125px; padding: 20px; vertical-align: middle;" alt="Best Broccoli Fresh Badge"> for you.</h1>
-
-            <h2 style="font-family: Arial,  sans-serif; font-size: 24px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Here's where you can get <%= @request.body %></h2>
+            <h2 style="font-family: Arial,  sans-serif; font-size: 24px; line-height: 1.2em; color: #111111; font-weight: 200; margin: 40px 0 10px; padding: 0;">Here's where you can get <%= @request.body %><img src="<%= image_url '/public/bbroc-fresh-badge.jpg' %>" width="125" height="125" style="height:125px; width: 125px; padding: 5px; vertical-align: middle;" alt="Best Broccoli Fresh Badge"></h2>
             <% @request.matches.each do |m| %>
               <p style="font-family: Arial, sans-serif; font-size: 24px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; text-align: center;"><%= m.post.vendor.name %> - <%= m.post.price_string %></p>
-                <img src="<%= image_url(m.post.image.url) %>" height="447" width="596" style="height: 447px; width: 596px;">
+                <img src="<%= image_url(m.post.image.url) %>" width="596" style="height: auto; width: 596px;">
               <hr style="border: 1px solid #ccc; padding: 2px; background-color: #ccc;">
 
             <% end %>
