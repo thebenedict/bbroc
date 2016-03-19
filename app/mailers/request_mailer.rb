@@ -10,7 +10,7 @@ class RequestMailer < ApplicationMailer
     @request = request
     opts[:reply_to] = 'info@bestbroccoli.com'
     mail(to: request.user.email,
-      subject: "#{@request.body}!"
+      subject: "#{@request.body}!",
       bcc: ['thebenedict@gmail.com', 'ericmpadron@gmail.com'], 
       from: '"Team Best Broccoli" <info@bestbroccoli.com>')
   end
