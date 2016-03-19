@@ -9,8 +9,8 @@ class RequestMailer < ApplicationMailer
   def matches_email(request, opts={})
     @request = request
     opts[:reply_to] = 'info@bestbroccoli.com'
-    opts[:subject] = 'We found it!'
-    mail(to: request.user.email, 
+    mail(to: request.user.email,
+      subject: "#{@request.body}!"
       bcc: ['thebenedict@gmail.com', 'ericmpadron@gmail.com'], 
       from: '"Team Best Broccoli" <info@bestbroccoli.com>')
   end
