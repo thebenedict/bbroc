@@ -14,6 +14,11 @@ align-self: flex-start;
   ul li {
     display: flex;
     justify-content: space-between;
+
+    &.resolved { 
+      color: $medium-green;
+      text-decoration: line-through;
+    }
   }
 }
 
