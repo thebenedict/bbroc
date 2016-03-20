@@ -1,6 +1,6 @@
 development: &default
   adapter: postgresql
-  database: bbroc_development
+  database: ebdb
   encoding: utf8
   host: localhost
   min_messages: warning
