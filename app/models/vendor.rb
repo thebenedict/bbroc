@@ -1,5 +1,5 @@
 class Vendor < ActiveRecord::Base
-  validates :name, uniqueness: true
+  validates :name
 
   has_many :posts
 
