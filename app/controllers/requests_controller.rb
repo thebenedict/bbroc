@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: requests
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  body        :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  notified_at :datetime
+#  status      :integer
+#
+
 class RequestsController < ApplicationController
   before_filter :verify_admin, only: :send_fulfillment_notifications
 

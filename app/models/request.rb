@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: requests
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  body        :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  notified_at :datetime
+#  status      :integer
+#
+
 class Request < ActiveRecord::Base
   scope :pending, -> { includes(:matches).where(notified_at: nil).where.not(matches: { id: nil }) }
 
@@ -8,18 +21,25 @@ class Request < ActiveRecord::Base
   accepts_nested_attributes_for :matches
 
   after_create :notify_admins
+  before_save :update_status
+
+  enum status: {
+    fresh: 0,
+    pending: 1,
+    resolved: 2
+  }
 
   def notify_admins
     RequestMailer.new_request_email(self).deliver_later
   end
 
-  def status
+  def update_status
     if self.matches.present? and notified_at.blank?
-      "pending [#{self.matches.count}]"
+      self.status = "pending"
     elsif self.matches.present?
-      "resolved"
+      self.status = "resolved"
     else
-      "new"
+      self.status = "fresh"
     end
   end
 

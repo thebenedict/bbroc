@@ -38,6 +38,7 @@ class RequestDashboard < Administrate::BaseDashboard
     :id,
     :body,
     :matches,
+    :status,
     :notified_at,
     :created_at,
     :updated_at,
