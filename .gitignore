@@ -14,6 +14,7 @@
 /vendor/tmp/*
 .env
 .byebug_history
+dump.sql
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

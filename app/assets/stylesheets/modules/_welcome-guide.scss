@@ -15,9 +15,12 @@ align-self: flex-start;
     display: flex;
     justify-content: space-between;
 
-    &.resolved { 
-      color: $medium-green;
-      text-decoration: line-through;
+    &.resolved {
+      color: $light-gray;
+
+      span:before {
+        content:"✓"
+      }
     }
   }
 }

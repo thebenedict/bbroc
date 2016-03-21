@@ -1,9 +1,13 @@
 <div id="wrap">
-  <% if current_user.role == "vendor" %>
+  <% if current_user.role == "admin" %>
+    <%= render "vendor_panel" %>
+    <%= render "request_panel" %>
+  <% elsif current_user.role == "vendor" %>
     <%= render "vendor_panel" %>
   <% else %>
     <%= render "request_panel" %>
   <% end %>
+
   <div class="panel">
     <div class="fb-like" data-href="http://www.bestbroccoli.com" data-layout="standard" data-width="225" data-action="like" data-show-faces="true" data-share="true"></div>
   </div>

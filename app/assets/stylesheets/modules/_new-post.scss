@@ -3,8 +3,6 @@
 
   .item-image { width: 305px; }
 
-  input {margin: 0 $small-spacing * 0.75 0 0;}
-
   .camera { margin-bottom: $small-spacing;}
 
   #inputImage {
@@ -21,4 +19,7 @@
 
   .hidden { display: none;}
 
+  .detail .form-actions {
+    width: 100%;
+  }
 }
