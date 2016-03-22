@@ -21,12 +21,13 @@ class Request < ActiveRecord::Base
   accepts_nested_attributes_for :matches
 
   after_create :notify_admins
-  before_save :update_status
+  before_save :update_status, :clean_body
 
   enum status: {
     fresh: 0,
     pending: 1,
-    resolved: 2
+    resolved: 2,
+    blank: 9
   }
 
   def notify_admins
@@ -38,9 +39,15 @@ class Request < ActiveRecord::Base
       self.status = "pending"
     elsif self.matches.present?
       self.status = "resolved"
+    elsif self.body.blank? 
+      self.status = "blank"
     else
       self.status = "fresh"
     end
+  end
+
+  def clean_body
+    self.body = self.body.strip
   end
 
   def self.send_fulfillment_notifications
