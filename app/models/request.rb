@@ -47,7 +47,7 @@ class Request < ActiveRecord::Base
   end
 
   def clean_body
-    self.body = self.body.strip
+    self.body = self.body.strip if self.body.present?
   end
 
   def self.send_fulfillment_notifications
