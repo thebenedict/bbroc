@@ -15,7 +15,7 @@ class RequestDashboard < Administrate::BaseDashboard
     notified_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    status: Field::String
+    status: Field::String.with_options(searchable: false)
   }
 
   # COLLECTION_ATTRIBUTES

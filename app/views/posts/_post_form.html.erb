@@ -22,7 +22,9 @@
       <%= f.input :unit, label: false, placeholder: "Unit" %>
     </div>
     <div class="detail">
-      <%= f.association :vendor, label: false, prompt: "Location" %>
+      <% if current_user.role == "admin" %>
+        <%= f.association :vendor, label: false, prompt: "Location" %>
+      <% end %>
       <div class="form-actions">
         <%= f.button :submit, "Post", data: {disable_with: "Submitting..."} %>
       </div>

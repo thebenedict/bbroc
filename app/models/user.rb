@@ -34,10 +34,22 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
-  has_many :posts
+  belongs_to :vendor
+  has_many :posts do 
+    def build(*args, &block)
+      params = args[0]
+      params[:user_id] = proxy_association.owner.id if proxy_association.owner
+      if proxy_association.owner.role == "vendor"
+        params[:vendor_id] = proxy_association.owner.vendor.id
+      end
+      p = Post.new(params)
+    end
+  end
   has_many :requests, dependent: :destroy
 
   accepts_nested_attributes_for :requests
+
+  before_save :update_role
 
   enum role: {
     user: 0,
@@ -55,6 +67,16 @@ class User < ActiveRecord::Base
 
   def recent_requests
     self.requests.order(created_at: "DESC").limit(5)
+  end
+
+  def update_role
+    #byebug
+    if self.vendor_id.present? and self.role != "admin"
+      self.role = "vendor"
+    elsif self.role != "admin"
+      self.role = "user"
+    end
+    true
   end
 
   def self.from_omniauth(auth, params)

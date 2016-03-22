@@ -32,6 +32,7 @@ class UserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     role: Field::String.with_options(searchable: false),
+    vendor: Field::BelongsTo
   }
 
   # COLLECTION_ATTRIBUTES
@@ -40,10 +41,10 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :posts,
     :requests,
     :id,
     :email,
+    :vendor,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -73,6 +74,7 @@ class UserDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :role,
+    :vendor,
   ]
 
   # FORM_ATTRIBUTES
@@ -82,24 +84,20 @@ class UserDashboard < Administrate::BaseDashboard
     :posts,
     :requests,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
     :remember_created_at,
     :sign_in_count,
     :current_sign_in_at,
     :last_sign_in_at,
     :current_sign_in_ip,
     :last_sign_in_ip,
-    :confirmation_token,
     :confirmed_at,
-    :confirmation_sent_at,
     :unconfirmed_email,
     :provider,
     :uid,
     :name,
     :hosted_avatar_url,
     :role,
+    :vendor,
   ]
 
   # Overwrite this method to customize how users are displayed
