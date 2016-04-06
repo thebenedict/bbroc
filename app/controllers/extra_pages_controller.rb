@@ -4,7 +4,8 @@ class ExtraPagesController < ApplicationController
   def home
     if params[:vendor_slug].present?
       @vendor = Vendor.find_by!(slug: params[:vendor_slug])
-      render "vendor_home" 
+      @request = Request.new
+      render "vendor_home"
     else
       @posts = Post.limit(10).sample(3)
     end

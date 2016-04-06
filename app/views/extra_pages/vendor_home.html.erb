@@ -19,9 +19,21 @@
   <div class="request-container">
     <h2>I'm looking for</h2>
     <div class="request-bar">
+      <% if !current_user %>
       <input id="request-bar" class="request-box" type="text" placeholder="" value="" onfocus="if (this.value == '') {this.value = '';}" onblur="if (this.value == '') {this.value = '';}" />
       <button class="sign-up-toggle" title="Tell us what you're looking for">Go</button>
+      <% end %>
+      <% if current_user %>
+        <%= simple_form_for @request do |f| %>
+        <div class="request-bar">
+          <%= f.input_field :body, label: false, class: "request-box", id: "request-bar" %>
+          <%= f.submit 'Go', class: "sign-up-toggle" %>
+        </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
+  <% if !current_user %>
   <%= render "application/sign_up_form" %>
+  <% end %>
 </div>
