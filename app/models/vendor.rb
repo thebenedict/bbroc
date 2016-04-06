@@ -8,6 +8,7 @@
 #  lng        :float
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  slug       :string
 #
 
 class Vendor < ActiveRecord::Base
@@ -16,7 +17,13 @@ class Vendor < ActiveRecord::Base
   has_many :posts
   has_many :users
 
+  before_save :generate_slug
+
   def map_url
     "https://maps.google.com/?q=#{self.lat},#{self.lng}"
+  end
+
+  def generate_slug
+    self.slug ||= self.name.parameterize
   end
 end

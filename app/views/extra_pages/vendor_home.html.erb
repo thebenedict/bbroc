@@ -3,13 +3,10 @@
     <div class="item-image">
       <%= image_tag "bbroc-find.png", alt: "See what's fresh with Best Broccoli" %>
     </div>
-    <h2>Know what's fresh</h2>
-    <div>
-      <p>Here's what we've recently found for other people</p>
-    </div>
+    <h2>What's fresh at <%= @vendor.name %></h2>
       <div class="fb-like" data-href="http://www.bestbroccoli.com" data-layout="standard" data-width="225" data-action="like" data-show-faces="true" data-share="true"></div>
   </div>
-  <%= render @posts %>
+  <%= render @vendor.posts.limit(12) %>
 </div>
 <div class="panel">
   <span class="full">Want to see your products listed here? <a href="mailto:info@bestbroccoli.com?subject= Vendor Inquiry" >Let us know</a></span>
@@ -18,7 +15,7 @@
   <hr>
 </div>
 <div class="panel alternate">
-  <h1 class="full box front">We take requests</h1>
+  <h1 class="full box front">Can't find it?<br/>We take requests.</h1>
   <div class="request-container">
     <h2>I'm looking for</h2>
     <div class="request-bar">

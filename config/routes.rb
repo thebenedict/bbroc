@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   end
 
   root to: "extra_pages#home"
-  
+  get '/vendors/:vendor_slug', to: 'extra_pages#home'
+
   # override registrations controller for extra field (name)
   devise_for :users, :controllers => { 
     registrations: "registrations",

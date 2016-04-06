@@ -2,7 +2,12 @@ class ExtraPagesController < ApplicationController
   before_action :redirect_if_logged_in
 
   def home
-    @posts = Post.limit(10).sample(3)
+    if params[:vendor_slug].present?
+      @vendor = Vendor.find_by!(slug: params[:vendor_slug])
+      render "vendor_home" 
+    else
+      @posts = Post.limit(10).sample(3)
+    end
   end
 
   private
