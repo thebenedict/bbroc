@@ -13,7 +13,7 @@ class ExtraPagesController < ApplicationController
   private
 
     def redirect_if_logged_in
-      if current_user and params[:vendor_slug].absent?
+      if current_user and params[:vendor_slug].blank?
         redirect_to posts_path
       end
     end
