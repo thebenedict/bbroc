@@ -21,4 +21,8 @@
     height: 150px;
       padding-top: $base-spacing * 1.25;
   }
+
+  .padding-left-right {
+    padding: 0 $small-spacing;
+  }
 }
