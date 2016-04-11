@@ -1,5 +1,5 @@
 footer {
-	padding: $base-spacing $base-spacing 0 $base-spacing;
+	padding: $base-spacing * 2;
 	text-align: center;
   flex: 0 1 100%;
   font-size: $base-font-size * 0.85;
@@ -9,7 +9,7 @@ footer {
 
   .menu-links {
 
-    margin: $base-spacing * 3 0;
+    margin-bottom: $base-spacing * 2;
 
     li {
       display: inline-block;
@@ -47,6 +47,5 @@ footer {
 		opacity: 0.25;
 		font-size: $base-font-size * 0.85;
 		font-weight: bold;
-		padding-bottom: $base-spacing * 1.25;
 	}
 }

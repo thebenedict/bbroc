@@ -1,7 +1,6 @@
 .full {
   width: 100%;
   text-align: center;
-  padding: $base-spacing;
   display: block;
 
   h3 {
@@ -10,12 +9,12 @@
   }
 
   .box {
-  margin-top: $small-spacing;
-  text-align: left;
-  font-size: $base-font-size * 1.25;
-  max-width: 54em;
-  margin-left: auto;
-  margin-right: auto;
+    margin-top: $small-spacing;
+    text-align: left;
+    font-size: $base-font-size * 1.25;
+    max-width: 54em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .item-image-first {

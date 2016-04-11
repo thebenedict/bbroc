@@ -1,30 +1,26 @@
-<div class="panel alternate">
-  <h1 class="full box front">We find what's fresh.</h1>
+<div class="panel alternate border-bottom">
+  <h1 class="full box front headline">Know what's fresh.</h1>
+  <div class="tagline">
+    <p>We find the best produce, artisan products and specialty items in Dar</p>
+    <div class="fb-like" data-href="https://www.facebook.com/bestbroccoli" data-width="225" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+    <p class="last">Like us for updates</p>
+  </div>
+  <p>
+</div>
+<div class="panel feed">
+  <%= render @posts %>
+</div>
+<div class="panel">
+  <span class="full">Want to see your products listed here? <a href="mailto:info@bestbroccoli.com?subject= Vendor Inquiry" >Let us know</a></span>
+</div>
+<div class="panel alternate border-top last">
+  <h1 class="full box front">We take requests!</h1>
   <div class="request-container">
-    <h2>I'm looking for</h2>
+    <h2 class="reqeust">I'm looking for</h2>
     <div class="request-bar">
       <input id="request-bar" class="request-box" type="text" placeholder="" value="" onfocus="if (this.value == '') {this.value = '';}" onblur="if (this.value == '') {this.value = '';}" />
       <button class="sign-up-toggle" title="Tell us what you're looking for">Go</button>
     </div>
   </div>
   <%= render "application/sign_up_form" %>
-</div>
-<div class="panel divide">
-  <hr>
-</div>
-<div class="panel feed">
-  <div class="welcome">
-    <div class="item-image">
-      <%= image_tag "bbroc-find.png", alt: "See what's fresh with Best Broccoli" %>
-    </div>
-    <h2>Know what's fresh</h2>
-    <div>
-      <p>Here's what we've recently found for other people</p>
-    </div>
-      <div class="fb-like" data-href="http://www.bestbroccoli.com" data-layout="standard" data-width="225" data-action="like" data-show-faces="true" data-share="true"></div>
-  </div>
-  <%= render @posts %>
-</div>
-<div class="panel">
-  <span class="full">Want to see your products listed here? <a href="mailto:info@bestbroccoli.com?subject= Vendor Inquiry" >Let us know</a></span>
 </div>
