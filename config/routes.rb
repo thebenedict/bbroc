@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
+  get '/messenger', to: 'messenger_webhook#webhook'
+
   root to: "extra_pages#home"
   get '/vendors/:vendor_slug', to: 'extra_pages#home'
 
