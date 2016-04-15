@@ -20,7 +20,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.default_url_options = { host: ENV.fetch("APPLICATION_HOST") }
   config.action_mailer.asset_host = "http://" + ENV.fetch("APPLICATION_HOST")
-
+  config.force_ssl = true
 
   config.paperclip_defaults = {
       :storage => :s3,
