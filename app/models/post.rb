@@ -29,9 +29,9 @@ class Post < ActiveRecord::Base
   validates :vendor, presence: true
 
   if Rails.env.production?
-    has_attached_file :image, default_url: "/public/apples-placeholder.jpg"
+    has_attached_file :image, default_url: "/public/apples-placeholder.jpg", :s3_protocol => :https
   else
-    has_attached_file :image, default_url: "/apples-placeholder.jpg"
+    has_attached_file :image, default_url: "/apples-placeholder.jpg", :s3_protocol => :https
   end
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
