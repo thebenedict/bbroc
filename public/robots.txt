@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /users/
-Disallow: /pages/privacy/
-Disallow: /pages/about/
+Disallow: /privacy/
