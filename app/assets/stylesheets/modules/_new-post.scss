@@ -19,7 +19,15 @@
 
   .hidden { display: none;}
 
-  .detail .form-actions {
+  .form-actions {
+    display: block;
     width: 100%;
+  }
+
+  .help {
+    font-size: $base-font-size * 0.85;
+    margin-top: $base-spacing;
+    padding-top: $small-spacing;
+    border-top: 1px solid $light-gray;
   }
 }

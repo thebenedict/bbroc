@@ -27,6 +27,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @legacy = params[:legacy]
     @post = Post.new
   end
 

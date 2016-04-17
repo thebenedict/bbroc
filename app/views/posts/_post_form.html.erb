@@ -17,20 +17,20 @@
       <%= f.input(:item, placeholder: "Item", label: false) %>
     </div>
     <div>
-      <%= f.input :notes, label: false, placeholder: "Note" %>
       <%= f.input :price, label: false, placeholder: "Price" %>
+      <%= f.input :notes, label: false, placeholder: "Note" %>
       <%= f.input :unit, label: false, placeholder: "Unit" %>
     </div>
     <div class="detail">
       <% if current_user.role == "admin" %>
         <%= f.association :vendor, label: false, prompt: "Location" %>
       <% end %>
-      <div class="form-actions">
-        <%= f.button :submit, "Post", data: {disable_with: "Submitting..."} %>
-      </div>
     </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Post", data: {disable_with: "Submitting..."} %>
+    </div>
+    <div class="help">Not working? Try our <%= link_to "form for older phones", new_post_url(legacy: 1) %></div>
   </div>
   <canvas id="hidden-canvas" width="610" height="458px" style="display: none;"></canvas>
-
   <% end %>
 </div>

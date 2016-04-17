@@ -1,7 +1,7 @@
 <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="item-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <%= image_tag post.image.url, alt: post.item %>
-    <meta itemprop="url" content="<%= image_url post.image.url %>">
+    <%= image_tag post.image.url(:standard), alt: post.item %>
+    <meta itemprop="url" content="<%= image_url post.image.url(:standard) %>">
     <meta itemprop="width" content="305">
     <meta itemprop="height" content="229">
   </div>

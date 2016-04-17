@@ -1,0 +1,24 @@
+<div id="new-post">
+  <%= simple_form_for(@post) do |f| %>
+    <div id="the-real-new-post" class="post">
+      <div>
+        <%= f.input :image %>
+        <%= f.input(:item, placeholder: "Item", label: false) %>
+      </div>
+      <div>
+        <%= f.input :price, label: false, placeholder: "Price" %>
+        <%= f.input :unit, label: false, placeholder: "Unit" %>
+        <%= f.input :notes, label: false, placeholder: "Note" %>
+      </div>
+      <div class="detail">
+        <% if current_user.role == "admin" %>
+          <%= f.association :vendor, label: false, prompt: "Location" %>
+        <% end %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Post", data: {disable_with: "Submitting..."} %>
+      </div>
+      <div class="help">Go back to the <%= link_to "standard form", new_post_url %></div>
+    </div>
+  <% end %>
+</div>
