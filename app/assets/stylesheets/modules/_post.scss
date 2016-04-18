@@ -10,7 +10,24 @@
   background: #fff;
 
   .item-image {
+    position: relative;
     overflow: hidden;
+  }
+
+  .badge {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: $base-font-size * 0.85;
+    //margin-left: 15px;
+
+    &.requested-by {
+      padding: 5px 10px 5px 10px;
+      background: rgba(55,95,200,0.8);
+    }
   }
 
   .headline {

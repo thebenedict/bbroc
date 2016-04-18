@@ -4,6 +4,7 @@
     <meta itemprop="url" content="<%= image_url post.image.url(:standard) %>">
     <meta itemprop="width" content="305">
     <meta itemprop="height" content="229">
+    <span class="badge <%= post.badge_class %>"> <%= post.badge_text_for(current_user) %> </span>
   </div>
   <div class="headline" itemprop="mainEntityOfPage" title="<%= post.item %>">
     <h2 itemprop="headline"><%= post.safe_item %></h2>
