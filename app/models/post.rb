@@ -24,6 +24,7 @@ class Post < ActiveRecord::Base
   belongs_to :vendor
   has_many :matches
   has_many :requests, through: :matches
+  has_many :requestors, through: :requests, class_name: "User", source: :user
 
   validates :item, presence: true
   validates :vendor, presence: true
@@ -39,4 +40,29 @@ class Post < ActiveRecord::Base
   def price_string
     "Tsh #{self.price} #{self.unit}"
   end
+
+  def badge_text_for(current_user)
+    if self.matches.present?
+      "requested by " + "#{self.requestor_name(current_user)}"
+    else
+      ""
+    end
+  end
+
+  def badge_class
+    if self.matches.present?
+      "requested-by"
+    else
+      ""
+    end
+  end
+
+  def requestor_name(current_user)
+    if self.requestors.include? current_user
+      "you"
+    else
+      self.requestors.first.first_name
+    end
+  end
+
 end
