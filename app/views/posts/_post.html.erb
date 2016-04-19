@@ -5,11 +5,15 @@
     <meta itemprop="width" content="305">
     <meta itemprop="height" content="229">
     <div class="post-toggle-options">
-      <%= link_to post.vendor.vendor_url, class: "button alt" do %>
-        <span>More from<br> <%= "#{post.vendor.name}" %> </span>
+      <% if request.path == post.vendor.vendor_url %>
+        <%= link_to "More from Best Broccoli", root_url, class: "button alt" %>
+        <% else %>
+        <%= link_to post.vendor.vendor_url, class: "button alt" do %>
+          <span>More from<br> <%= "#{post.vendor.name}" %> </span>
+        <% end %>
       <% end %>
       <%= link_to "Show on map", post.vendor.map_url, class: "button", target: "_blank" %>
-      <a id="back-button" href="javascript:void(0)">back</a>
+      <a href="javascript:void(0)">back</a>
     </div>
     <span class="badge <%= post.badge_class %>"> <%= post.badge_text_for(current_user) %> </span>
   </div>

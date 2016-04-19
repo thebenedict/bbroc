@@ -21,10 +21,10 @@
   text-align: center;
 
   &.alt {
-    background-color: $medium-gray;
+    background-color: $blue;
 
     &:hover {
-      background-color: shade($medium-gray, 20%);
+      background-color: shade($blue, 20%);
     }
   }
 

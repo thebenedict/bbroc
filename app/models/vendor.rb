@@ -28,7 +28,7 @@ class Vendor < ActiveRecord::Base
   end
 
   def vendor_url
-    "vendors/"+"#{self.slug}"
+    "/vendors/"+"#{self.slug}"
   end
 
 end
