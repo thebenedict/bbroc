@@ -12,6 +12,14 @@
   .item-image {
     position: relative;
     overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+
+      img {
+        opacity: .85;
+      }
+    }
   }
 
   .badge {
@@ -26,7 +34,7 @@
 
     &.requested-by {
       padding: 5px 10px 5px 10px;
-      background: rgba(55,95,200,0.8);
+      background: rgba(44,208,177,0.8);
     }
   }
 
@@ -95,6 +103,11 @@
     z-index: 2;
     opacity: 0;
     transition: opacity .25s ease-in-out;
+
+    .vendor {
+      font-size: $base-font-size * 1.4;
+      font-weight: $base-font-weight * 2;
+    }
 
     .button, a {
       display: none;

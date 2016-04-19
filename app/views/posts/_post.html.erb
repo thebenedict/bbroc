@@ -6,14 +6,17 @@
     <meta itemprop="height" content="229">
     <div class="post-toggle-options">
       <% if request.path == post.vendor.vendor_url %>
-        <%= link_to "More from Best Broccoli", root_url, class: "button alt" %>
-        <% else %>
-        <%= link_to post.vendor.vendor_url, class: "button alt" do %>
-          <span>More from<br> <%= "#{post.vendor.name}" %> </span>
+      <%= link_to root_url, class: "button" do %>
+        <span>Best Broccoli</span>
+      <% end %>
+      <% else %>
+      <span class="vendor"> <%= "#{post.vendor.name}" %> </span>
+        <%= link_to post.vendor.vendor_url, class: "button" do %>
+          <span>More from here</span>
         <% end %>
       <% end %>
-      <%= link_to "Show on map", post.vendor.map_url, class: "button", target: "_blank" %>
-      <a href="javascript:void(0)">back</a>
+      <%= link_to "Find on map", post.vendor.map_url, class: "button alt", target: "_blank" %>
+      <a href="javascript:void(0)">Back to photo</a>
     </div>
     <span class="badge <%= post.badge_class %>"> <%= post.badge_text_for(current_user) %> </span>
   </div>
