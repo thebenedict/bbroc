@@ -5,6 +5,10 @@ $('.sign-up-toggle').on('click', function() {
 });
 
 $('.post-toggle-options').on('click', function() {
-  $('.post-toggle-options').removeClass('tapped');
-  $(this).toggleClass('tapped');
+  if ($(this).hasClass('tapped') ) {
+    $('.post-toggle-options').removeClass('tapped');
+  }else {
+    $('.post-toggle-options').removeClass('tapped');
+    $(this).addClass('tapped');
+  }
 });

@@ -9,7 +9,7 @@
         <span>More from<br> <%= "#{post.vendor.name}" %> </span>
       <% end %>
       <%= link_to "Show on map", post.vendor.map_url, class: "button", target: "_blank" %>
-      <a href="javascript:void(0)">back</a>
+      <a id="back-button" href="javascript:void(0)">back</a>
     </div>
     <span class="badge <%= post.badge_class %>"> <%= post.badge_text_for(current_user) %> </span>
   </div>
