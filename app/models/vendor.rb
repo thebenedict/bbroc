@@ -26,4 +26,9 @@ class Vendor < ActiveRecord::Base
   def generate_slug
     self.slug ||= self.name.parameterize
   end
+
+  def vendor_url
+    "vendors/"+"#{self.slug}"
+  end
+
 end

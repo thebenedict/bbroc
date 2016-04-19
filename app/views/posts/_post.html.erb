@@ -4,6 +4,13 @@
     <meta itemprop="url" content="<%= image_url post.image.url(:standard) %>">
     <meta itemprop="width" content="305">
     <meta itemprop="height" content="229">
+    <div class="post-toggle-options">
+      <%= link_to post.vendor.vendor_url, class: "button alt" do %>
+        <span>More from<br> <%= "#{post.vendor.name}" %> </span>
+      <% end %>
+      <%= link_to "Show on map", post.vendor.map_url, class: "button", target: "_blank" %>
+      <a href="javascript:void(0)">back</a>
+    </div>
     <span class="badge <%= post.badge_class %>"> <%= post.badge_text_for(current_user) %> </span>
   </div>
   <div class="headline" itemprop="mainEntityOfPage" title="<%= post.item %>">

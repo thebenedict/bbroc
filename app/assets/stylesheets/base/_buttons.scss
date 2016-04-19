@@ -20,6 +20,15 @@
   width: 100%;
   text-align: center;
 
+  &.alt {
+    background-color: $medium-gray;
+
+    &:hover {
+      background-color: shade($medium-gray, 20%);
+    }
+  }
+
+
   &.smaller {
     padding: $small-spacing * 0.5 $base-spacing * 0.5;
     font-size: $base-font-size * 0.9;

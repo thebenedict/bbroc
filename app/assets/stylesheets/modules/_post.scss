@@ -79,4 +79,34 @@
       &:last-of-type {text-align: right;}
     }
   }
+
+  .post-toggle-options {
+    display: flex;
+    position: absolute;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: $base-spacing;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(255,255,255,.85);
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+
+    .button {
+      display: none;
+    }
+
+    &.tapped {
+      opacity: 1;
+      transition: opacity .25s ease-in-out;
+
+      .button {
+        display: block;
+      }
+    }
+  }
 }
