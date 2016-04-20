@@ -4,10 +4,11 @@
     <meta itemprop="url" content="<%= image_url post.image.url(:standard) %>">
     <meta itemprop="width" content="305">
     <meta itemprop="height" content="229">
+    <span class="close-button"><a href="javascript:void(0)">✖</a></span>
     <div class="post-toggle-options">
       <% if request.path == post.vendor.vendor_url %>
       <%= link_to root_url, class: "button" do %>
-        <span>More from Best Broccoli</span>
+        <span>Back to Best Broccoli</span>
       <% end %>
       <% else %>
       <span class="vendor"> <%= "#{post.vendor.name}" %> </span>
@@ -16,7 +17,6 @@
         <% end %>
       <% end %>
       <%= link_to "Find on map", post.vendor.map_url, class: "button alt", target: "_blank" %>
-      <a href="javascript:void(0)">Back to photo</a>
     </div>
     <span class="badge <%= post.badge_class %>"> <%= post.badge_text_for(current_user) %> </span>
   </div>
