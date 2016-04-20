@@ -42,8 +42,10 @@ class Post < ActiveRecord::Base
   end
 
   def badge_text_for(current_user)
-    if self.matches.present?
+    if self.matches.present? and self.requestors.present?
       "requested by " + "#{self.requestor_name(current_user).capitalize}"
+    elsif self.requestors.present?
+      "requested"
     else
       ""
     end
