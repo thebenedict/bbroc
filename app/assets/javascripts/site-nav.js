@@ -4,11 +4,18 @@ $('.sign-up-toggle').on('click', function() {
   $('#item-requested').text($('#request-bar').val());
 });
 
-$(document).on("click", ".post-toggle-options", function(){
+$(":not('.post-toggle-options')").on('click', function() {
+  $('.post-toggle-options').removeClass('tapped');
+  $('.close-button').removeClass('active');
+});
+
+$(document).on('click', '.post-toggle-options', function(){
     if ($(this).hasClass('tapped') ) {
       $('.post-toggle-options').removeClass('tapped');
+        $('.close-button').removeClass('active');
     }else {
       $('.post-toggle-options').removeClass('tapped');
       $(this).addClass('tapped');
+      $(this).siblings().addClass('active');
     }
-  });
+});
