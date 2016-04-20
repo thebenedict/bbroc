@@ -3,11 +3,18 @@ header {
 	display: flex;
 	width: 100%;
 	background: rgba(255,255,255,0.90);
-	flex-flow: row wrap;
-	justify-content: space-around;
-	padding: $small-spacing;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	padding: $small-spacing $base-spacing+$small-spacing/2;
 	box-shadow: 0 2px 2px -2px #ccc;
 	z-index: 99;
+
+  .section {
+    flex: 0 1 auto;
+    text-align: left;
+
+    &.right { text-align: right; }
+  }
 
   h1.main-logo {
 		font-size: $base-font-size * 1.25;

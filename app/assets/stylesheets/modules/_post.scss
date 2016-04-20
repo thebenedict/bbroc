@@ -1,9 +1,10 @@
 .post {
   display: flex;
   flex-flow: row wrap;
-  max-width: $max-post-size;
+  flex: 1 1 $max-post-size;
+  justify-content: space-between;
   padding: $small-spacing * 0.75;
-  margin: $small-spacing * 0.5;
+  margin: $small-spacing / 2;
   align-items: center;
   border: $base-border;
   box-shadow: $base-box-shadow;
