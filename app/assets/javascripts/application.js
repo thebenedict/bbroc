@@ -33,14 +33,13 @@ if (window.location.hash && window.location.hash == '#_=_') {
 }
 
 // Register and install service worker
-/*
+
 if ('serviceWorker' in navigator) {
  console.log('Service Worker is supported');
- navigator.serviceWorker.register('sw.js').then(function(reg) {
+ navigator.serviceWorker.register('/sw.js').then(function(reg) {
    console.log(':^)', reg);
 
  }).catch(function(err) {
    console.log(':^(', err);
  });
 }
-*/
