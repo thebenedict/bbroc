@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   flex: 1 1 $max-post-size;
+  max-width: $max-post-size * 2;
   justify-content: space-between;
   padding: $small-spacing * 0.75;
   margin: $small-spacing / 2;
