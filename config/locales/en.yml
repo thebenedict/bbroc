@@ -54,4 +54,4 @@ en:
         other: "%{count} years" # default was: "almost %{count} years"
 
   titles:
-    application: best broccoli
+    application: Best Broccoli
