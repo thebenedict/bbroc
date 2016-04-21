@@ -20,13 +20,13 @@
     }
   ],
   "splash_screens": [{
-      "src": "/splash-lowres",
+      "src": "/splash-lowres.png",
       "sizes": "320x240"
     }, {
-      "src": "/splash-hd-small",
+      "src": "/splash-hd-small.png",
       "sizes": "1334x750"
     }, {
-      "src": "/splash-hd-hi",
+      "src": "/splash-hd-hi.png",
       "sizes": "1920x1080",
       "density": 3
     }],
