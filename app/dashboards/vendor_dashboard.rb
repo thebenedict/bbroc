@@ -13,6 +13,8 @@ class VendorDashboard < Administrate::BaseDashboard
     name: Field::String,
     lat: Field::Number.with_options(decimals: 2),
     lng: Field::Number.with_options(decimals: 2),
+    accuracy: Field::Number,
+    user_submitted: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -26,7 +28,6 @@ class VendorDashboard < Administrate::BaseDashboard
     :posts,
     :id,
     :name,
-    :lat,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,6 +38,8 @@ class VendorDashboard < Administrate::BaseDashboard
     :name,
     :lat,
     :lng,
+    :accuracy,
+    :user_submitted,
     :created_at,
     :updated_at,
   ]
@@ -49,6 +52,8 @@ class VendorDashboard < Administrate::BaseDashboard
     :name,
     :lat,
     :lng,
+    :accuracy,
+    :user_submitted,
   ]
 
   # Overwrite this method to customize how vendors are displayed

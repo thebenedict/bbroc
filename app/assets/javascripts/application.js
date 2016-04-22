@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require typed
+//= require geolocation
 //= require jquery.infinite-pages
 //= require_tree .
 

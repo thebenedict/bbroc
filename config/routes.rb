@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'vendorscontroller/new'
+
   get 'requests/create'
 
   namespace :admin do
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
   get '/messenger', to: 'messenger_webhook#webhook'
 
   root to: "extra_pages#home"
-  get '/vendors/:vendor_slug', to: 'extra_pages#home'
 
   # override registrations controller for extra field (name)
   devise_for :users, :controllers => { 
@@ -26,4 +27,6 @@ Rails.application.routes.draw do
   get '/notify', to: 'requests#send_fulfillment_notifications'
   resources :posts
   resources :requests, only: :create
+  resources :vendors, only: [:new, :create]
+  get '/vendors/:vendor_slug', to: 'extra_pages#home'
 end

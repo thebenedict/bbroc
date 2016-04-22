@@ -1,0 +1,10 @@
+<h1>New vendor</h1>
+<%= simple_form_for @vendor do |f| %>
+  <%= f.input :name %>
+  <%= f.input :lat %>
+  <%= f.input :lng %>
+  <%= f.input :accuracy %>
+  <div class="form-actions">
+    <%= f.button :submit, data: {disable_with: "Submitting..."} %>
+  </div>
+<% end %>
