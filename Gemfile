@@ -33,6 +33,7 @@ gem "administrate", "~> 0.1.4"
 gem "sentry-raven"
 gem 'le'
 gem 'daemons'
+gem 'geocoder'
 
 group :development do
   gem "quiet_assets"

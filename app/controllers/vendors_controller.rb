@@ -13,6 +13,14 @@
 #
 
 class VendorsController < ApplicationController
+  def index
+    if params[:lat].present? and params[:lng].present?
+      @vendors = Vendor.near([params[:lat], params[:lng]]).limit(4)
+    else
+      @vendors = Vendor.all.order('name')
+    end
+  end
+
   def new
     @vendor = Vendor.new
   end

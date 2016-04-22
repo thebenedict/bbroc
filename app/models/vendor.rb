@@ -20,6 +20,8 @@ class Vendor < ActiveRecord::Base
 
   before_save :generate_slug
 
+  geocoded_by :address, :latitude  => :lat, :longitude => :lng
+
   def map_url
     "https://maps.google.com/?q=#{self.lat},#{self.lng}"
   end

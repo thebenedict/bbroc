@@ -131,6 +131,7 @@ GEM
       activesupport
       capybara
       i18n
+    geocoder (1.3.4)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashdiff (0.3.0)
@@ -347,6 +348,7 @@ DEPENDENCIES
   factory_girl_rails
   flutie
   formulaic
+  geocoder
   high_voltage
   jquery-infinite-pages
   jquery-rails

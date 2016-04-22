@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   get '/notify', to: 'requests#send_fulfillment_notifications'
   resources :posts
   resources :requests, only: :create
-  resources :vendors, only: [:new, :create]
+  resources :vendors, only: [:index, :new, :create]
   get '/vendors/:vendor_slug', to: 'extra_pages#home'
 end

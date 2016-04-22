@@ -1,5 +1,17 @@
+function updateVendorDropdown(lat, lng) {
+  $.ajax({
+    type: "GET",
+    url: "/vendors?lat=" + lat + "&lng=" + lng,
+    success: function(result) {
+      console.log("vendors fetched");
+    },
+      error: function(e) {
+      console.log("something wrong!");
+    }
+  });
+}
+
 function geo_success(position) {
-  //do_something(position.coords.latitude, position.coords.longitude);
   console.log(position);
   $('#vendor_lat').val(position.coords.latitude);
   $('#vendor_lng').val(position.coords.longitude);
@@ -17,3 +29,8 @@ var geo_options = {
 };
 
 var wpid = navigator.geolocation.watchPosition(geo_success, geo_error, geo_options);
+
+
+navigator.geolocation.getCurrentPosition(function(position) {
+  updateVendorDropdown(position.coords.latitude, position.coords.longitude);
+});
