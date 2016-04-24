@@ -1,5 +1,5 @@
 $(function() {
-    $('#inputImage').change(function(e) {
+    $('#post_image').change(function(e) {
         var file = e.target.files[0],
             imageType = /image.*/;
 
@@ -55,12 +55,66 @@ $(function() {
         $img.load(function() {
           var hiddenCanvas = $('#hidden-canvas')[0]
           context.drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth, newHeight);
-          hiddenCanvas.getContext('2d').drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth * 2, newHeight *2);
-          var uri = $('#hidden-canvas')[0].toDataURL("image/jpeg");
-          $('#post_image').val(uri);
         });
     }
+
+    // geolocation for new vendors
+    function updateVendorDropdown(lat, lng) {
+      $.ajax({
+        type: "GET",
+        url: "/vendors?lat=" + lat + "&lng=" + lng,
+        success: function(result) {
+          console.log("vendors fetched");
+        },
+          error: function(e) {
+          console.log("something wrong!");
+        }
+      });
+    }
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      updateVendorDropdown(position.coords.latitude, position.coords.longitude);
+    });
+
+    $('.post_vendor_name').removeClass('visible');
+
+    $('.location-trigger').click(function() {
+      if($('.post_vendor_name').is(":visible")) {
+        $('.post_vendor_name').removeClass('visible');
+        $('#post_vendor_attributes_name').val('');
+      } else {
+        $('.post_vendor_name').addClass('visible');
+        $('#post_vendor_id').val('');
+      }
+    });
+
+    $('#post_vendor_id').change(function() {
+      if($(this).val()) {
+        $('.post_vendor_name').removeClass('visible');
+        $('#post_vendor_attributes_name').val('');
+      }
+    })
+
 });
+
+function geo_success(position) {
+  console.log(position);
+  $('#post_vendor_attributes_lat').val(position.coords.latitude);
+  $('#post_vendor_attributes_lng').val(position.coords.longitude);
+  $('#post_vendor_attributes_accuracy').val(position.coords.accuracy);
+}
+
+function geo_error() {
+  console.log("Sorry, no position available.");
+}
+
+var geo_options = {
+  enableHighAccuracy: true, 
+  maximumAge        : 10000, 
+  timeout           : 27000
+};
+
+var wpid = navigator.geolocation.watchPosition(geo_success, geo_error, geo_options);
 
 $('#take-image').on('click', function() {
   $(this).addClass('hidden');

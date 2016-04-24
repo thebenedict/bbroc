@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   def new
     @legacy = params[:legacy]
     @post = Post.new
+    @post.build_vendor
   end
 
   def create
@@ -38,6 +39,9 @@ class PostsController < ApplicationController
     named_params = post_params
     named_params[:image] = image
     post = current_user.posts.build(named_params)
+    if post.vendor.new_record?
+      post.vendor.user_submitted = true
+    end
     if post.save
       flash.notice = "Success, thanks for posting!"
     else
@@ -49,7 +53,8 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:item, :vendor_id, :notes, :price, :unit, :image, :image_field)
+      params.require(:post).permit(:item, :vendor_id, :notes, :price, :unit, 
+        :image, :image_field, vendor_attributes: [:name, :lat, :lng, :accuracy])
     end
 
     def verify_post_permission

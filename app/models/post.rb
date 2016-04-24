@@ -19,6 +19,8 @@
 #
 
 class Post < ActiveRecord::Base
+  UNITS_CHOICES = YAML.load_file("#{Rails.root}/config/data/choices.yml")["UNITS"]
+
   default_scope { order('created_at DESC') }
 
   belongs_to :user
@@ -33,6 +35,8 @@ class Post < ActiveRecord::Base
   has_attached_file :image, styles: { standard: "610x458>" }, default_url: "/apples-placeholder.jpg", :s3_protocol => :https
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  accepts_nested_attributes_for :vendor, limit: 1, reject_if: proc { |attributes| attributes['name'].blank? }
 
   def safe_item
     item.length <= 16 ? item : "#{item.first(16).strip}&hellip;".html_safe

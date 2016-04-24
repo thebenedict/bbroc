@@ -5,7 +5,7 @@
 
   .camera { margin-bottom: $small-spacing;}
 
-  #inputImage {
+  .post_image {
     opacity: 0.01;
     position: absolute;
     top: -150px;
@@ -24,10 +24,91 @@
     width: 100%;
   }
 
-  .help {
+  .input-wrapper { width: 100%; }
+
+  .location-trigger {
     font-size: $base-font-size * 0.85;
-    margin-top: $base-spacing;
-    padding-top: $small-spacing;
-    border-top: 1px solid $light-gray;
+    margin-bottom: $base-spacing;
+  }
+
+  .price-wrap {
+    width: 100%;
+
+    * { 
+      display: inline-block;
+    };
+
+    .divider { 
+      width: 5%;
+      text-align: center;
+    }
+
+  }
+
+  .post_price {
+    width: 60%
+  }
+
+  .post_unit {
+    width: 35%;
+
+    select {
+      width: 100%;
+      appearance: none;
+      color: $medium-gray;
+      background: white;
+      padding: 8px;
+      margin: 0;
+    }
+  }
+
+  .post_vendor {
+    width: 100%;
+
+    select { 
+      width: 100%;
+      appearance: none;
+      color: $medium-gray;
+      background: white;
+      padding: 8px;
+      margin: $small-spacing 0 0 0;
+    }
+  }
+
+  .post_vendor {
+    select {
+      margin-bottom: $small-spacing;
+    }
+  }
+
+  .post_vendor_name {
+    width: 100%;
+    display: none;
+    transition: all 0.5s ease;
+
+    &.visible { 
+      display: block;
+    }
+
+    input { 
+      margin-top: -$small-spacing;
+      margin-bottom: $base-spacing;
+    }
+  }
+
+  .submit {
+    width: 60%;
+    display: inline-block;
+    margin-right: 5%;
+  }
+
+  .cancel {
+    width: 35%;
+    display: inline-block;
+    background: $light-gray;
+
+    &:active, &:hover {
+      background: darken($light-gray, 10);
+    }
   }
 }

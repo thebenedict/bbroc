@@ -35,16 +35,7 @@ class User < ActiveRecord::Base
          :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
   belongs_to :vendor
-  has_many :posts do 
-    def build(*args, &block)
-      params = args[0]
-      params[:user_id] = proxy_association.owner.id if proxy_association.owner
-      if proxy_association.owner.role == "vendor"
-        params[:vendor_id] = proxy_association.owner.vendor.id
-      end
-      p = Post.new(params)
-    end
-  end
+  has_many :posts
   has_many :requests, dependent: :destroy
 
   accepts_nested_attributes_for :requests

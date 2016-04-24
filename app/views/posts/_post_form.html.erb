@@ -1,36 +1,34 @@
 <a href="/"><i class="fa fa-close"></i></a>
 <div id="new-post">
-  <input id="inputImage" type="file">
   <%= simple_form_for(@post) do |f| %>
   <div id="the-real-new-post" class="post">
-    <div id="take-image" class="camera button" onclick="document.getElementById('inputImage').click()">
+    <div id="take-image" class="camera button" onclick="document.getElementById('post_image').click()">
       <span> Add Photo</span>
     </div>
-    <div id="retake-image" class="camera hidden button" onclick="document.getElementById('inputImage').click()">
+    <div id="retake-image" class="camera hidden button" onclick="document.getElementById('post_image').click()">
       <span> Retake Photo</span>
     </div>
     <div class="item-image hidden">
       <canvas id="canvas" width="305px" height="229px"></canvas>
     </div>
-    <div>
-      <%= f.input :image, as: :hidden %>
-      <%= f.input(:item, placeholder: "Item", label: false) %>
+    <div class="input-wrapper">
+      <%= f.input :image %>
+      <%= f.input(:item, placeholder: "Item name", label: false) %>
+      <div class="price-wrap">
+        <%= f.input :price, label: false, placeholder: "Price in TSH" %><div class="divider">/</div><%= f.input :unit, label: false, collection: Post::UNITS_CHOICES, include_blank: "unit" %>
+      </div>
+      <%= f.association :vendor, label: false, required: false, include_blank: "Location" %>
+      <div class="location-trigger"><%= link_to "Not listed? Add a new location", "javascript:void(0)" %></div>
     </div>
-    <div>
-      <%= f.input :price, label: false, placeholder: "Price" %>
-      <%= f.input :notes, label: false, placeholder: "Note" %>
-      <%= f.input :unit, label: false, placeholder: "Unit" %>
-    </div>
-    <div class="detail">
-      <% if current_user.role == "admin" %>
-        <%= f.association :vendor, label: false, prompt: "Location" %>
-      <% end %>
-    </div>
+    <%= f.simple_fields_for :vendor do |v| %>
+      <%= v.input :name, label: false, placeholder: "New location name", html: { class: 'visible' }  %>
+      <%= v.input :lat, as: :hidden %>
+      <%= v.input :lng, as: :hidden %>
+      <%= v.input :accuracy, as: :hidden %>
+    <% end %>
     <div class="form-actions">
-      <%= f.button :submit, "Post", data: {disable_with: "Submitting..."} %>
+      <%= f.button :submit, "Post", class: "submit", data: {disable_with: "Submitting..."} %><%= link_to "Cancel", root_path, class: "button cancel" %>
     </div>
-    <div class="help">Not working? Try our <%= link_to "form for older phones", new_post_url(legacy: 1) %></div>
   </div>
-  <canvas id="hidden-canvas" width="610" height="458px" style="display: none;"></canvas>
   <% end %>
 </div>
