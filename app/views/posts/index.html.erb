@@ -1,20 +1,5 @@
 <div id="wrap">
-  <div class="panel alternate border-bottom">
-    <h1 class="full box front headline">Know what's fresh.</h1>
-    <div class="tagline">
-      <p>We find the best produce, artisan products and specialty items in Dar</p>
-      <div class="fb-like" data-href="https://www.facebook.com/bestbroccoli" data-width="225" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
-      <p class="last">Like us for updates</p>
-    </div>
-  </div>
-  <% if current_user.role == "admin" %>
-    <%= render "vendor_panel" %>
-    <%= render "request_panel" %>
-  <% elsif current_user.role == "vendor" %>
-    <%= render "vendor_panel" %>
-  <% else %>
-    <%= render "request_panel" %>
-  <% end %>
+  <%= render "actions_panel" %>
   <div class="panel feed">
     <%= render @posts %>
   </div>
