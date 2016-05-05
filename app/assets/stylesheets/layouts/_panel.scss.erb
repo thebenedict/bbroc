@@ -21,10 +21,13 @@
     &.last { margin: 0; }
   }
 
-  .fb-like { 
-    min-height: 61px;
-    margin-bottom: $small-spacing;
+  h4 {
+    font-weight: $base-font-weight;
+    font-size: $base-font-size;
+    margin: 0;
   }
+
+
 
   &.feed {
     background: $off-white;
@@ -55,7 +58,7 @@
 
   &.alternate {
     background: url("<%= image_path('back-light.png') %>");
-    padding: $base-spacing * 2 0;
+    padding: $base-spacing * 1.5 0;
   }
 
   &.border-top { border-top: 1px solid $light-gray; }
@@ -63,5 +66,19 @@
 
   &.control {
     justify-content: space-around;
+  }
+
+  &.home {
+    margin: 0;
+    padding: $base-spacing $base-spacing 0 $base-spacing;
+
+    .intro-head {
+      display: block;
+      font-size: $base-font-size * 1.25;
+      font-weight: $base-font-weight * 2;
+      padding: $small-spacing 0 $small-spacing * 0.5 0;
+      width: 100%;
+      text-align: center;
+    }
   }
 }

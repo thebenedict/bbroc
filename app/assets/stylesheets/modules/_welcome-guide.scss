@@ -1,7 +1,7 @@
 .welcome {
-padding: $base-spacing * 0.75;
 margin: $small-spacing * 0.5;
-max-width: 325px;
+flex: 1 1 $max-post-size;
+
 text-align: center;
 align-self: flex-start;
 
