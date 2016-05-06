@@ -5,11 +5,9 @@
     <div id="take-image" class="camera button" onclick="document.getElementById('post_image').click()">
       <span>+ Add Photo</span>
     </div>
-    <div id="retake-image" class="camera hidden button" onclick="document.getElementById('post_image').click()">
-      <span> Retake Photo</span>
-    </div>
-    <div class="item-image hidden">
-      <canvas id="canvas" width="305px" height="229px"></canvas>
+    <div id="retake-image" class="full camera hidden">
+      <h2>Nice Photo!</h2>
+      <span class="button" onclick="document.getElementById('post_image').click()">Retake?</span>
     </div>
     <div class="input-wrapper">
       <%= f.input :image %>
