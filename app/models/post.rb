@@ -30,7 +30,8 @@ class Post < ActiveRecord::Base
   has_many :requestors, through: :requests, class_name: "User", source: :user
 
   validates :item, presence: true
-  validates :vendor, presence: true
+  validates :vendor, presence: {message: "Location can't be blank"}
+  validates :image, attachment_presence: true
 
   has_attached_file :image, styles: { standard: "610x458>" }, default_url: "/apples-placeholder.jpg", :s3_protocol => :https
 

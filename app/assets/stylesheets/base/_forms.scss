@@ -1,5 +1,17 @@
 form {
   width: 100%;
+
+  .error { 
+    color: $bright-red; 
+    margin-bottom: $small-spacing;
+    font-size: 0.85em;
+  }
+}
+
+.field_with_errors {
+  input[type="text"], select {
+    margin-bottom: 0.2em;
+  }
 }
 
 fieldset {

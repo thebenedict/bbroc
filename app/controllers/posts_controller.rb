@@ -37,16 +37,18 @@ class PostsController < ApplicationController
     image.original_filename = "#{post_params[:item].parameterize}.jpg"
     named_params = post_params
     named_params[:image] = image
-    post = current_user.posts.build(named_params)
-    if post.vendor.new_record?
-      post.vendor.user_submitted = true
+    @post = current_user.posts.build(named_params)
+    if @post.valid? and @post.vendor.new_record?
+      @post.vendor.user_submitted = true
     end
-    if post.save
+    if @post.save
       flash.notice = "Success, thanks for posting!"
+      redirect_to new_post_path
     else
-      flash.alert = "Something went wrong, please try again."
+      @post.build_vendor
+      flash.alert = "Please correct the errors below and try again"
+      render :new
     end
-    redirect_to new_post_path
   end
 
   private

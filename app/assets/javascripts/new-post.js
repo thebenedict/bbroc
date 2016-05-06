@@ -95,6 +95,9 @@ $(function() {
       }
     })
 
+  console.log("test");
+  $('#post_image').change();
+
 });
 
 function geo_success(position) {
