@@ -16,44 +16,8 @@ $(function() {
         var canvas = $('#canvas')[0];
         var context = canvas.getContext('2d');
 
-        var width = $img[0].width;
-		    var height = $img[0].height;
-        var r = (width / height);
-        var cardWidth = 305;
-        var cardHeight = 229;
-        var newWidth;
-		    var newHeight;
-        var xCrop;
-        var yCrop;
-
-        if (r == 1) {
-          newWidth = cardWidth;
-          newHeight = (cardWidth / width) * height;
-
-          var w = (width / newWidth);
-
-          xCrop = ((width / 2) - (cardWidth / 2) * w);
-          yCrop = 0;
-        } else if (r > 1) {
-          newHeight = cardHeight;
-          newWidth = (cardHeight / height) * width;
-
-          var w = (width / newWidth);
-
-          xCrop = ((width / 2) - (cardWidth / 2) * w);
-          yCrop = 0;
-        } else {
-          newWidth = cardWidth;
-          newHeight = (cardWidth / width) * height;
-
-          var h = (height / newHeight);
-
-          xCrop = 0;
-          yCrop = ((height / 2) - (cardHeight / 2) * h);
-        }
-
         $img.load(function() {
-          context.drawImage(this, 0, 0, newWidth, newHeight);
+          context.drawImage(this, 0, 0, 305, 229);
         });
     }
 
