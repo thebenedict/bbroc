@@ -13,10 +13,10 @@ $(function() {
 
     function fileOnload(e) {
         var $img = $('<img>', { src: e.target.result });
-        var canvas = $('#canvas')[0];
+      //var canvas = $('#canvas')[0];
         var context = canvas.getContext('2d');
 
-        var width = $img[0].width;
+      /*  var width = $img[0].width;
 		    var height = $img[0].height;
         var r = (width / height);
         var cardWidth = 305;
@@ -50,11 +50,11 @@ $(function() {
 
           xCrop = 0;
           yCrop = ((height / 2) - (cardHeight / 2) * h);
-        }
+        }*/
 
         $img.load(function() {
           var hiddenCanvas = $('#hidden-canvas')[0]
-          context.drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth, newHeight);
+          context.drawImage(this,0,0);
         });
     }
 
@@ -109,8 +109,8 @@ function geo_error() {
 }
 
 var geo_options = {
-  enableHighAccuracy: true, 
-  maximumAge        : 10000, 
+  enableHighAccuracy: true,
+  maximumAge        : 10000,
   timeout           : 27000
 };
 
