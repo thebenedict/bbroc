@@ -53,8 +53,7 @@ $(function() {
         }
 
         $img.load(function() {
-          var hiddenCanvas = $('#hidden-canvas')[0]
-          context.drawImage(this, xCrop, yCrop, width, height, 0, 0, newWidth, newHeight);
+          context.drawImage(this, 0, 0, newWidth, newHeight);
         });
     }
 

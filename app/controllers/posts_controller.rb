@@ -46,7 +46,7 @@ class PostsController < ApplicationController
       redirect_to new_post_path
     else
       @post.build_vendor
-      flash.alert = "Please correct the errors below and try again"
+      flash.alert = "Please correct the errors below"
       render :new
     end
   end
