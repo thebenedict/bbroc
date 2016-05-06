@@ -1,0 +1,12 @@
+<div class="content-controls">
+  <div class="control new-post">
+    <%= link_to "Share a photo", new_post_path, class: "button" %>
+  </div>
+
+  <div class="control new-request">
+    <%= simple_form_for @request do |f| %>
+      <%= f.input_field :body, placeholder: "I'm looking for…" %>
+      <%= f.submit 'Ask' %>
+    <% end %>
+  </div>
+</div>

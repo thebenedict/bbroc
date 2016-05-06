@@ -19,6 +19,7 @@
   white-space: nowrap;
   width: 100%;
   text-align: center;
+  box-shadow: inset 0px 0px 10px 4px rgba(76, 76, 76, 0.3);
 
   &.alt {
     background-color: $blue;
