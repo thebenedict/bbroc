@@ -1,6 +1,6 @@
 #{$all-buttons}, .button {
   appearance: none;
-  background: radial-gradient(ellipse farthest-corner at 0px 0px, $action-color 45%, darken($action-color, 15%) 100%, $action-color);
+  background: radial-gradient(ellipse farthest-corner at 0px 0px, $bbroc-blue 45%, darken($bbroc-blue, 10%) 100%, $bbroc-blue);
   border: 0;
   border-radius: $base-border-radius;
   color: #fff;
@@ -25,7 +25,7 @@
   }
 
   &:hover {
-    background: radial-gradient(ellipse farthest-corner at 0px 0px, darken($action-color, 5%) 45%, darken($action-color, 20%) 100%, $action-color);
+    background: radial-gradient(ellipse farthest-corner at 0px 0px, $bbroc-blue 65%, darken($bbroc-blue, 10%) 100%, $bbroc-blue);
   }
 
 
