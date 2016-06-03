@@ -34,7 +34,7 @@
     <div class="headline" itemprop="mainEntityOfPage" title="<%= post.item %>">
       <h2 itemprop="headline"><%= post.safe_item %></h2>
       <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-        <%= image_tag avatar_or_default(current_user), alt: "placeholder avatar", class: "avatar", title: "Hey, #{current_user.first_name}" %>
+        <%= image_tag avatar_or_default(post.user), alt: "placeholder avatar", class: "avatar" %>
         <meta itemprop="name" content="<%= post.user.name %>">
       </div>
     </div>

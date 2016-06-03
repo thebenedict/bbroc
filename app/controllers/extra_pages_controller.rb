@@ -8,6 +8,7 @@ class ExtraPagesController < ApplicationController
       render "vendor_home"
     else
       @posts = Post.limit(24)
+      @request = Request.new
     end
   end
 
