@@ -6,8 +6,20 @@ $(function() {
         if (!file.type.match(imageType))
             return;
 
-
+        var reader = new FileReader();
+        reader.onload = fileOnload;
+        reader.readAsDataURL(file);
     });
+
+    function fileOnload(e) {
+        var $img = $('<img>', { src: e.target.result });
+        var canvas = $('#canvas')[0];
+        var context = canvas.getContext('2d');
+
+        $img.load(function() {
+          context.drawImage(this, 0, 0, 305, 229);
+        });
+    }
 
     // geolocation for new vendors
     function updateVendorDropdown(lat, lng) {
@@ -45,9 +57,6 @@ $(function() {
         $('#post_vendor_attributes_name').val('');
       }
     })
-
-  console.log("test");
-  $('#post_image').change();
 
 });
 

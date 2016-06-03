@@ -5,38 +5,17 @@
   text-align: center;
   border-bottom: 1px solid $light-gray;
 
+  h1 {
+    font-size: 1.6em;
+  }
+
   .control {
     flex: 1 1 auto;
     padding: 0 $small-spacing/2;
-    margin-bottom: $base-spacing;
-
-    input {
-      display: inline-block;
-      float: left;
-      margin-top: 0;
-    }
+    margin-bottom: $base-spacing*2;
   }
 
   .button, input[type=submit] { 
     max-width: 13em; 
-  }
-
-  .new-request {
-    input[type=text] { 
-      width: 70%;
-      padding: 0.75em;
-      margin-right: 2%;  
-      margin-bottom: 0;
-    }
-
-    input[type=submit] { 
-      width: 28%;
-    }    
-
-  }
-
-  h2 { 
-    font-weight: normal;
-    margin: 0 0 $small-spacing/2 0; 
   }
 }
