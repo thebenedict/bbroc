@@ -1,6 +1,6 @@
 #{$all-buttons}, .button {
   appearance: none;
-  background-color: $action-color;
+  background: radial-gradient(ellipse farthest-corner at 0px 0px, $action-color 45%, darken($action-color, 15%) 100%, $action-color);
   border: 0;
   border-radius: $base-border-radius;
   color: #fff;
@@ -19,14 +19,13 @@
   white-space: nowrap;
   width: 100%;
   text-align: center;
-  box-shadow: inset 0px 0px 10px 4px rgba(76, 76, 76, 0.3);
 
   &.alt {
     background-color: $blue;
+  }
 
-    &:hover {
-      background-color: shade($blue, 20%);
-    }
+  &:hover {
+    background: radial-gradient(ellipse farthest-corner at 0px 0px, darken($action-color, 5%) 45%, darken($action-color, 20%) 100%, $action-color);
   }
 
 

@@ -1,49 +1,61 @@
-<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="item-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <%= image_tag post.image.url(:standard), alt: post.item %>
-    <meta itemprop="url" content="<%= image_url post.image.url(:standard) %>">
-    <meta itemprop="width" content="305">
-    <meta itemprop="height" content="229">
-    <span class="close-button"><a href="javascript:void(0)">✖</a></span>
-    <div class="post-toggle-options">
-      <% if request.path == post.vendor.vendor_url %>
-      <%= link_to root_url, class: "button" do %>
-        <span>Back to Best Broccoli</span>
-      <% end %>
-      <% else %>
-      <span class="vendor"> <%= "#{post.vendor.name}" %> </span>
-        <%= link_to post.vendor.vendor_url, class: "button" do %>
-          <span>More from here</span>
+<% if post_counter == 2 %>
+  <article class="post request-box" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="headline">
+      <h2>Have a request?</h2>
+    </div>  
+    <%= simple_form_for @request do |f| %>
+      <%= f.input_field :body, placeholder: "I'm looking for…" %>
+      <%= f.submit 'Ask' %>
+    <% end %>
+  </article>
+<% else %>
+  <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="item-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+      <%= image_tag post.image.url(:standard), alt: post.item %>
+      <meta itemprop="url" content="<%= image_url post.image.url(:standard) %>">
+      <meta itemprop="width" content="305">
+      <meta itemprop="height" content="229">
+      <span class="close-button"><a href="javascript:void(0)">✖</a></span>
+      <div class="post-toggle-options">
+        <% if request.path == post.vendor.vendor_url %>
+        <%= link_to root_url, class: "button" do %>
+          <span>Back to Best Broccoli</span>
         <% end %>
-      <% end %>
-      <%= link_to "Find on map", post.vendor.map_url, class: "button alt", target: "_blank" %>
+        <% else %>
+        <span class="vendor"> <%= "#{post.vendor.name}" %> </span>
+          <%= link_to post.vendor.vendor_url, class: "button" do %>
+            <span>More from here</span>
+          <% end %>
+        <% end %>
+        <%= link_to "Find on map", post.vendor.map_url, class: "button alt", target: "_blank" %>
+      </div>
+      <span class="badge <%= post.badge_class %>"> <%= post.badge_text_for(current_user) %> </span>
     </div>
-    <span class="badge <%= post.badge_class %>"> <%= post.badge_text_for(current_user) %> </span>
-  </div>
-  <div class="headline" itemprop="mainEntityOfPage" title="<%= post.item %>">
-    <h2 itemprop="headline"><%= post.safe_item %></h2>
-    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-      <%= image_tag "vendor_logos/#{post.vendor.name.parameterize}.jpg", alt: "#{post.vendor.name} logo", class: "avatar" %>
-      <meta itemprop="name" content="<%= post.user.name %>">
+    <div class="headline" itemprop="mainEntityOfPage" title="<%= post.item %>">
+      <h2 itemprop="headline"><%= post.safe_item %></h2>
+      <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+        <%= image_tag avatar_or_default(current_user), alt: "placeholder avatar", class: "avatar", title: "Hey, #{current_user.first_name}" %>
+        <meta itemprop="name" content="<%= post.user.name %>">
+      </div>
     </div>
-  </div>
-  <div class="detail" >
-    <h3 itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
-      <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-        at <%= link_to post.vendor.name, post.vendor.map_url, target: "_blank" %>
-        <meta itemprop="latitude" content="<%= post.vendor.lat %>" />
-        <meta itemprop="longitude" content="<%= post.vendor.lng %>" />
+    <div class="detail" >
+      <h3 itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+          at <%= link_to post.vendor.name, post.vendor.map_url, target: "_blank" %>
+          <meta itemprop="latitude" content="<%= post.vendor.lat %>" />
+          <meta itemprop="longitude" content="<%= post.vendor.lng %>" />
+        </span>
+      </h3>
+      <h3>
+        <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: false, itemprop: "datePublished" %>
+        <meta itemprop="dateModified" content="<%= post.created_at %>"/>
+      </h3>
+    </div>
+    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="http://www.bestbroccoli.com/public/best-broccoli-logo.png">
       </span>
-    </h3>
-    <h3>
-      <%= time_tag post.created_at, distance_of_time_in_words_to_now(post.created_at) + ' ago', pubdate: false, itemprop: "datePublished" %>
-      <meta itemprop="dateModified" content="<%= post.created_at %>"/>
-    </h3>
-  </div>
-  <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="http://www.bestbroccoli.com/public/best-broccoli-logo.png">
+      <meta itemprop="name" content="Best Broccoli">
     </span>
-    <meta itemprop="name" content="Best Broccoli">
-  </span>
-</article>
+  </article>
+<% end %>
