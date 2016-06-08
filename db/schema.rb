@@ -32,12 +32,6 @@ ActiveRecord::Schema.define(version: 20160422055728) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-  create_table "fresh_reports", force: :cascade do |t|
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "matches", force: :cascade do |t|
     t.integer  "request_id"
     t.integer  "post_id"
@@ -62,10 +56,7 @@ ActiveRecord::Schema.define(version: 20160422055728) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "fresh_report_id"
   end
-
-  add_index "posts", ["fresh_report_id"], name: "index_posts_on_fresh_report_id", using: :btree
 
   create_table "requests", force: :cascade do |t|
     t.integer  "user_id"
@@ -121,7 +112,6 @@ ActiveRecord::Schema.define(version: 20160422055728) do
 
   add_foreign_key "matches", "posts"
   add_foreign_key "matches", "requests"
-  add_foreign_key "posts", "fresh_reports"
   add_foreign_key "requests", "users"
   add_foreign_key "users", "vendors"
 end

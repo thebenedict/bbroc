@@ -1,7 +1,7 @@
 .welcome {
-margin: $small-spacing * 0.5;
+margin: $small-spacing * 2.5;
 flex: 1 1 $max-post-size;
-
+max-width: 400px;
 text-align: center;
 align-self: flex-start;
 
@@ -22,6 +22,10 @@ align-self: flex-start;
         content:"✓"
       }
     }
+  }
+
+  h3 {
+    text-align: left;
   }
 }
 

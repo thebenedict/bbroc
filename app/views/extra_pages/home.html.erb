@@ -1,27 +1,19 @@
 <div class="panel alternate border-bottom">
-  <h1 class="full box front headline">Know what's fresh.</h1>
-    <div class="tagline">
+    <div class="welcome">
+      <h1 class="full box front headline">Know what's fresh.</h1>
       <h4>
         Join the community that helps find the best produce, artisan products and specialty items in Dar es Salaam.
         <div class="fb-like" data-href="https://www.facebook.com/bestbroccoli" data-width="225" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
       </h4>
+      <br>
+      <h4>-Share your amazing finds-</h4>
+      <h4>-Request help finding something-</h4>
+      <h4>-Discover all that Dar has to offer-</h4>
     </div>
-    <div class="panel home">
-      <div class="welcome">
-        <span class="intro-head">Find something?</span>
-        <%= link_to "Share it", new_user_registration_path, class: "form-text-space button" %>
-      </div>
-      <div class="welcome">
-        <span class="intro-head">Can't find it?</span>
-        <a href="#bottom" class="button">Ask for it</a>
-      </div>
-    </div>
+    <%= render "authentication_forms" %>
 </div>
 <div class="panel feed">
   <%= render @posts %>
-</div>
-<div class="panel">
-  <span class="full">Want to see your products listed here? <a href="mailto:info@bestbroccoli.com?subject= Vendor Inquiry" >Let us know</a></span>
 </div>
 <div class="panel alternate border-top last">
   <h1 class="full box front">We take requests!</h1>

@@ -7,11 +7,6 @@
     </h1>
   </div>
   <div class="section right">
-    <% if !current_user %>
-    <div>
-      <a class="button smaller" href="/users/sign_in" >Sign in</a>
-    </div>
-    <% end %>
     <% if current_user %>
     <ul>
       <li>
@@ -23,5 +18,5 @@
       </li>
     </ul>
     <% end %>
-  </div> 
+  </div>
 </header>
