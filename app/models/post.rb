@@ -31,7 +31,7 @@ class Post < ActiveRecord::Base
 
   validates :item, presence: true
   validates :vendor, presence: {message: "Location can't be blank"}
-  validates :image, attachment_presence: true
+  validates :image, attachment_presence: true if Rails.env.production?
 
   has_attached_file :image, styles: { standard: "610x458>" }, default_url: "/apples-placeholder.jpg", :s3_protocol => :https
 
