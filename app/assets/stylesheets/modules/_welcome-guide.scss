@@ -1,9 +1,17 @@
 .welcome {
-margin: $small-spacing * 2.5;
+padding: 0 0.6em;
 flex: 1 1 $max-post-size;
-max-width: 400px;
+max-width: 500px;
 text-align: center;
 align-self: flex-start;
+
+&:first-of-type {
+  margin: 0 $base-spacing $base-spacing * 1.75 $base-spacing;
+}
+
+h4 {
+  line-height: 1.45em;
+}
 
   img {
     position: relative;

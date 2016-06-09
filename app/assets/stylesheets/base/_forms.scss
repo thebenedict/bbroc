@@ -1,8 +1,8 @@
 form {
   width: 100%;
 
-  .error { 
-    color: $bright-red; 
+  .error {
+    color: $bright-red;
     margin-bottom: $small-spacing;
     font-size: 0.85em;
   }
@@ -27,6 +27,7 @@ select {
   display: block;
   font-family: $base-font-family;
   font-size: $base-font-size;
+      border-radius: 3px;
 }
 
 label {
@@ -108,4 +109,9 @@ select {
   margin-bottom: $base-spacing;
   max-width: 100%;
   width: auto;
+}
+
+.form-text-space {
+  display: inline-block;
+  margin: $small-spacing * 0.5 0 $small-spacing * 0.5 0;
 }

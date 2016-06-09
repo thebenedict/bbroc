@@ -1,12 +1,9 @@
 <header>
-  <div class="section left">
-    <h1 class="main-logo">
-      <%= link_to root_path do %>
-      <span>Best</span><%= image_tag "icon.svg", alt: "best broccoli logo" %><span>Broccoli</span>
-      <% end %>
-    </h1>
-  </div>
-  <div class="section right">
+  <h1 class="main-logo">
+    <%= link_to root_path do %>
+    <span>Best</span><%= image_tag "icon.svg", alt: "best broccoli logo" %><span>Broccoli</span>
+    <% end %>
+  </h1>
     <% if current_user %>
     <ul>
       <li>
@@ -18,5 +15,4 @@
       </li>
     </ul>
     <% end %>
-  </div>
 </header>

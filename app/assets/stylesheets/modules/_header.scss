@@ -4,19 +4,13 @@ header {
 	width: 100%;
 	background: rgba(255,255,255,0.90);
 	flex-flow: row nowrap;
-	justify-content: space-between;
+	justify-content: center;
 	padding: $small-spacing $small-spacing+$small-spacing/2;
 	box-shadow: 0 2px 2px -2px #ccc;
 	z-index: 99;
 
-  .section {
-    flex: 0 1 auto;
-    text-align: left;
-
-    &.right { text-align: right; }
-  }
-
   h1.main-logo {
+		flex: 0 1 154px;
 		font-size: $base-font-size * 1.25;
 		margin: 0;
 
@@ -34,7 +28,7 @@ header {
 		display: inline-flex;
 		justify-content: flex-end;
 		align-items: center;
-		flex: 0 1 auto;
+		flex: 1;
 
 		img {
 			border-radius: 50%;
