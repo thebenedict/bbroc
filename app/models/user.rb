@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :requests, dependent: :destroy
 
-  has_attached_file :avatar, styles: { small: "40x40#" }, default_url: "/assets/user-icon.png", :s3_protocol => :https
+  has_attached_file :avatar, styles: { small: "40x40#" }, default_url: "/user-icon.png", :s3_protocol => :https
   validates_attachment :avatar,
     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
