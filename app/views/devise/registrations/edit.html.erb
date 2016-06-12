@@ -9,6 +9,11 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
+        <%= f.input :avatar, as: :file, label: "Change profile photo" %>
+        <div class="item-image hidden">
+          <canvas id="canvas" width="100" height="100"></canvas>
+          <div id="measure" style="position: absolute; left: -10000px; top: -100000px;"></div>
+        </div>
         <%= f.input :name, required: true, autofocus: true, label: false, placeholder: "Name" %>
         <%= f.input :email, required: true, label: false, placeholder: 'Email' %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -16,7 +21,6 @@
         <% end %>
         <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, label: false, placeholder: 'New Password' %>
         <%= f.input :password_confirmation, required: false, label: false, placeholder: 'Confirm New Password' %>
-        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, label: false, placeholder: 'Current Password' %>
       </div>
       <div class="form-actions">
         <%= f.button :submit, "Update" %>

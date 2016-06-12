@@ -27,10 +27,9 @@ $(function() {
         type: "GET",
         url: "/vendors?lat=" + lat + "&lng=" + lng,
         success: function(result) {
-          console.log("vendors fetched");
         },
           error: function(e) {
-          console.log("something wrong!");
+          console.log("vendors not fetched!");
         }
       });
     }

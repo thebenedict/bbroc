@@ -25,6 +25,10 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
 
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
   def add_resource_to_session(resource)
     session[:incomplete_resource] = resource
   end
@@ -42,6 +46,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password, :avatar)
   end
 end
