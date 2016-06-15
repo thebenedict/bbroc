@@ -20,7 +20,7 @@ class Request < ActiveRecord::Base
 
   accepts_nested_attributes_for :matches
 
-  after_create :notify_admins
+  after_create :notify_admins, :send_user_confirmation
   before_save :update_status, :clean_body
 
   enum status: {
@@ -32,6 +32,10 @@ class Request < ActiveRecord::Base
 
   def notify_admins
     RequestMailer.new_request_email(self).deliver_later
+  end
+
+  def send_user_confirmation
+    RequestMailer.request_confirmation_email(self).deliver_later
   end
 
   def update_status
