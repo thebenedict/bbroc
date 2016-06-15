@@ -14,6 +14,8 @@
 class Request < ActiveRecord::Base
   scope :pending, -> { includes(:matches).where(notified_at: nil).where.not(matches: { id: nil }) }
 
+  validates :body, presence: true
+
   belongs_to :user
   has_many :matches
   has_many :posts, through: :matches

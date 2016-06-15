@@ -16,7 +16,9 @@ class RequestsController < ApplicationController
 
   def create
     request = current_user.requests.create(request_params)
-    flash.notice = "We'll let you know what we hear about #{request.body.downcase}"
+    if request.save
+      flash.notice = "We'll let you know what we hear about #{request.body.downcase}"
+    end
     redirect_to :posts
   end
 
