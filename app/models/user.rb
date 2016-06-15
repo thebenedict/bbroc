@@ -57,11 +57,11 @@ class User < ActiveRecord::Base
       self.name.split(" ")[0]
     else
       "you"
-    end  
+    end
   end
 
   def recent_requests
-    self.requests.order(created_at: "DESC").limit(5)
+    self.requests.order(created_at: "DESC").limit(7)
   end
 
   def update_role
