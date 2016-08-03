@@ -343,7 +343,7 @@ DEPENDENCIES
   daemons
   database_cleaner
   delayed_job_active_record
-  devise
+  devise (~> 3.5.6)
   dotenv-rails
   factory_girl_rails
   flutie
